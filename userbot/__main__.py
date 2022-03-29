@@ -7,26 +7,37 @@
 
 import sys
 from importlib import import_module
+from platform import python_version
+
+from pytgcalls import __version__ as pytgcalls
 from pytgcalls import idle
-from userbot import LOOP, BOT_TOKEN, BOTLOG_CHATID, BOT_VER, LOGS, bot, ramblacklist, call_py
+from telethon import version
+
+from userbot import BOT_TOKEN
+from userbot import BOT_VER as ubotversion
+from userbot import BOTLOG_CHATID, LOGS, LOOP, bot
+from userbot.clients import ram_ubot_on, ramulti
+from userbot.core.git import git
 from userbot.modules import ALL_MODULES
-from userbot.utils.utils import autobot, creatgr
-from userbot.clients.logger import ram_ubot_on
+from userbot.utils import autobot, creatgr
+
 try:
     for module_name in ALL_MODULES:
-        imported_module = import_module("userbot.modules." + module_name)
-    bot.start()
-    call_py.start()
-    user = bot.get_me()
-    if user.id in ramblacklist:
-        LOGS.warning(
-            "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK LU.\nCredits: @merdhni"
-        )
-        sys.exit(1)
-    LOGS.info(f"⚡RAM - UBOT⚡ ⚙️ V{BOT_VER} [ TELAH DIAKTIFKAN! ]")
+        imported_module = import_module(f"userbot.modules.{module_name}")
+    client = ramulti()
+    total = 5 - client
+    git()
+    LOGS.info(f"Total Clients = {total} User")
+    LOGS.info(f"Python Version - {python_version()}")
+    LOGS.info(f"Telethon Version - {version.__version__}")
+    LOGS.info(f"PyTgCalls Version - {pytgcalls.__version__}")
+    LOGS.info(f"✨ RAM - UBOT ✨ Version - {ubotversion} [DAH AKTIF NGENTOOOOTTTT!!!✴️]")
+except (ConnectionError, KeyboardInterrupt, NotImplementedError, SystemExit):
+    pass
 except BaseException as e:
     LOGS.info(str(e), exc_info=True)
     sys.exit(1)
+
 
 LOOP.run_until_complete(ram_ubot_on())
 if not BOTLOG_CHATID:
