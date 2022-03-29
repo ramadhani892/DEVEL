@@ -14,7 +14,6 @@ from userbot.events import register
 from userbot import CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME
 from userbot.utils import edit_delete, edit_or_reply, ram_cmd
 
-
 async def gen_chlog(repo, diff):
     d_form = "%d/%m/%y"
     return "".join(
@@ -28,7 +27,7 @@ async def print_changelogs(xx, ac_br, changelog):
         f"**✨ Tersedia Perapdetan Untuk [{ac_br}] :\n\n✨ Yang harus di apdet:**\n`{changelog}`"
     )
     if len(changelog_str) > 4096:
-        await edit_or_reply(xx, "**Udah lama ga ngentot lo, Nih gua kasih file bokep.**")
+        await edit_or_reply(xx, "**Udah lama ga apdet lo ngentot, Nih gua kasih file bokep.**")
         with open("output.txt", "w+") as file:
             file.write(changelog_str)
         await xx.client.send_file(xx.chat_id, "output.txt")
@@ -168,12 +167,12 @@ async def upstream(event):
 
     changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
     if conf == "dulu":
-        await xx.edit(f"`RAM-UBOT, Sedang Apdet, Sabar ye anjing...`")
+        await xx.edit(f"`[RAM-UBOT]\nSedang Mengapdet Pada branch {ac_br}...`")
         await deploy(xx, repo, ups_rem, ac_br, txt)
         return
 
     if changelog == "" and not force_update:
-        await edit_delete(xx, "**😔✋ Baru abis apdet tolol, Belom ada apdet lagi.**")
+        await edit_delete(xx, "**😔✋ Baru abis apdet tolol, Belom ada apdetan lagi.**")
         return repo.__del__()
 
     if conf == "" and not force_update:
