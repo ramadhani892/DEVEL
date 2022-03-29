@@ -26,11 +26,10 @@ def vcmention(user):
 
 
 # credits by @vckyaz < vicky \>
-# FROM GeezProjects < https://github.com/vckyou/GeezProjects \>
-# ambil boleh apus credits jangan ya ka:)
+# recode by @lahsiajg < starboy \>
 
-@boy(pattern="joinvc(?: |$)(.*)")
-@ok(pattern=r"^\.jvc(?: |$)(.*)", sudo=True)
+@boy(pattern="jvc(?: |$)(.*)")
+@ok(pattern=r"^\.cjvc(?: |$)(.*)", sudo=True)
 async def join_(event):
     star = await edit_or_reply(event, f"**Otw Naik os, Sapa tau ada giveaway.**")
     if len(event.text.split()) > 1:
@@ -62,8 +61,8 @@ async def join_(event):
     await star.edit(f"**{from_user} Ngentot Naik Os!**")
 
 
-@boy(pattern="leavevc(?: |$)(.*)")
-@ok(pattern=r"^\.lvc(?: |$)(.*)", sudo=True)
+@boy(pattern="lvc(?: |$)(.*)")
+@ok(pattern=r"^\.clvc(?: |$)(.*)", sudo=True)
 async def leavevc(event):
     """ leave video chat """
     ram = await edit_or_reply(event, "**Turun dulu....**")
@@ -73,5 +72,5 @@ async def leavevc(event):
         try:
             await call_py.leave_group_call(chat_id)
         except (memek, ajg):
-            await edit_or_reply(event, f"{from_user} Tidak Berada Di VC Group.")
+            await edit_or_reply(event, f"Eh {from_user}, Lo ga ada di os ngentot!!!!!")
         await ram.edit(f"**Babay Anak kontol {from_user} Turun dulu...**")
