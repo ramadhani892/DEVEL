@@ -19,16 +19,16 @@ async def man_userbot_on():
     )
     try:
         if bot and tgbot:
-            ManUBOT = await tgbot.get_me()
-            BOT_USERNAME = ManUBOT.username
+            RamUbot = await tgbot.get_me()
+            BOT_USERNAME = RamUbot.username
             await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
             await asyncio.sleep(3)
     except BaseException:
         pass
     try:
         if bot and tgbot:
-            ManUBOT = await tgbot.get_me()
-            BOT_USERNAME = ManUBOT.username
+            RamUbot = await tgbot.get_me()
+            BOT_USERNAME = RamUbot.username
             await bot(EditAdminRequest(BOTLOG_CHATID, BOT_USERNAME, new_rights, "BOT"))
             await asyncio.sleep(3)
     except BaseException:
@@ -40,7 +40,7 @@ async def man_userbot_on():
             if BOTLOG_CHATID != 0:
                 await bot.send_message(
                     BOTLOG_CHATID,
-                    f"{BOTLOG_MSG},
+                    f"{BOTLOG_MSG}",
                 )
     except BaseException:
         pass
@@ -51,7 +51,7 @@ async def man_userbot_on():
             if BOTLOG_CHATID != 0:
                 await RAM2.send_message(
                     BOTLOG_CHATID,
-                    f"{BOTLOG_MSG},
+                    f"{BOTLOG_MSG}",
                 )
     except BaseException:
         pass
@@ -62,7 +62,7 @@ async def man_userbot_on():
             if BOTLOG_CHATID != 0:
                 await RAM3.send_message(
                     BOTLOG_CHATID,
-                    f"{BOTLOG_MSG},
+                    f"{BOTLOG_MSG}",
                 )
     except BaseException:
         pass
@@ -73,7 +73,7 @@ async def man_userbot_on():
             if BOTLOG_CHATID != 0:
                 await RAM4.send_message(
                     BOTLOG_CHATID,
-                    f"{BOTLOG_MSG},
+                    f"{BOTLOG_MSG}",
                 )
     except BaseException:
         pass
@@ -84,7 +84,7 @@ async def man_userbot_on():
             if BOTLOG_CHATID != 0:
                 await RAM5.send_message(
                     BOTLOG_CHATID,
-                    f"{BOTLOG_MSG},
+                    f"{BOTLOG_MSG}",
                 )
     except BaseException:
         pass
