@@ -12,8 +12,8 @@ from userbot.events import register
 
 
 @ram_cmd(pattern="fgban(?: |$)(.*)")
-@register(pattern=r"^\.cgbn(?: |$)(.*)", sudoTrue)
-async def _(event):
+@register(pattern=r"^\.cgbn(?: |$)(.*)", sudo=True)
+async def gbun(event):
     if event.fwd_from:
         return
     gbunVar = event.text
