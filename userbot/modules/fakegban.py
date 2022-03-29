@@ -7,12 +7,12 @@ from telethon.tl.types import ChannelParticipantsAdmins
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, DEVS
-from userbot.utils import edit_or_reply, ram_cmd
-from userbot.events import register
+from userbot.utils import edit_or_reply, ram_cmd as cuy
+from userbot.events import register as bro
 
 
-@ram_cmd(pattern="fgban(?: |$)(.*)")
-@register(pattern=r"^\.cgbn(?: |$)(.*)", sudo=True)
+@cuy(pattern="fgban(?: |$)(.*)")
+@bro(pattern=r"^\.cgbn(?: |$)(.*)", sudo=True)
 async def gbun(event):
     if event.fwd_from:
         return
@@ -20,7 +20,7 @@ async def gbun(event):
     gbunVar = gbunVar[6:]
     me = await event.client.get_me()
     mentions = f"**Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By** {me.first_name}\n"
-    await edit_or_reply(event, "**Mengaktifkan global banned....**")
+    await edit_or_reply(event, "`Mengaktifkan global banned....✅`")
     asyncio.sleep(3.5)
     chat = await event.get_input_chat()
     async for _ in event.client.iter_participants(
@@ -54,7 +54,7 @@ async def gbun(event):
                 gbunr = f"**Reason: **{gbunm}"
                 jnl += gbunr
             else:
-                no_reason = "**Reason: **`Jamet`"
+                no_reason = "**Reason: **`Kang Tipu VCS`"
                 jnl += no_reason
             await reply_message.reply(jnl)
     else:
