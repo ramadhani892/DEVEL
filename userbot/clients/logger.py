@@ -7,7 +7,7 @@ from userbot import BOTLOG_CHATID
 from userbot import bot, tgbot
 
 
-async def man_userbot_on():
+async def ram_ubot_on():
     new_rights = ChatAdminRights(
         add_admins=True,
         invite_users=True,
