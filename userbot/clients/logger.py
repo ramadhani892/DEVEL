@@ -5,7 +5,7 @@ from telethon.tl.types import ChatAdminRights
 from userbot import BOTLOG_MSG
 from userbot import BOTLOG_CHATID
 from userbot import bot, tgbot
-
+from userbot.utils hadeh_ajg
 
 
 async def ram_ubot_on():
@@ -35,10 +35,57 @@ async def ram_ubot_on():
     except BaseException:
         pass
     try:
-        if BOTLOG_CHATID != 0:
-            await bot.send_message(
-                BOTLOG_CHATID,
-                f"{BOTLOG_MSG}",
-             )
+        if bot:
+            await hadeh_ajg(bot)
+            await asyncio.sleep(3)
+            if BOTLOG_CHATID != 0:
+                await bot.send_message(
+                    BOTLOG_CHATID,
+                    f"{BOTLOG_MSG},
+                )
+    except BaseException:
+        pass
+    try:
+        if RAM2:
+            await hadeh_ajg(RAM2)
+            await asyncio.sleep(3)
+            if BOTLOG_CHATID != 0:
+                await RAM2.send_message(
+                    BOTLOG_CHATID,
+                    f"{BOTLOG_MSG},
+                )
+    except BaseException:
+        pass
+    try:
+        if RAM3:
+            await hadeh_ajg(RAM3)
+            await asyncio.sleep(3)
+            if BOTLOG_CHATID != 0:
+                await RAM3.send_message(
+                    BOTLOG_CHATID,
+                    f"{BOTLOG_MSG},
+                )
+    except BaseException:
+        pass
+    try:
+        if RAM4:
+            await checking(RAM4)
+            await asyncio.sleep(3)
+            if BOTLOG_CHATID != 0:
+                await RAM4.send_message(
+                    BOTLOG_CHATID,
+                    f"{BOTLOG_MSG},
+                )
+    except BaseException:
+        pass
+    try:
+        if RAM5:
+            await checking(RAM5)
+            await asyncio.sleep(3)
+            if BOTLOG_CHATID != 0:
+                await RAM5.send_message(
+                    BOTLOG_CHATID,
+                    f"{BOTLOG_MSG}
+                )
     except BaseException:
         pass
