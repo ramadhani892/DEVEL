@@ -1,15 +1,15 @@
 import asyncio
 from pytgcalls.methods.groups import JoinGroupCall
-from pytgcalls import StreamType
-from pytgcalls.types.input_stream import AudioPiped
+from pytgcalls import StreamType as ya
+from pytgcalls.types.input_stream import AudioPiped as rambot
 from pytgcalls.exceptions import (
-    NoActiveGroupCall,
-    AlreadyJoinedError,
-    NotInGroupCallError
+    NoActiveGroupCall as memek,
+    AlreadyJoinedError as asu,
+    NotInGroupCallError as ajg
 )
 from telethon.tl import types
 from telethon.utils import get_display_name
-from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.functions.users import GetFullUserRequest as ngentod
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot import call_py
@@ -31,13 +31,13 @@ def vcmention(user):
 
 @ram_cmd(pattern="joinvc(?: |$)(.*)")
 async def join_(event):
-    geezav = await edit_or_reply(event, f"**Processing**")
+    star = await edit_or_reply(event, f"**Processing**")
     if len(event.text.split()) > 1:
         chat = event.chat_id
         chats = event.pattern_match.group(1)
         try:
-            chat = await event.client(GetFullUserRequest(chats))
-        except AlreadyJoinedError as e:
+            chat = await event.client(ngentod(chats))
+        except asu as e:
             await call_py.leave_group_call(chat)
             clear_queue(chat)
             await asyncio.sleep(3)
@@ -52,13 +52,13 @@ async def join_(event):
         await call_py.start()
     await call_py.join_group_call(
         chat_id,
-        AudioPiped(
+        rambot(
             'http://duramecho.com/Misc/SilentCd/Silence01s.mp3'
         ),
         chats,
-        stream_type=StreamType().pulse_stream,
+        stream_type=ya().pulse_stream,
     )
-    await geezav.edit(f"**{from_user} Berhasil Naik Ke VC Group!**")
+    await star.edit(f"**{from_user} Berhasil Naik Ke VC Group!**")
 
 
 @ram_cmd(pattern="leavevc(?: |$)(.*)")
@@ -70,7 +70,7 @@ async def leavevc(event):
     if from_user:
         try:
             await call_py.leave_group_call(chat_id)
-        except (NotInGroupCallError, NoActiveGroupCall):
+        except (memek, ajg):
             await edit_or_reply(event, f"{from_user} Tidak Berada Di VC Group.")
         await geezav.edit(f"**{from_user} Berhasil Turun Dari VC Group.**")
 
