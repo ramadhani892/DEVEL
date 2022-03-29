@@ -12,7 +12,7 @@ from asyncio import get_event_loop
 from logging import basicConfig, getLogger, INFO, DEBUG
 from distutils.util import strtobool as sb
 from math import ceil
-
+from base64 import b64decode
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
 from pymongo import MongoClient
