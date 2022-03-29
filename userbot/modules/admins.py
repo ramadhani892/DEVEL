@@ -36,14 +36,14 @@ from telethon.tl.types import (
 from userbot import BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, DEVS, DEVG
-from userbot.events import register
+from userbot.events import register as boy
 from userbot.utils import (
     _format,
     edit_delete,
     edit_or_reply,
     get_user_from_event,
-    ram_cmd,
-    ram_handler,
+    ram_cmd as star,
+    ram_handler as lah,
     media_type,
 )
 from userbot.utils.logger import logging
@@ -86,8 +86,8 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
 
 
-@ram_cmd(pattern="setgpic( -s| -d)$")
-@register(pattern=r"^\.csetgpic( -s| -d)$", sudo=True)
+@star(pattern="setgpic( -s| -d)$")
+@boy(pattern=r"^\.csetgpic( -s| -d)$", sudo=True)
 async def set_group_photo(event):
     "For changing Group dp"
     flag = (event.pattern_match.group(1)).strip()
@@ -123,8 +123,8 @@ async def set_group_photo(event):
         await edit_delete(event, "**Foto Profil Grup Berhasil dihapus.**", 30)
 
 
-@ram_cmd(pattern="promote(?:\s|$)([\s\S]*)")
-@register(pattern=r"^\.cpromote(?:\s|$)([\s\S]*)", sudo=True)
+@star(pattern="promote(?:\s|$)([\s\S]*)")
+@boy(pattern=r"^\.cpromote(?:\s|$)([\s\S]*)", sudo=True)
 async def promote(event):
     new_rights = ChatAdminRights(
         add_admins=False,
@@ -148,8 +148,8 @@ async def promote(event):
     await edit_delete(ram, "`Admin baru jangan semena mena ya ngentod lo!`", 30)
 
 
-@ram_cmd(pattern="demote(?:\s|$)([\s\S]*)")
-@register(pattern=r"^\.cdemote(?:\s|$)([\s\S]*)", sudo=True)
+@star(pattern="demote(?:\s|$)([\s\S]*)")
+@boy(pattern=r"^\.cdemote(?:\s|$)([\s\S]*)", sudo=True)
 async def demote(event):
     "To demote a person in group"
     user, _ = await get_user_from_event(event)
@@ -173,8 +173,8 @@ async def demote(event):
     await edit_delete(ram, "`Makanya Jangan semena mena kontol!`", 30)
 
 
-@ram_cmd(pattern="ban(?:\s|$)([\s\S]*)")
-@register(pattern=r"^\.cban(?:\s|$)([\s\S]*)", sudo=True)
+@star(pattern="ban(?:\s|$)([\s\S]*)")
+@boy(pattern=r"^\.cban(?:\s|$)([\s\S]*)", sudo=True)
 async def ban(bon):
     me = await bon.client.get_me()
     chat = await bon.get_chat()
@@ -204,8 +204,8 @@ async def ban(bon):
         )
 
 
-@ram_cmd(pattern="unban(?:\s|$)([\s\S]*)")
-@register(pattern=r"^\.cunban(?:\s|$)([\s\S]*)", sudo=True)
+@star(pattern="unban(?:\s|$)([\s\S]*)")
+@boy(pattern=r"^\.cunban(?:\s|$)([\s\S]*)", sudo=True)
 async def nothanos(unbon):
     chat = await unbon.get_chat()
     admin = chat.admin_rights
@@ -224,8 +224,8 @@ async def nothanos(unbon):
         await edit_delete(ram, "`Sepertinya Terjadi ERROR!`")
 
 
-@ram_cmd(pattern="mute(?: |$)(.*)")
-@register(pattern=r"^\.cmute(?: |$)(.*)", sudo=True)
+@star(pattern="mute(?: |$)(.*)")
+@boy(pattern=r"^\.cmute(?: |$)(.*)", sudo=True)
 async def spider(spdr):
     try:
         from userbot.modules.sql_helper.spam_mute_sql import mute
@@ -275,8 +275,8 @@ async def spider(spdr):
         return await edit_delete(ram, "**Terjadi ERROR!**")
 
 
-@ram_cmd(pattern="unmute(?: |$)(.*)")
-@register(pattern=r"^\.cunmute(?: |$)(.*)", sudo=True)
+@star(pattern="unmute(?: |$)(.*)")
+@boy(pattern=r"^\.cunmute(?: |$)(.*)", sudo=True)
 async def unmoot(unmot):
     chat = await unmot.get_chat()
     admin = chat.admin_rights
@@ -302,7 +302,7 @@ async def unmoot(unmot):
         return await edit_delete(ram, "**Terjadi ERROR!**")
 
 
-@ram_handler()
+@lah()
 async def muter(moot):
     try:
         from userbot.modules.sql_helper.gmute_sql import is_gmuted
@@ -333,8 +333,8 @@ async def muter(moot):
             await moot.delete()
 
 
-@ram_cmd(pattern="ungmute(?: |$)(.*)")
-@register(pattern=r"^\.cungmute(?: |$)(.*)", sudo=True)
+@star(pattern="ungmute(?: |$)(.*)")
+@boy(pattern=r"^\.cungmute(?: |$)(.*)", sudo=True)
 async def ungmoot(un_gmute):
     chat = await un_gmute.get_chat()
     admin = chat.admin_rights
@@ -357,8 +357,8 @@ async def ungmoot(un_gmute):
         await edit_delete(un_gmute, "**Berhasil! Jangan Rusuh lg ya asu...**")
 
 
-@ram_cmd(pattern="gmute(?: |$)(.*)")
-@register(pattern=r"^\.cgmute(?: |$)(.*)", sudo=True)
+@star(pattern="gmute(?: |$)(.*)")
+@boy(pattern=r"^\.cgmute(?: |$)(.*)", sudo=True)
 async def gspider(gspdr):
     chat = await gspdr.get_chat()
     admin = chat.admin_rights
@@ -399,7 +399,7 @@ async def gspider(gspdr):
         )
 
 
-@ram_cmd(pattern="zombies(?: |$)(.*)")
+@star(pattern="zombies(?: |$)(.*)")
 async def rm_deletedacc(show):
     con = show.pattern_match.group(1).lower()
     del_u = 0
@@ -456,7 +456,7 @@ async def rm_deletedacc(show):
         )
 
 
-@ram_cmd(pattern="admins$")
+@star(pattern="admins$")
 async def get_admin(show):
     info = await show.client.get_entity(show.chat_id)
     title = info.title or "Grup Ini"
@@ -475,8 +475,8 @@ async def get_admin(show):
     await show.edit(mentions, parse_mode="html")
 
 
-@ram_cmd(pattern="pin( loud|$)")
-@register(pattern=r"^\.cpin( loud|$)", sudo=True)
+@star(pattern="pin( loud|$)")
+@boy(pattern=r"^\.cpin( loud|$)", sudo=True)
 async def pin(event):
     to_pin = event.reply_to_msg_id
     if not to_pin:
@@ -492,8 +492,8 @@ async def pin(event):
     await edit_delete(event, "`Pinned Successfully!`")
 
 
-@ram_cmd(pattern="unpin( all|$)")
-@register(pattern=r"^\.cunpin( all|$)", sudo=True)
+@star(pattern="unpin( all|$)")
+@boy(pattern=r"^\.cunpin( all|$)", sudo=True)
 async def pin(event):
     to_unpin = event.reply_to_msg_id
     options = (event.pattern_match.group(1)).strip()
@@ -521,8 +521,8 @@ async def pin(event):
     await edit_delete(event, "`Unpinned Successfully!`")
 
 
-@ram_cmd(pattern="kick(?: |$)(.*)")
-@register(pattern=r"^\.ckick(?: |$)(.*)", sudo=True)
+@star(pattern="kick(?: |$)(.*)")
+@boy(pattern=r"^\.ckick(?: |$)(.*)", sudo=True)
 async def kick(usr):
     chat = await usr.get_chat()
     admin = chat.admin_rights
@@ -548,7 +548,7 @@ async def kick(usr):
         )
 
 
-@ram_cmd(pattern=r"undlt( -u)?(?: |$)(\d*)?")
+@star(pattern=r"undlt( -u)?(?: |$)(\d*)?")
 async def _iundlt(event):
     catevent = await edit_or_reply(event, "`Searching recent actions...`")
     flag = event.pattern_match.group(1)
