@@ -116,7 +116,7 @@ async def repo_is_here(event):
     await xx.edit(
         f"      ۩   __WELCOME TO THE HELL__   ۩\n\n"
         f"✨ **Userbot Version :** `{BOT_VER}` \n"
-        f"✨ **Branch            :[{branch}](https://t.me/merdhni)\n"
+        f"✨ **Branch                  :** [{branch}](https://t.me/merdhni)\n"
         f"✨ **Group Support    :** [Ram Support](t.me/ramsupportt)\n"
         f"✨ **Channel RAM      :** [Project Ram](t.me/UserbotCh)\n"
         f"✨ **Owner Repo         :** [merdhani](t.me/merdhni)\n"
