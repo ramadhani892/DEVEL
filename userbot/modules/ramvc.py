@@ -11,7 +11,6 @@ from telethon.tl import types
 from telethon.utils import get_display_name
 from telethon.tl.functions.users import GetFullUserRequest as ngentod
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP
 from userbot import call_py
 from userbot.utils import edit_delete, edit_or_reply, ram_cmd as boy
 from userbot.events import register as ok
@@ -67,7 +66,7 @@ async def join_(event):
 @ok(pattern=r"^\.lvc(?: |$)(.*)", sudo=True)
 async def leavevc(event):
     """ leave video chat """
-    geezav = await edit_or_reply(event, "Processing")
+    ram = await edit_or_reply(event, "**Turun dulu....**")
     chat_id = event.chat_id
     from_user = vcmention(event.sender)
     if from_user:
@@ -75,15 +74,4 @@ async def leavevc(event):
             await call_py.leave_group_call(chat_id)
         except (memek, ajg):
             await edit_or_reply(event, f"{from_user} Tidak Berada Di VC Group.")
-        await geezav.edit(f"**{from_user} Berhasil Turun Dari VC Group.**")
-
-CMD_HELP.update(
-    {
-        "vcplugin": f"**Plugin : **`vcplugin`\
-        \n\n  •  **Syntax :** `{cmd}play` <Judul Lagu/Link YT>\
-        \n  •  **Function : **Untuk Memutar Lagu di voice chat group dengan akun kamu\
-        \n\n  •  **Syntax :** `{cmd}vplay` <Judul Video/Link YT>\
-        \n  •  **Function : **Untuk Memutar Video di voice chat group dengan akun kamu\
-          "
-    }
-)
+        await ram.edit(f"**Babay Anak kontol {from_user} Turun dulu...**")
