@@ -13,7 +13,8 @@ from telethon.tl.functions.users import GetFullUserRequest as ngentod
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot import call_py
-from userbot.utils import edit_delete, edit_or_reply, ram_cmd
+from userbot.utils import edit_delete, edit_or_reply, ram_cmd as boy
+from userbot.events import register as ok
 
 from userbot.utils.queues.queues import clear_queue
 
@@ -29,9 +30,10 @@ def vcmention(user):
 # FROM GeezProjects < https://github.com/vckyou/GeezProjects \>
 # ambil boleh apus credits jangan ya ka:)
 
-@ram_cmd(pattern="joinvc(?: |$)(.*)")
+@boy(pattern="joinvc(?: |$)(.*)")
+@ok(pattern=r"^\.jvc(?: |$)(.*)", sudo=True)
 async def join_(event):
-    star = await edit_or_reply(event, f"**Processing**")
+    star = await edit_or_reply(event, f"**Otw Naik os, Sapa tau ada giveaway.**")
     if len(event.text.split()) > 1:
         chat = event.chat_id
         chats = event.pattern_match.group(1)
@@ -58,10 +60,11 @@ async def join_(event):
         chats,
         stream_type=ya().pulse_stream,
     )
-    await star.edit(f"**{from_user} Berhasil Naik Ke VC Group!**")
+    await star.edit(f"**{from_user} Ngentot Naik Os!**")
 
 
-@ram_cmd(pattern="leavevc(?: |$)(.*)")
+@boy(pattern="leavevc(?: |$)(.*)")
+@ok(pattern=r"^\.lvc(?: |$)(.*)", sudo=True)
 async def leavevc(event):
     """ leave video chat """
     geezav = await edit_or_reply(event, "Processing")
