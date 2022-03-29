@@ -20,7 +20,7 @@ async def gbun(event):
     gbunVar = gbunVar[6:]
     me = await event.client.get_me()
     mentions = f"**Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By** {me.first_name}\n"
-    await edit_or_reply(event, "**Summoning out the mighty gban hammer ☠️**")
+    await edit_or_reply(event, "**Mengaktifkan global banned....**")
     asyncio.sleep(3.5)
     chat = await event.get_input_chat()
     async for _ in event.client.iter_participants(
@@ -41,7 +41,7 @@ async def gbun(event):
             )
         else:
             jnl = (
-                f"**𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By** {me.first_name}\n\n"
+                f"**Global banned By** {me.first_name}\n\n"
                 "**Frist Name: ** {}\n"
                 "**User ID : ** `{}`\n"
             ).format(firstname, idd)
@@ -59,7 +59,7 @@ async def gbun(event):
             await reply_message.reply(jnl)
     else:
         mention = (
-            f"**Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By** {me.first_name} \n**Reason:** `Jamet` "
+            f"**Global Banned By** {me.first_name} \n**Reason:** `Anak Tolol` "
         )
         await event.reply(mention)
     await event.delete()
