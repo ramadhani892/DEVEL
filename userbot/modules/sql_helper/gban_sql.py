@@ -1,51 +1,51 @@
-from sqlalchemy import Column, String
+try:
+    from userbot.modules.sql_helper import BASE, SESSION
+except ImportError:
+    raise AttributeError
 
-from userbot.modules.sql_helper import BASE, SESSION
-
-
-class GBan(BASE):
-    __tablename__ = "gban"
-    chat_id = Column(String(14), primary_key=True)
-    reason = Column(String(127))
-
-    def __init__(self, chat_id, reason=""):
-        self.chat_id = chat_id
-        self.reason = reason
+from sqlalchemy import Column, String, UnicodeText
 
 
-GBan.__table__.create(checkfirst=True)
+class Globals(BASE):
+    __tablename__ = "globals"
+    variable = Column(String, primary_key=True, nullable=False)
+    value = Column(UnicodeText, primary_key=True, nullable=False)
+
+    def __init__(self, variable, value):
+        self.variable = str(variable)
+        self.value = value
 
 
-def is_gbanned(chat_id):
+Globals.__table__.create(checkfirst=True)
+
+
+def gvarstatus(variable):
     try:
-        return SESSION.query(GBan).filter(GBan.chat_id == str(chat_id)).one()
+        return (
+            SESSION.query(Globals)
+            .filter(Globals.variable == str(variable))
+            .first()
+            .value
+        )
     except BaseException:
         return None
     finally:
         SESSION.close()
 
 
-def get_gbanuser(chat_id):
-    try:
-        return SESSION.query(GBan).get(str(chat_id))
-    finally:
-        SESSION.close()
-
-
-def freakgban(chat_id, reason):
-    adder = GBan(str(chat_id), str(reason))
+def addgvar(variable, value):
+    if SESSION.query(Globals).filter(Globals.variable == str(variable)).one_or_none():
+        delgvar(variable)
+    adder = Globals(str(variable), value)
     SESSION.add(adder)
     SESSION.commit()
 
 
-def freakungban(chat_id):
-    rem = SESSION.query(GBan).get(str(chat_id))
+def delgvar(variable):
+    rem = (
+        SESSION.query(Globals)
+        .filter(Globals.variable == str(variable))
+        .delete(synchronize_session="fetch")
+    )
     if rem:
-        SESSION.delete(rem)
         SESSION.commit()
-
-
-def get_all_gbanned():
-    rem = SESSION.query(GBan).all()
-    SESSION.close()
-    return rem
