@@ -1,4 +1,4 @@
-import pybase64
+from pybase64 import b64decode
 from telethon.tl.functions.channels import JoinChannelRequest as Get
 from telethon.tl.types import MessageEntityMentionName
 from userbot import RAM2, RAM3, RAM4, RAM5, bot
