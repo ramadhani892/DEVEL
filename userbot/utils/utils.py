@@ -10,7 +10,7 @@ from pathlib import Path
 from random import randint
 
 import heroku3
-from telethon.tl.functions.channels import CreateChannelRequest
+from telethon.tl.functions.channels import CreateChannelRequest, EditPhotoRequest
 from telethon.tl.functions.contacts import UnblockRequest
 
 from userbot import (
@@ -35,10 +35,11 @@ else:
 async def creatgr():
     LOGS.info("LAGI GUA BIKININ GRUP BUAT LO NGENTOT LO KONTOL")
     desc = "Group Log untuk ⭐RAM-UBOT⭐.\n\nJANGAN KELUAR LO MONYED NANTI CRASH!.\n\n✨ Powered By ~ @UserbotCh ✨"
+    phic = "userbot/utils/styles/RAMUBOT.jpg"
     try:
         grup = await bot(
-            CreateChannelRequest(title="✨RAM UBOT✨ LOGS", about=desc, megagroup=True)
-        )
+            CreateChannelRequest(title="✨RAM UBOT✨ LOGS", about=desc, megagroup=True),
+            EditPhotoRequest(photo=phic))
         grup_id = grup.chats[0].id
     except Exception as e:
         LOGS.error(str(e))
