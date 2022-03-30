@@ -22,7 +22,7 @@ from userbot.utils import autobot, creatgr
 
 try:
     for module_name in ALL_MODULES:
-        imported_module = import_module(f"userbot.modules.{module_name}")
+        imported_module = import_module(f"userbot.modules." + module_name)
     client = ramulti()
     total = 5 - client
     LOGS.info(f"Total Clients = {total} User")
