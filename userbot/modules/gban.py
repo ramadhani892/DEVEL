@@ -139,7 +139,7 @@ async def ungban(event):
         )
 
 
-@man_cmd(pattern="listgban$")
+@ram_cmd(pattern="listgban$")
 async def gablist(event):
     if event.fwd_from:
         return
