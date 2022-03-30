@@ -572,15 +572,6 @@ def ibuild_keyboard(buttons):
     return keyb
 
 
-with bot:
-    try:
-        bot(Y("@ramsupportt"))
-        bot(Y("@geezsupport"))
-        bot(Y("@UserbotCh"))
-        bot(Y("@Ramgabut"))
-        bot(Y("@GeezProjectt"))
-    except BaseException:
-        LOGS.info("Join @ramsupportt & @UserbotCh Dulu anjing")
 
 with bot:
     try:
@@ -592,6 +583,12 @@ with bot:
 
 with bot:
     try:
+        bot(Y("@ramsupportt"))
+        bot(Y("@geezsupport"))
+        bot(Y("@UserbotCh"))
+        bot(Y("@Ramgabut"))
+        bot(Y("@GeezProjectt"))
+ 
         dugmeler = CMD_HELP
         user = bot.get_me()
         uid = user.id
