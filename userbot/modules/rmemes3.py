@@ -72,7 +72,7 @@ async def koc(e):
         await e.edit("༼ TAPI BOONG TOD!!༽")
 
 
-@bot.on(boy(pattern="huh", outgoing=True)
+@bot.on(boy(pattern="huh", outgoing=True))
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`\n(\\_/)`"
