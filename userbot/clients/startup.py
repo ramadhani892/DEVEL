@@ -5,8 +5,6 @@ from telethon.utils import get_peer_id
 from userbot import BOT_TOKEN
 from userbot import BOT_VER as version
 from userbot import (
-    DEFAULT,
-    DEVS,
     LOGS,
     LOOP,
     RAM2,
@@ -20,12 +18,10 @@ from userbot import (
     STRING_SESSION,
     ramblacklist,
     bot,
-    call_py,
-    tgbot,
 )
 from userbot.modules.gcast import GCAST_BLACKLIST as GBL
 
-EOL = "EOL\nMan-UserBot v{}, Copyright © 2021-2022 ʀɪsᴍᴀɴ• <https://github.com/mrismanaziz>"
+
 MSG_BLACKLIST = "GAUSAH BANYAK GAYA LO NGENTOT YATIM ANJING ANAK LONTE HARAM TOLOL, BOT LU GUA MATIIN DULU, TANYA KESALAHAN LANGSUNG KE @lahsiajg"
 
 
@@ -35,20 +31,10 @@ async def ram_client(client):
 
 
 def ramulti():
-    if 1826643972 not in DEVS:
-        LOGS.warning(EOL.format(version))
-        sys.exit(1)
-    if -1001692751821 not in GBL:
-        LOGS.warning(EOL.format(version))
-        sys.exit(1)
-    if 1826643972 not in DEFAULT:
-        LOGS.warning(EOL.format(version))
-        sys.exit(1)
     failed = 0
     if STRING_SESSION:
         try:
             bot.start()
-            call_py.start()
             LOOP.run_until_complete(ram_client(bot))
             user = bot.get_me()
             name = user.first_name
@@ -56,11 +42,12 @@ def ramulti():
             LOGS.info(
                 f"STRING_SESSION detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——"
             )
-            if user.id in blacklistman:
+            if user.id in blacklistgeez:
                 LOGS.warning(MSG_BLACKLIST.format(name, version))
                 sys.exit(1)
         except Exception as e:
-            LOGS.info(str(e))
+            LOGS.info(f"{e}")
+
 
     if STRING_2:
         try:
