@@ -13,6 +13,8 @@ from telethon.utils import get_display_name, pack_bot_file_id
 
 from userbot import (
     BOTLOG_CHATID,
+    GROUP_LINK,
+    CH_SFS,
     CMD_HANDLER,
     HEROKU_API_KEY,
     HEROKU_APP_NAME,
@@ -895,8 +897,8 @@ async def bot_start(event):
                         \n\n**Powered by** [UserBot](https://github.com/mrismanaziz/Man-Userbot)"
         buttons = [
             (
-                Button.url("ɢʀᴏᴜᴘ", f"https://t.me/{GROUP}"),
-                Button.url("ᴄʜᴀɴɴᴇʟ", f"https://t.me/{CHANNEL}"),
+                Button.url("ɢʀᴏᴜᴘ", f"{GROUP_LINK"),
+                Button.url("ᴄʜᴀɴɴᴇʟ", f"{CH_SFS}"),
             )
         ]
     else:
