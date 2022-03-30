@@ -1,12 +1,9 @@
 import sys
 
-from telethon.utils import get_peer_id
+import telethon.utils
 
-from userbot import BOT_TOKEN
 from userbot import BOT_VER as version
 from userbot import (
-    DEFAULT,
-    DEVS,
     LOGS,
     LOOP,
     RAM2,
@@ -18,37 +15,24 @@ from userbot import (
     STRING_4,
     STRING_5,
     STRING_SESSION,
-    bot,
     ramblacklist,
-    call_py,
-    tgbot,
+    bot,
 )
-from userbot.modules.gcast import GCAST_BLACKLIST as GBL
 
-EOL = "EOL\n✨ RAM - UBOT ✨ v{}, Copyright © 2021-2022 merdhani• <https://github.com/ramadhani892>"
-MSG_BLACKLIST = "MAKANYA GA USAH BANYAK BAT LAGA LU KONTOL, MAMPUS BOT LU DI MATIIN KAN, LAPORKAN KESALAHAN KE @ramsupportt"
+
+MSG_BLACKLIST = "MAKANYA JANGAN BELAGU BAE NGENTOD, USERBOT {} LU UDAH DI MATIIN, LAPORKAN PADA @MERDHNI!!!!"
 
 
 async def ram_client(client):
     client.me = await client.get_me()
-    client.uid = get_peer_id(client.me)
+    client.uid = telethon.utils.get_peer_id(client.me)
 
 
 def ramulti():
-    if 1883494460 not in DEVS:
-        LOGS.warning(EOL.format(version))
-        sys.exit(1)
-    if -1001692751821 not in GBL:
-        LOGS.warning(EOL.format(version))
-        sys.exit(1)
-    if 1883494460 not in DEFAULT:
-        LOGS.warning(EOL.format(version))
-        sys.exit(1)
     failed = 0
     if STRING_SESSION:
         try:
             bot.start()
-            call_py.start()
             LOOP.run_until_complete(ram_client(bot))
             user = bot.get_me()
             name = user.first_name
@@ -56,12 +40,11 @@ def ramulti():
             LOGS.info(
                 f"STRING_SESSION detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——"
             )
-            if user.id in ramblacklist:
+            if user.id in blacklistgeez:
                 LOGS.warning(MSG_BLACKLIST.format(name, version))
                 sys.exit(1)
         except Exception as e:
-            LOGS.info(str(e))
-
+            LOGS.info(f"{e}")
 
     if STRING_2:
         try:
@@ -71,11 +54,11 @@ def ramulti():
             name = user.first_name
             uid = user.id
             LOGS.info(f"STRING_2 detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——")
-            if user.id in ramblacklist:
+            if user.id in blacklistgeez:
                 LOGS.warning(MSG_BLACKLIST.format(name, version))
                 sys.exit(1)
         except Exception as e:
-            LOGS.info(str(e))
+            LOGS.info(f"{e}")
 
     if STRING_3:
         try:
@@ -85,11 +68,11 @@ def ramulti():
             name = user.first_name
             uid = user.id
             LOGS.info(f"STRING_3 detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——")
-            if user.id in ramblacklist:
+            if user.id in blacklistgeez:
                 LOGS.warning(MSG_BLACKLIST.format(name, version))
                 sys.exit(1)
         except Exception as e:
-            LOGS.info(str(e))
+            LOGS.info(f"{e}")
 
     if STRING_4:
         try:
@@ -99,36 +82,25 @@ def ramulti():
             name = user.first_name
             uid = user.id
             LOGS.info(f"STRING_4 detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——")
-            if user.id in ramblacklist:
+            if user.id in blacklistgeez:
                 LOGS.warning(MSG_BLACKLIST.format(name, version))
                 sys.exit(1)
         except Exception as e:
-            LOGS.info(str(e))
+            LOGS.info(f"{e}")
 
     if STRING_5:
         try:
             RAM5.start()
             LOOP.run_until_complete(ram_client(RAM5))
             user = RAM5.get_me()
-            name = user.first_name
+            name = User.first_name
             uid = user.id
             LOGS.info(f"STRING_5 detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——")
-            if user.id in ramblacklist:
+            if user.id in blacklistgeez:
                 LOGS.warning(MSG_BLACKLIST.format(name, version))
                 sys.exit(1)
         except Exception as e:
-            LOGS.info(str(e))
-
-    if BOT_TOKEN:
-        try:
-            user = tgbot.get_me()
-            name = user.first_name
-            uname = user.username
-            LOGS.info(
-                f"BOT_TOKEN detected!\n┌ First Name: {name}\n└ Username: @{uname}\n——"
-            )
-        except Exception as e:
-            LOGS.info(str(e))
+            LOGS.info(f"{e}")
 
     if not STRING_SESSION:
         failed += 1
