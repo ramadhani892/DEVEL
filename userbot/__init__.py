@@ -568,6 +568,14 @@ def ibuild_keyboard(buttons):
         else:
             keyb.append([Button.url(btn[0], btn[1])])
     return keyb
+with bot:
+    try:
+        from userbot.modules.button import BTN_URL_REGEX, build_keyboard
+        from userbot.modules.sql_helper.bot_blacklist import check_is_black_list
+        from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
+        from userbot.utils import reply_id
+    except BaseException:
+        pass
 
 with bot:
     try:
