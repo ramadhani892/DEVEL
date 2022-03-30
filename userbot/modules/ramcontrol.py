@@ -21,7 +21,7 @@ from userbot import (
     tgbot,
     user,
 )
-from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
+from userbot.modules.sql_helper.bot_blacklist import check_is_black_list
 from userbot.modules.sql_helper.bot_starters import (
     add_starter_to_db,
     get_all_starters,
