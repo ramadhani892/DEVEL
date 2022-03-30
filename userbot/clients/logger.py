@@ -3,9 +3,9 @@ import asyncio
 from telethon.tl.functions.channels import EditAdminRequest, InviteToChannelRequest
 from telethon.tl.types import ChatAdminRights
 
-from userbot import BOTLOG_CHATID, BOTLOG_MSG 
-from userbot import CMD_HANDLER as cmd
+from userbot import BOTLOG_CHATID, BOTLOG_MSG as star
 from userbot import RAM2, RAM3, RAM4, RAM5, bot
+
 
 
 async def ram_ubot_on():
@@ -29,49 +29,54 @@ async def ram_ubot_on():
     try:
         if bot and tgbot:
             RamUbot = await tgbot.get_me()
-            BOT_USERNAME = RamUbot.username
+            BOT_USERNAME = RamUboy.username
             await bot(EditAdminRequest(BOTLOG_CHATID, BOT_USERNAME, new_rights, "BOT"))
             await asyncio.sleep(3)
     except BaseException:
         pass
     try:
-        if BOTLOG_CHATID != 0:
-            await bot.send_message(
-                BOTLOG_CHATID,
-                f"{BOTLOG_MSG},
-            )
+        if bot:
+            if BOTLOG_CHATID != 0:
+                await bot.send_message(
+                    BOTLOG_CHATID,
+                    f"{star}",
+                )
     except BaseException:
         pass
     try:
-        if BOTLOG_CHATID != 0:
-           await RAM2.send_message(
-               BOTLOG_CHATID,
-               f"{BOTLOG_MSG},
-           )
+        if RAM2:
+            if BOTLOG_CHATID != 0:
+                await RAM2.send_message(
+                    BOTLOG_CHATID,
+                    f"{star}",
+                )
     except BaseException:
         pass
     try:
-        if BOTLOG_CHATID != 0:
-            await RAM3.send_message(
-                BOTLOG_CHATID,
-                f"{BOTLOG_MSG},
-            )
+        if RAM3:
+            if BOTLOG_CHATID != 0:
+                await RAM3.send_message(
+                    BOTLOG_CHATID,
+                    f"{star}",
+                )
     except BaseException:
         pass
     try:
-        if BOTLOG_CHATID != 0:
-            await RAM4.send_message(
-                BOTLOG_CHATID,
-                f"{BOTLOG_MSG},
-            )
+        if RAM4:
+            if BOTLOG_CHATID != 0:
+                await RAM4.send_message(
+                    BOTLOG_CHATID,
+                    f"{star}",
+                )
     except BaseException:
         pass
     try:
-        if BOTLOG_CHATID != 0:
-           await RAM5.send_message(
-               BOTLOG_CHATID,
-               f"{BOTLOG_MSG},
-           )
+        if RAM5:
+            if BOTLOG_CHATID != 0:
+                await RAM5.send_message(
+                    BOTLOG_CHATID,
+                    f"{star}",
+                )
     except BaseException:
         pass
     try:
