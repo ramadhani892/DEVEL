@@ -578,7 +578,7 @@ with bot:
         bot(Y("@Ramgabut"))
         bot(Y("@GeezProjectt"))
     except BaseException:
-        LOGS.info("JOIN DULU NGENTOT")
+        pass
     try:
         dugmeler = CMD_HELP
         user = bot.get_me()
