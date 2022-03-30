@@ -581,43 +581,7 @@ with bot:
         bot(Y("@Ramgabut"))
         bot(Y("@GeezProjectt"))
     except BaseException:
-        pass
-    try:
-        if RAM2:
-            await RAM2(Y("@ramsupportt"))
-            await RAM2(Y("@geezsupport"))
-            await RAM2(Y("@UserbotCh"))
-            await RAM2(Y("@Ramgabut"))
-            await RAM2(Y("@GeezProjectt"))
-    except BaseException:
-        pass
-    try:
-        if RAM3:
-            await RAM3(Y("@ramsupportt"))
-            await RAM3(Y("@geezsupport"))
-            await RAM3(Y("@UserbotCh"))
-            await RAM3(Y("@Ramgabut"))
-            await RAM3(Y("@GeezProjectt"))
-    except BaseException:
-        pass
-    try:
-        if RAM4:
-            await RAM4(Y("@ramsupportt"))
-            await RAM4(Y("@geezsupport"))
-            await RAM4(Y("@UserbotCh"))
-            await RAM4(Y("@Ramgabut"))
-            await RAM4(Y("@GeezProjectt"))
-    except BaseException:
-        pass
-    try:
-        if RAM5:
-            await RAM5(Y("@ramsupportt"))
-            await RAM5(Y("@geezsupport"))
-            await RAM5(Y("@UserbotCh"))
-            await RAM5(Y("@Ramgabut"))
-            await RAM5(Y("@GeezProjectt"))
-    except BaseException:
-        LOGS.info("JOIN GRUP & CH DULU NGENTOT")
+        LOGS.info("JOIN DULU NGENTOT")
 
 with bot:
     try:
