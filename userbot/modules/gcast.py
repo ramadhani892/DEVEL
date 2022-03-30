@@ -37,8 +37,8 @@ async def gcast(event):
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
-        return await edit_delete(event, "**Berikan Sebuah Pesan atau Reply**")
-    kk = await edit_or_reply(event, "`Globally Broadcasting Msg...`")
+        return await edit_delete(event, "**KALO MALAS TYPING YA MINIMAL REPLY LAH NGENTOD**")
+    kk = await edit_or_reply(event, "`Limit jangan Salahin Gua tot, Lagi gua kirim ni....`")
     er = 0
     done = 0
     async for x in event.client.iter_dialogs():
@@ -67,8 +67,8 @@ async def gucast(event):
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
-        return await edit_delete(event, "**Berikan Sebuah Pesan atau Reply**")
-    kk = await edit_or_reply(event, "`Globally Broadcasting Msg...`")
+        return await edit_delete(event, "**KALO MALAS TYPING YA MINIMAL REPLY YA NGENTOT**")
+    kk = await edit_or_reply(event, "`Limit jangan salahin gua tot, Lagi gua kirim ni....`")
     er = 0
     done = 0
     async for x in event.client.iter_dialogs():
@@ -98,13 +98,13 @@ async def sudo(event):
     if blacklistgc == "True":
         await edit_or_reply(
             event,
-            f"🔮 **Blacklist GCAST:** `Enabled`\n\n📚 **Blacklist Group:**\n» {list}\n\nKetik `.addblacklist` di grup yang ingin anda tambahkan ke daftar blacklist gcast.",
+            f"🌟 **Blacklist GCAST:** `Enabled`\n\n📚 **Blacklist Group:**\n» {list}\n\nKetik `.addblacklist` di grup yang ingin anda tambahkan ke daftar blacklist gcast.",
         )
     else:
-        await edit_delete(event, "🔮 **Blacklist GCAST:** `Disabled`")
+        await edit_delete(event, "🌟 **Blacklist GCAST:** `Disabled`")
 
 
-@star(pattern="addblacklist(?:\\s|$)([\\s\\S]*)")
+@star(pattern="addbl(?:\\s|$)([\\s\\S]*)")
 async def add(event):
     xxnx = await edit_or_reply(event, "`Processing...`")
     var = "BLACKLIST_GCAST"
@@ -135,7 +135,7 @@ async def add(event):
     heroku_Config[var] = blacklistgrup
 
 
-@star(pattern="delblacklist(?:\\s|$)([\\s\\S]*)")
+@star(pattern="delbl(?:\\s|$)([\\s\\S]*)")
 async def _(event):
     xxx = await edit_or_reply(event, "`Processing...`")
     gc = event.chat_id
@@ -171,11 +171,11 @@ CMD_HELP.update(
         \n  •  **Function : **Mengirim Global Broadcast pesan ke Seluruh Grup yang kamu masuk. (Bisa Mengirim Media/Sticker)\
         \n\n  •  **Syntax :** `{cmd}blchat`\
         \n  •  **Function : **Untuk Mengecek informasi daftar blacklist gcast.\
-        \n\n  •  **Syntax :** `{cmd}addblacklist`\
+        \n\n  •  **Syntax :** `{cmd}addbl`\
         \n  •  **Function : **Untuk Menambahkan grup tersebut ke blacklist gcast.\
-        \n\n  •  **Syntax :** `{cmd}delblacklist`\
+        \n\n  •  **Syntax :** `{cmd}delbl`\
         \n  •  **Function : **Untuk Menghapus grup tersebut dari blacklist gcast.\
-        \n  •  **Note : **Ketik perintah** `{cmd}addblacklist` **dan** `{cmd}delblacklist` **di grup yang kamu Blacklist.\
+        \n  •  **Note : **Ketik perintah** `{cmd}addbl` **dan** `{cmd}delbl` **di grup yang kamu Blacklist.\
     "
     }
 )
