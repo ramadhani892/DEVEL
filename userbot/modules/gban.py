@@ -18,7 +18,7 @@ from userbot import CMD_HELP, DEVS, DEVG, ramblacklist
 from userbot.events import register
 from userbot.utils import chataction, edit_or_reply, get_user_from_event, ram_cmd
 
-from .admin import BANNED_RIGHTS, UNBAN_RIGHTS
+from .admins import BANNED_RIGHTS, UNBAN_RIGHTS
 
 
 async def admin_groups(grp):
