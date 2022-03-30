@@ -73,16 +73,16 @@ async def _(e):
 
 @bot.on(boy(pattern="huh", outgoing=True))
 async def _(event):
-    typew.pattern_match.group(1)
-    await typew.edit("`\n(\\_/)`"
+    event.pattern_match.group(1)
+    await event.edit("`\n(\\_/)`"
                      "`\n(●_●)`"
                      "`\n />❤️ *NIH GUA KASIH BUAT LU!!`")
     sleep(3)
-    await typew.edit("`\n(\\_/)`"
+    await event.edit("`\n(\\_/)`"
                      "`\n(●_●)`"
                      "`\n/>💔  *E GAK DEH,UDH DI KSH GRATIS LU RUSAKIN`")
     sleep(2)
-    await typew.edit("`\n(\\_/)`"
+    await event.edit("`\n(\\_/)`"
                      "`\n(●_●)`"
                      "`\n💔<\\  *KENTOD`")
 
@@ -143,12 +143,12 @@ async def _(event):
 
 @bot.on(boy(pattern="nah(?: |$)(.*)", outgoing=True))
 async def _(event):
-    typew.pattern_match.group(1)
-    await typew.edit("`\n(\\_/)`"
+    event.pattern_match.group(1)
+    await event.edit("`\n(\\_/)`"
                      "`\n(●_●)`"
                      "`\n />💖 *Ini Buat Kamu`")
     sleep(2)
-    await typew.edit("`\n(\\_/)`"
+    await event.edit("`\n(\\_/)`"
                      "`\n(●_●)`"
                      "`\n💖<\\  *Tapi Bo'ong`")
 # Alpinnnn Gans
