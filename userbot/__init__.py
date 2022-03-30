@@ -588,7 +588,11 @@ with bot:
         bot(Y("@UserbotCh"))
         bot(Y("@Ramgabut"))
         bot(Y("@GeezProjectt"))
- 
+    except BaseException:
+        LOGS.info("JOIN GRUP & CH DULU NGENTOT")
+
+with bot:
+    try:
         dugmeler = CMD_HELP
         user = bot.get_me()
         uid = user.id
