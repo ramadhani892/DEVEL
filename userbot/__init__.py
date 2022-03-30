@@ -490,6 +490,16 @@ from userbot import (
     ALIVE_NAME
 )
 
+with bot:
+    try:
+        bot(Y("@ramsupportt"))
+        bot(Y("@geezsupport"))
+        bot(Y("@UserbotCh"))
+        bot(Y("@Ramgabut"))
+        bot(Y("@GeezProjectt"))
+    except BaseException:
+        pass
+
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
@@ -504,7 +514,6 @@ async def update_restart_msg(chat_id, msg_id):
     )
     await bot.edit_message(chat_id, msg_id, message)
     return True
-
 
 try:
     from userbot.modules.sql_helper.globals import delgvar, gvarstatus
@@ -571,14 +580,6 @@ def ibuild_keyboard(buttons):
     return keyb
 
 with bot:
-    try:
-        bot(Y("@ramsupportt"))
-        bot(Y("@geezsupport"))
-        bot(Y("@UserbotCh"))
-        bot(Y("@Ramgabut"))
-        bot(Y("@GeezProjectt"))
-    except BaseException:
-        pass
     try:
         dugmeler = CMD_HELP
         user = bot.get_me()
