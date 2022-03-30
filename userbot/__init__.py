@@ -575,14 +575,6 @@ def ibuild_keyboard(buttons):
 
 with bot:
     try:
-        from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
-        from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
-        from userbot.utils import reply_id
-    except BaseException:
-        pass
-
-with bot:
-    try:
         bot(Y("@ramsupportt"))
         bot(Y("@geezsupport"))
         bot(Y("@UserbotCh"))
@@ -603,6 +595,14 @@ with bot:
         BTN_URL_REGEX = re.compile(
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
         )
+
+with bot:
+    try:
+        from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
+        from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
+        from userbot.utils import reply_id
+    except BaseException:
+        pass
 
         @tgbot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
         async def bot_pms(event):
