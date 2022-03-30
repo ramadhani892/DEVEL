@@ -20,7 +20,7 @@ try:
     call_py.start()
     user = bot.get_me()
     ramblacklist = requests.get(
-        "https://raw.githubusercontent.com/ramadhani893/Ramblack/master/ramblacklist.json"
+        "https://raw.githubusercontent.com/ramadhani892/Ramblack/master/ramblacklist.json"
     ).json()
     if user.id in ramblacklist:
         LOGS.warning(
