@@ -2,9 +2,11 @@ import asyncio
 
 from telethon.tl.functions.channels import EditAdminRequest, InviteToChannelRequest
 from telethon.tl.types import ChatAdminRights
-from userbot import BOTLOG_MSG
-from userbot import BOTLOG_CHATID
-from userbot import bot, tgbot
+
+from userbot import BOT_VER as version
+from userbot import BOTLOG_CHATID, BOTLOG_MSG as star
+from userbot import CMD_HANDLER as cmd
+from userbot import RAM2, RAM3, RAM4, RAM5, bot, branch
 
 
 async def ram_ubot_on():
@@ -35,56 +37,50 @@ async def ram_ubot_on():
         pass
     try:
         if bot:
-            await hadeh_ajg(bot)
-            await asyncio.sleep(3)
             if BOTLOG_CHATID != 0:
                 await bot.send_message(
                     BOTLOG_CHATID,
-                    f"{BOTLOG_MSG}",
+                    f"{star},
                 )
     except BaseException:
         pass
     try:
         if RAM2:
-            await hadeh_ajg(RAM2)
-            await asyncio.sleep(3)
             if BOTLOG_CHATID != 0:
                 await RAM2.send_message(
                     BOTLOG_CHATID,
-                    f"{BOTLOG_MSG}",
+                    f"{star},
                 )
     except BaseException:
         pass
     try:
         if RAM3:
-            await hadeh_ajg(RAM3)
-            await asyncio.sleep(3)
             if BOTLOG_CHATID != 0:
                 await RAM3.send_message(
                     BOTLOG_CHATID,
-                    f"{BOTLOG_MSG}",
+                    f"{star},
                 )
     except BaseException:
         pass
     try:
         if RAM4:
-            await hadeh_ajg(RAM4)
-            await asyncio.sleep(3)
             if BOTLOG_CHATID != 0:
                 await RAM4.send_message(
                     BOTLOG_CHATID,
-                    f"{BOTLOG_MSG}",
+                    f"{star},
                 )
     except BaseException:
         pass
     try:
         if RAM5:
-            await hadeh_ajg(RAM5)
-            await asyncio.sleep(3)
             if BOTLOG_CHATID != 0:
                 await RAM5.send_message(
                     BOTLOG_CHATID,
-                    f"{BOTLOG_MSG}",
+                    f"{star},
                 )
+    except BaseException:
+        pass
+    try:
+        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
     except BaseException:
         pass
