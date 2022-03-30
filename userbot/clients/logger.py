@@ -29,7 +29,7 @@ async def ram_ubot_on():
     try:
         if bot and tgbot:
             RamUbot = await tgbot.get_me()
-            BOT_USERNAME = RamUboy.username
+            BOT_USERNAME = RamUbot.username
             await bot(EditAdminRequest(BOTLOG_CHATID, BOT_USERNAME, new_rights, "BOT"))
             await asyncio.sleep(3)
     except BaseException:
