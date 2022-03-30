@@ -4,7 +4,6 @@ from time import sleep
 from userbot import CMD_HELP, bot
 from userbot import CMD_HANDLER as cmd
 from userbot.events import ram_cmd as boy
-from telethon import events
 import asyncio
 
 
