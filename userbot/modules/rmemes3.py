@@ -73,7 +73,6 @@ async def _(e):
 
 @bot.on(boy(pattern="huh", outgoing=True))
 async def _(event):
-    event.pattern_match.group(1)
     await event.edit("`\n(\\_/)`"
                      "`\n(●_●)`"
                      "`\n />❤️ *NIH GUA KASIH BUAT LU!!`")
@@ -143,7 +142,6 @@ async def _(event):
 
 @bot.on(boy(pattern="nah(?: |$)(.*)", outgoing=True))
 async def _(event):
-    event.pattern_match.group(1)
     await event.edit("`\n(\\_/)`"
                      "`\n(●_●)`"
                      "`\n />💖 *Ini Buat Kamu`")
