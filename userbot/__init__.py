@@ -561,6 +561,15 @@ def paginate_help(page_number, loaded_modules, prefix):
         ]
     return pairs
 
+def ibuild_keyboard(buttons):
+    keyb = []
+    for btn in buttons:
+        if btn[2] and keyb:
+            keyb[-1].append(Button.url(btn[0], btn[1]))
+        else:
+            keyb.append([Button.url(btn[0], btn[1])])
+    return keyb
+
 with bot:
     try:
         bot(Y("@ramsupportt"))
@@ -570,8 +579,6 @@ with bot:
         bot(Y("@GeezProjectt"))
     except BaseException:
         LOGS.info("JOIN DULU NGENTOT")
-
-with bot:
     try:
         dugmeler = CMD_HELP
         user = bot.get_me()
@@ -583,15 +590,6 @@ with bot:
         BTN_URL_REGEX = re.compile(
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
         )
-
-def ibuild_keyboard(buttons):
-    keyb = []
-    for btn in buttons:
-        if btn[2] and keyb:
-            keyb[-1].append(Button.url(btn[0], btn[1]))
-        else:
-            keyb.append([Button.url(btn[0], btn[1])])
-    return keyb
 
 
         @tgbot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
