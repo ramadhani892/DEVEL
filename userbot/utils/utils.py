@@ -39,7 +39,7 @@ async def creatgr():
     try:
         grup = await bot(
             CreateChannelRequest(title="✨RAM UBOT✨ LOGS", about=desc, megagroup=True))
-               await bot(EditPhotoRequest(photo=phic))
+               await bot.upload_file(EditPhotoRequest(photo=phic))
         grup_id = grup.chats[0].id
     except Exception as e:
         LOGS.error(str(e))
