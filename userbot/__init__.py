@@ -575,47 +575,47 @@ def ibuild_keyboard(buttons):
 
 with bot:
     try:
-        bot(Y("@ramsupportt"))
-        bot(Y("@geezsupport"))
-        bot(Y("@UserbotCh"))
-        bot(Y("@Ramgabut"))
-        bot(Y("@GeezProjectt"))
+      await bot(Y("@ramsupportt"))
+      await bot(Y("@geezsupport"))
+      await bot(Y("@UserbotCh"))
+      await bot(Y("@Ramgabut"))
+      await bot(Y("@GeezProjectt"))
     except BaseException:
         pass
     try:
         if RAM2:
-                RAM2(Y("@ramsupportt"))
-                RAM2(Y("@geezsupport"))
-                RAM2(Y("@UserbotCh"))
-                RAM2(Y("@Ramgabut"))
-                RAM2(Y("@GeezProjectt"))
+            await RAM2(Y("@ramsupportt"))
+            await RAM2(Y("@geezsupport"))
+            await RAM2(Y("@UserbotCh"))
+            await RAM2(Y("@Ramgabut"))
+            await RAM2(Y("@GeezProjectt"))
     except BaseException:
         pass
     try:
         if RAM3:
-                RAM3(Y("@ramsupportt"))
-                RAM3(Y("@geezsupport"))
-                RAM3(Y("@UserbotCh"))
-                RAM3(Y("@Ramgabut"))
-                RAM3(Y("@GeezProjectt"))
+            await RAM3(Y("@ramsupportt"))
+            await RAM3(Y("@geezsupport"))
+            await RAM3(Y("@UserbotCh"))
+            await RAM3(Y("@Ramgabut"))
+            await RAM3(Y("@GeezProjectt"))
     except BaseException:
         pass
     try:
         if RAM4:
-                RAM4(Y("@ramsupportt"))
-                RAM4(Y("@geezsupport"))
-                RAM4(Y("@UserbotCh"))
-                RAM4(Y("@Ramgabut"))
-                RAM4(Y("@GeezProjectt"))
+            await RAM4(Y("@ramsupportt"))
+            await RAM4(Y("@geezsupport"))
+            await RAM4(Y("@UserbotCh"))
+            await RAM4(Y("@Ramgabut"))
+            await RAM4(Y("@GeezProjectt"))
     except BaseException:
         pass
     try:
         if RAM5:
-                RAM5(Y("@ramsupportt"))
-                RAM5(Y("@geezsupport"))
-                RAM5(Y("@UserbotCh"))
-                RAM5(Y("@Ramgabut"))
-                RAM5(Y("@GeezProjectt"))
+            await RAM5(Y("@ramsupportt"))
+            await RAM5(Y("@geezsupport"))
+            await RAM5(Y("@UserbotCh"))
+            await RAM5(Y("@Ramgabut"))
+            await RAM5(Y("@GeezProjectt"))
     except BaseException:
         LOGS.info("JOIN GRUP & CH DULU NGENTOT")
 
