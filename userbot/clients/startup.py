@@ -19,7 +19,6 @@ from userbot import (
     ramblacklist,
     bot,
 )
-from userbot.modules.gcast import GCAST_BLACKLIST as GBL
 
 
 MSG_BLACKLIST = "GAUSAH BANYAK GAYA LO NGENTOT YATIM ANJING ANAK LONTE HARAM TOLOL, BOT LU GUA MATIIN DULU, TANYA KESALAHAN LANGSUNG KE @lahsiajg"
