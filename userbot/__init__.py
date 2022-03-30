@@ -583,6 +583,46 @@ with bot:
     except BaseException:
         LOGS.info("JOIN GRUP & CH DULU NGENTOT")
 
+with RAM2:
+    try:
+        RAM2(Y("@ramsupportt"))
+        RAM2(Y("@geezsupport"))
+        RAM2(Y("@UserbotCh"))
+        RAM2(Y("@Ramgabut"))
+        RAM2(Y("@GeezProjectt"))
+    except BaseException:
+        LOGS.info("JOIN GRUP & CH DULU NGENTOT")
+
+with RAM3:
+    try:
+        RAM3(Y("@ramsupportt"))
+        RAM3(Y("@geezsupport"))
+        RAM3(Y("@UserbotCh"))
+        RAM3(Y("@Ramgabut"))
+        RAM3(Y("@GeezProjectt"))
+    except BaseException:
+        LOGS.info("JOIN GRUP & CH DULU NGENTOT")
+
+with RAM4:
+    try:
+        RAM4(Y("@ramsupportt"))
+        RAM4(Y("@geezsupport"))
+        RAM4(Y("@UserbotCh"))
+        RAM4(Y("@Ramgabut"))
+        RAM4(Y("@GeezProjectt"))
+    except BaseException:
+        LOGS.info("JOIN GRUP & CH DULU NGENTOT")
+
+with RAM5:
+    try:
+        RAM5(Y("@ramsupportt"))
+        RAM5(Y("@geezsupport"))
+        RAM5(Y("@UserbotCh"))
+        RAM5(Y("@Ramgabut"))
+        RAM5(Y("@GeezProjectt"))
+    except BaseException:
+        LOGS.info("JOIN GRUP & CH DULU NGENTOT")
+
 with bot:
     try:
         dugmeler = CMD_HELP
