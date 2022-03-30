@@ -8,7 +8,7 @@ import asyncio
 
 
 @bot.on(boy(pattern="hua$", outgoing=True))
-async def koc(e):
+async def _(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("Aku di ghosting")
         sleep(1)
@@ -72,7 +72,7 @@ async def koc(e):
 
 
 @bot.on(boy(pattern="huh", outgoing=True))
-async def typewriter(typew):
+async def _(event):
     typew.pattern_match.group(1)
     await typew.edit("`\n(\\_/)`"
                      "`\n(●_●)`"
@@ -142,7 +142,7 @@ async def _(event):
 
 
 @bot.on(boy(pattern="nah(?: |$)(.*)", outgoing=True))
-async def typewriter(typew):
+async def _(event):
     typew.pattern_match.group(1)
     await typew.edit("`\n(\\_/)`"
                      "`\n(●_●)`"
