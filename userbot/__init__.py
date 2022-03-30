@@ -508,6 +508,9 @@ async def update_restart_msg(chat_id, msg_id):
 
 try:
     from userbot.modules.sql_helper.globals import delgvar, gvarstatus
+    from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
+    from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
+    from userbot.utils import reply_id
 
     chat_id, msg_id = gvarstatus("restartstatus").split("\n")
     with bot:
@@ -574,10 +577,16 @@ def ibuild_keyboard(buttons):
 
 with bot:
     try:
-        from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
-        from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
-        from userbot.utils import reply_id
+        bot(Y("@ramsupportt"))
+        bot(Y("@geezsupport"))
+        bot(Y("@UserbotCh"))
+        bot(Y("@Ramgabut"))
+        bot(Y("@GeezProjectt"))
+    except BaseException:
+        LOGS.info("Join @ramsupportt & @UserbotCh Dulu anjing")
 
+with bot:
+    try:
         dugmeler = CMD_HELP
         user = bot.get_me()
         uid = user.id
