@@ -95,10 +95,13 @@ def build_keyboard(buttons):
 CMD_HELP.update(
     {
         "button": f"**Plugin : **`button`\
-        \n\n  •  **Syntax :** `{cmd}rbutton` <text> [Name on button]<buttonurl:link you want to open>\
+        \n\n  •  **Syntax :** `{cmd}cbutton` <text> [Name on button]<buttonurl:link you want to open>\
         \n  •  **Function : **Untuk membuat pesan button\
-        \n  •  **Examples : **`{cmd}rbutton test [SUPPORT]<buttonurl:https://t.me/ramsupportt> [Channel]<buttonurl:https://t.me/userbotch:same> [TEST]<buttonurl:https://t.me/ramgabut>`\
-        \n  •  **NOTE :** Untuk menggunakan ini, anda memerlukan bot anda ({BOT_USERNAME}) harus ada di grup/channel di mana anda menggunakan\
-        "
+        \n  •  **Examples : **`{cmd}cbutton test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/Lunatic0de:same> [Support]<buttonurl:https://t.me/SharingUserbot>`\
+        \n  •  **NOTE :** Untuk menggunakan ini, anda memerlukan bot anda harus ada di grup/channel di mana anda menggunakan\
+        \n\n  •  **Syntax :** `{cmd}ibutton` <text> [Name on button]<buttonurl:link you want to open>\
+        \n  •  **Function : **Untuk membuat pesan button melalui inline\
+        \n  •  **Examples : **`{cmd}ibutton test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/Lunatic0de:same> [Support]<buttonurl:https://t.me/SharingUserbot>`\
+    "
     }
 )
