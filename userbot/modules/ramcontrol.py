@@ -897,7 +897,7 @@ async def bot_start(event):
                         \n\n**Powered by** [UserBot](https://github.com/mrismanaziz/Man-Userbot)"
         buttons = [
             (
-                Button.url("ɢʀᴏᴜᴘ", f"{GROUP_LINK"),
+                Button.url("ɢʀᴏᴜᴘ", f"{GROUP_LINK}"),
                 Button.url("ᴄʜᴀɴɴᴇʟ", f"{CH_SFS}"),
             )
         ]
