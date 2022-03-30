@@ -587,7 +587,7 @@ with bot:
         from userbot.modules.sql_helper.bot_blacklists import check_is_black_list
         from userbot.modules.sql_helper.bot_pms_sql import add_user_to_db, get_user_id
         from userbot.utils import reply_id
-    except BaseException;
+    except BaseException:
         pass
 
 with bot:
