@@ -575,11 +575,11 @@ def ibuild_keyboard(buttons):
 
 with bot:
     try:
-      await bot(Y("@ramsupportt"))
-      await bot(Y("@geezsupport"))
-      await bot(Y("@UserbotCh"))
-      await bot(Y("@Ramgabut"))
-      await bot(Y("@GeezProjectt"))
+        bot(Y("@ramsupportt"))
+        bot(Y("@geezsupport"))
+        bot(Y("@UserbotCh"))
+        bot(Y("@Ramgabut"))
+        bot(Y("@GeezProjectt"))
     except BaseException:
         pass
     try:
