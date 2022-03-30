@@ -35,11 +35,11 @@ else:
 async def creatgr():
     LOGS.info("LAGI GUA BIKININ GRUP BUAT LO NGENTOT LO KONTOL")
     desc = "Group Log untuk ⭐RAM-UBOT⭐.\n\nJANGAN KELUAR LO MONYED NANTI CRASH!.\n\n✨ Powered By ~ @UserbotCh ✨"
-    phic = "userbot/utils/styles/RAMUBOT.jpg"
+    phic = "userbot/utils/styles/RAMUBOT.jpg
     try:
         grup = await bot(
-            CreateChannelRequest(title="✨RAM UBOT✨ LOGS", about=desc, megagroup=True), EditPhotoRequest(photo=phic)
-        )
+            CreateChannelRequest(title="✨RAM UBOT✨ LOGS", about=desc, megagroup=True))
+               await bot(EditPhotoRequest(photo=phic))
         grup_id = grup.chats[0].id
     except Exception as e:
         LOGS.error(str(e))
