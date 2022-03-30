@@ -9,10 +9,10 @@ from userbot import (
     DEVS,
     LOGS,
     LOOP,
-    RAM2
-    RAM3
-    RAM4
-    RAM5
+    RAM2,
+    RAM3,
+    RAM4,
+    RAM5,
     STRING_2,
     STRING_3,
     STRING_4,
