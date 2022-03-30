@@ -15,6 +15,7 @@ from userbot import (
     STRING_4,
     STRING_5,
     STRING_SESSION,
+    ramblacklist,
     bot,
 )
 
@@ -39,7 +40,7 @@ def ramulti():
             LOGS.info(
                 f"STRING_SESSION detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——"
             )
-            if user.id in blacklistgeez:
+            if user.id in ramblacklist:
                 LOGS.warning(MSG_BLACKLIST.format(name, version))
                 sys.exit(1)
         except Exception as e:
@@ -53,7 +54,7 @@ def ramulti():
             name = user.first_name
             uid = user.id
             LOGS.info(f"STRING_2 detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——")
-            if user.id in blacklistgeez:
+            if user.id in ramblacklist:
                 LOGS.warning(MSG_BLACKLIST.format(name, version))
                 sys.exit(1)
         except Exception as e:
@@ -67,7 +68,7 @@ def ramulti():
             name = user.first_name
             uid = user.id
             LOGS.info(f"STRING_3 detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——")
-            if user.id in blacklistgeez:
+            if user.id in ramblacklist:
                 LOGS.warning(MSG_BLACKLIST.format(name, version))
                 sys.exit(1)
         except Exception as e:
@@ -81,7 +82,7 @@ def ramulti():
             name = user.first_name
             uid = user.id
             LOGS.info(f"STRING_4 detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——")
-            if user.id in blacklistgeez:
+            if user.id in ramblacklist:
                 LOGS.warning(MSG_BLACKLIST.format(name, version))
                 sys.exit(1)
         except Exception as e:
@@ -95,7 +96,7 @@ def ramulti():
             name = User.first_name
             uid = user.id
             LOGS.info(f"STRING_5 detected!\n┌ First Name: {name}\n└ User ID: {uid}\n——")
-            if user.id in blacklistgeez:
+            if user.id in ramblacklist:
                 LOGS.warning(MSG_BLACKLIST.format(name, version))
                 sys.exit(1)
         except Exception as e:
