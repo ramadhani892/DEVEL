@@ -581,45 +581,42 @@ with bot:
         bot(Y("@Ramgabut"))
         bot(Y("@GeezProjectt"))
     except BaseException:
-        LOGS.info("JOIN GRUP & CH DULU NGENTOT")
-
-with RAM2:
+        pass
     try:
-        RAM2(Y("@ramsupportt"))
-        RAM2(Y("@geezsupport"))
-        RAM2(Y("@UserbotCh"))
-        RAM2(Y("@Ramgabut"))
-        RAM2(Y("@GeezProjectt"))
+        if RAM2:
+                RAM2(Y("@ramsupportt"))
+                RAM2(Y("@geezsupport"))
+                RAM2(Y("@UserbotCh"))
+                RAM2(Y("@Ramgabut"))
+                RAM2(Y("@GeezProjectt"))
     except BaseException:
-        LOGS.info("JOIN GRUP & CH DULU NGENTOT")
-
-with RAM3:
+        pass
     try:
-        RAM3(Y("@ramsupportt"))
-        RAM3(Y("@geezsupport"))
-        RAM3(Y("@UserbotCh"))
-        RAM3(Y("@Ramgabut"))
-        RAM3(Y("@GeezProjectt"))
+        if RAM3:
+                RAM3(Y("@ramsupportt"))
+                RAM3(Y("@geezsupport"))
+                RAM3(Y("@UserbotCh"))
+                RAM3(Y("@Ramgabut"))
+                RAM3(Y("@GeezProjectt"))
     except BaseException:
-        LOGS.info("JOIN GRUP & CH DULU NGENTOT")
-
-with RAM4:
+        pass
     try:
-        RAM4(Y("@ramsupportt"))
-        RAM4(Y("@geezsupport"))
-        RAM4(Y("@UserbotCh"))
-        RAM4(Y("@Ramgabut"))
-        RAM4(Y("@GeezProjectt"))
+        if RAM4:
+                RAM4(Y("@ramsupportt"))
+                RAM4(Y("@geezsupport"))
+                RAM4(Y("@UserbotCh"))
+                RAM4(Y("@Ramgabut"))
+                RAM4(Y("@GeezProjectt"))
     except BaseException:
-        LOGS.info("JOIN GRUP & CH DULU NGENTOT")
+        pass
 
-with RAM5:
     try:
-        RAM5(Y("@ramsupportt"))
-        RAM5(Y("@geezsupport"))
-        RAM5(Y("@UserbotCh"))
-        RAM5(Y("@Ramgabut"))
-        RAM5(Y("@GeezProjectt"))
+        if RAM5:
+                RAM5(Y("@ramsupportt"))
+                RAM5(Y("@geezsupport"))
+                RAM5(Y("@UserbotCh"))
+                RAM5(Y("@Ramgabut"))
+                RAM5(Y("@GeezProjectt"))
     except BaseException:
         LOGS.info("JOIN GRUP & CH DULU NGENTOT")
 
