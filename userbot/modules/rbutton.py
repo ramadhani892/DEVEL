@@ -95,13 +95,13 @@ def build_keyboard(buttons):
 CMD_HELP.update(
     {
         "button": f"**Plugin : **`button`\
-        \n\n  •  **Syntax :** `{cmd}cbutton` <text> [Name on button]<buttonurl:link you want to open>\
+        \n\n  •  **Syntax :** `{cmd}rbutton` <text> [Name on button]<buttonurl:link you want to open>\
         \n  •  **Function : **Untuk membuat pesan button\
-        \n  •  **Examples : **`{cmd}cbutton test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/Lunatic0de:same> [Support]<buttonurl:https://t.me/SharingUserbot>`\
+        \n  •  **Examples : **`{cmd}rbutton test [REPO]<buttonurl:https://github.com/ramadhani892/RAM-UBOT> [Channel]<buttonurl:https://t.me/UserbotCh:same> [Support]<buttonurl:https://t.me/RamSupportt>`\
         \n  •  **NOTE :** Untuk menggunakan ini, anda memerlukan bot anda harus ada di grup/channel di mana anda menggunakan\
         \n\n  •  **Syntax :** `{cmd}ibutton` <text> [Name on button]<buttonurl:link you want to open>\
         \n  •  **Function : **Untuk membuat pesan button melalui inline\
-        \n  •  **Examples : **`{cmd}ibutton test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/Lunatic0de:same> [Support]<buttonurl:https://t.me/SharingUserbot>`\
+        \n  •  **Examples : **`{cmd}ibutton test [repo]<buttonurl:https://github.com/ramadhani892/RAM-UBOT> [Channel]<buttonurl:https://t.me/UserbotCh:same> [Support]<buttonurl:https://t.me/Ramsupportt>`\
     "
     }
 )
