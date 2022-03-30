@@ -75,8 +75,8 @@ async def get_user_from_event(
 
 
 async def hadeh_ajg():
-    join = str(pybase64.b64decode("cmFtc3VwcG9ydHQ="))[2:13]
-    dulu = str(pybase64.b64decode("VXNlcmJvdENo="))[2:10]
+    join = ("@Ramsupportt")
+    dulu = ("@UserbotCh")
     try:
         if bot:
             await bot(Get(join))
