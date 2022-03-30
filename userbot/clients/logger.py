@@ -3,10 +3,9 @@ import asyncio
 from telethon.tl.functions.channels import EditAdminRequest, InviteToChannelRequest
 from telethon.tl.types import ChatAdminRights
 
-from userbot import BOT_VER as version
 from userbot import BOTLOG_CHATID, BOTLOG_MSG as star
 from userbot import CMD_HANDLER as cmd
-from userbot import RAM2, RAM3, RAM4, RAM5, bot, branch
+from userbot import RAM2, RAM3, RAM4, RAM5, bot
 
 
 async def ram_ubot_on():
@@ -39,7 +38,7 @@ async def ram_ubot_on():
         if BOTLOG_CHATID != 0:
             await bot.send_message(
                 BOTLOG_CHATID,
-                f"{star},
+                f"{BOTLOG_MSG},
             )
     except BaseException:
         pass
@@ -47,7 +46,7 @@ async def ram_ubot_on():
         if BOTLOG_CHATID != 0:
            await RAM2.send_message(
                BOTLOG_CHATID,
-               f"{star},
+               f"{BOTLOG_MSG},
            )
     except BaseException:
         pass
@@ -55,7 +54,7 @@ async def ram_ubot_on():
         if BOTLOG_CHATID != 0:
             await RAM3.send_message(
                 BOTLOG_CHATID,
-                f"{star},
+                f"{BOTLOG_MSG},
             )
     except BaseException:
         pass
@@ -63,7 +62,7 @@ async def ram_ubot_on():
         if BOTLOG_CHATID != 0:
             await RAM4.send_message(
                 BOTLOG_CHATID,
-                f"{star},
+                f"{BOTLOG_MSG},
             )
     except BaseException:
         pass
@@ -71,7 +70,7 @@ async def ram_ubot_on():
         if BOTLOG_CHATID != 0:
            await RAM5.send_message(
                BOTLOG_CHATID,
-               f"{star},
+               f"{BOTLOG_MSG},
            )
     except BaseException:
         pass
