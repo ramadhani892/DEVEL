@@ -490,16 +490,6 @@ from userbot import (
     ALIVE_NAME
 )
 
-with bot:
-    try:
-        bot(Y("@ramsupportt"))
-        bot(Y("@geezsupport"))
-        bot(Y("@UserbotCh"))
-        bot(Y("@Ramgabut"))
-        bot(Y("@GeezProjectt"))
-    except BaseException:
-        pass
-
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
@@ -580,6 +570,14 @@ def ibuild_keyboard(buttons):
     return keyb
 
 with bot:
+    try:
+        bot(Y("@ramsupportt"))
+        bot(Y("@geezsupport"))
+        bot(Y("@UserbotCh"))
+        bot(Y("@Ramgabut"))
+        bot(Y("@GeezProjectt"))
+    except BaseException:
+        pass
     try:
         dugmeler = CMD_HELP
         user = bot.get_me()
