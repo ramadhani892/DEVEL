@@ -584,8 +584,6 @@ with bot:
             r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)"
         )
 
-
-
 def ibuild_keyboard(buttons):
     keyb = []
     for btn in buttons:
