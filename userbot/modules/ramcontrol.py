@@ -13,9 +13,7 @@ from telethon.utils import get_display_name, pack_bot_file_id
 
 from userbot import (
     BOTLOG_CHATID,
-    CH_SFS,
     CMD_HANDLER,
-    GROUP_LINK,
     HEROKU_API_KEY,
     HEROKU_APP_NAME,
     SUDO_HANDLER,
