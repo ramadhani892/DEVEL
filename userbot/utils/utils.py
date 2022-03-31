@@ -48,10 +48,7 @@ async def creatgr():
     if not str(grup_id).startswith("-100"):
         grup_id = int(f"-100{str(grup_id)}")
     heroku_var["BOTLOG_CHATID"] = grup_id
-    LOGS.info("BENTAR BENTAR TOD, SABAR YAK!!!")
-    btl = "BOTLOG_CHATID"
-    try:
-      await bot.upload_file(EditPhotoRequest(btl, "userbot/utils/styles/RAMUBOT.jpg"))
+    
 
 async def autobot():
     if BOT_TOKEN:
