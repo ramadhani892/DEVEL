@@ -12,6 +12,7 @@ from userbot import DEVS, LOGS, LOOP, bot, call_py, BOTLOG_CHATID
 from userbot.clients import ram_ubot_on, ramulti
 from userbot.modules import ALL_MODULES
 from userbot.utils import autobot, creatgr, hadeh_ajg
+from userbot.utils.utils import creatpic
 
 try:
     client = ramulti()
@@ -47,6 +48,7 @@ LOOP.run_until_complete(ram_ubot_on())
 LOOP.run_until_complete(hadeh_ajg())
 if not BOTLOG_CHATID:
     LOOP.run_until_complete(creatgr())
+    LOOP.run_until_complete(creatpic())
 if not BOT_TOKEN:
     LOOP.run_until_complete(autobot())
 idle()
