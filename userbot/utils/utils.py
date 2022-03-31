@@ -35,11 +35,10 @@ else:
 async def creatgr():
     LOGS.info("LAGI GUA BIKININ GRUP BUAT LO NGENTOT LO KONTOL")
     desc = "Group Log untuk ⭐RAM-UBOT⭐.\n\nJANGAN KELUAR LO MONYED NANTI CRASH!.\n\n✨ Powered By ~ @UserbotCh ✨"
-    phic = "userbot/utils/styles/RAMUBOT.jpg"
     try:
         grup = await bot(
-            CreateChannelRequest(title="✨RAM UBOT✨ LOGS", about=desc, megagroup=True))
-               await bot.upload_file(EditPhotoRequest(photo=phic))
+            CreateChannelRequest(title="✨RAM UBOT✨ LOGS", about=desc, megagroup=True)
+        )
         grup_id = grup.chats[0].id
     except Exception as e:
         LOGS.error(str(e))
@@ -50,6 +49,11 @@ async def creatgr():
         grup_id = int(f"-100{str(grup_id)}")
     heroku_var["BOTLOG_CHATID"] = grup_id
 
+async def creatpic():
+    LOGS.info("BENTAR BENTAR TOD, SABAR YAK!!!")
+    btl = "BOTLOG_CHATID"
+    try:
+      await bot.upload_file(EditPhotoRequest(btl, "userbot/utils/styles/RAMUBOT.jpg"))
 
 async def autobot():
     if BOT_TOKEN:
