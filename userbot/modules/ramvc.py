@@ -45,7 +45,7 @@ async def join_(event):
     else:
         chat_id = event.chat_id
         chats = event.pattern_match.group(1)
-        from_user = vcmention(event.sender)
+        vcmention(event.sender)
     if not call_py.is_connected:
         await call_py.start()
     await call_py.join_group_call(
