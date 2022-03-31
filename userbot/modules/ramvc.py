@@ -63,7 +63,7 @@ async def join_(event):
 @ok(pattern=r"^\.clvc(?: |$)(.*)", sudo=True)
 async def leavevc(event):
     """ leave video chat """
-    ram = await edit_or_reply(event, "**Turun dulu....**")
+    await edit_or_reply(event, "**Turun dulu....**")
     chat_id = event.chat_id
     from_user = vcmention(event.sender)
     if from_user:
