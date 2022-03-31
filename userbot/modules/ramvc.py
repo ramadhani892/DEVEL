@@ -29,7 +29,7 @@ def vcmention(user):
 @boy(pattern="jvc(?: |$)(.*)")
 @ok(pattern=r"^\.cjvc(?: |$)(.*)", sudo=True)
 async def join_(event):
-    star = await edit_or_reply(event, f"**Otw Naik os, Sapa tau ada giveaway.**")
+    star = await edit_or_reply(event, f"**Hoii Aku datangg....**")
     if len(event.text.split()) > 1:
         chat = event.chat_id
         chats = event.pattern_match.group(1)
@@ -56,7 +56,7 @@ async def join_(event):
         chats,
         stream_type=ya().pulse_stream,
     )
-    await star.edit(f"**{from_user} Ngentot Naik Os!**")
+    await edit.delete(star, f"**Berhasil Join Ke obrolan Suara.**\n**Group Id:{chat_id}!**", 5)
 
 
 @boy(pattern="lvc(?: |$)(.*)")
@@ -71,4 +71,4 @@ async def leavevc(event):
             await call_py.leave_group_call(chat_id)
         except (memek, ajg):
             await edit_or_reply(event, f"Eh {from_user}, Lo ga ada di os ngentot!!!!!")
-        await ram.edit(f"**Babay Anak kontol {from_user} Turun dulu...**")
+        await ram.edit(f"**Babay Anak kontol, {from_user} Turun dulu...**")
