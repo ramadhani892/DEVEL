@@ -56,7 +56,7 @@ async def join_(event):
         chats,
         stream_type=ya().pulse_stream,
     )
-    await edit.delete(event, f"**Berhasil Join Ke obrolan Suara.**\n**Group Id:{chat_id}!**", 5)
+    await edit_delete(event, f"**Berhasil Join Ke obrolan Suara.**\n**Group Id:{chat_id}!**", 5)
 
 
 @boy(pattern="lvc(?: |$)(.*)")
