@@ -166,7 +166,7 @@ async def _(event):
         "⠀⢠⣧⡔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠟⠁⠀\n"
         "⠀⢸⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ Ah\nShit, here we go again.\n", reply_to=event.reply_to_msg_id,
     )
-
+    await event.delete()
 
 @ram_cmd(pattern="sthink(?: |$)(.*)")
 async def _(event):
@@ -188,7 +188,7 @@ async def _(event):
         "⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁\n"
         "⠀⠀⠛⢿⣿⣿⣿⣿⣿⣿⡿⠟\n", reply_to=event.reply_to_msg_id,
     )
-
+    await event.delete()
 
 CMD_HELP.update(
     {
