@@ -15,7 +15,7 @@ async def _(event):
     await xx.edit("`Dan yang terakhir adalah kamu bukan jodohku`")
 
 
-@ram_cmd(pattern="misii(?: |$)(.*)")
+@ram_cmd(pattern="misi(?: |$)(.*)")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -194,9 +194,9 @@ CMD_HELP.update(
     {
         "arts": f"**Plugin : **`arts`\
         \n\n  •  **Syntax :** `{cmd}kodok`\
-        \n  •  **Function : **arts Forg.\
+        \n  •  **Function : **arts Frog.\
         \n\n  •  **Syntax :** `{cmd}kodog`\
-        \n  •  **Function : **arts forg bundir.\
+        \n  •  **Function : **arts frog bundir.\
         \n\n  •  **Syntax :** `{cmd}dtrump`\
         \n  •  **Function : **arts donald Trump.\
         \n\n  •  **Syntax :** `{cmd}scina`\
@@ -207,7 +207,7 @@ CMD_HELP.update(
         \n  •  **Function : **arts si jhonson.\
         \n\n  •  **Syntax :** `{cmd}sthink`\
         \n  •  **Function : **arts berfikir\
-        \n\n  •  **Syntax :** `{cmd}punten` ; `{cmd}pantau`\
+        \n\n  •  **Syntax :** `{cmd}misi` ; `{cmd}pantau`\
         \n  •  **Function : **Arts Beruang kek lagi mantau.\
         \n\n  •  **Syntax :** `{cmd}sadboy`\
         \n  •  **Function : **ya sadboy coba aja.\
