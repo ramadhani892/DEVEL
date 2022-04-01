@@ -17,8 +17,8 @@ async def _(event):
 
 @ram_cmd(pattern="misii(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(
-        event,
+    await event.client.send_message(
+        event.chat_id,
         "`\n┻┳|―-∩`"
         "`\n┳┻|     ヽ`"
         "`\n┻┳|    ● |`"
@@ -26,14 +26,13 @@ async def _(event):
         "`\n┻┳|￣  )`"
         "`\n┳ﾐ(￣ ／`"
         "`\n┻┳T￣|`"
-        "\n**Punten**",
-    )
-
+        "\n**Punten**", reply_to=event.reply_to_msg_id)
+    await event.delete()
 
 @ram_cmd(pattern="pantau(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(
-        event,
+    await event.client.send_message(
+        event.chat_id,
         "`\n┻┳|―-∩`"
         "`\n┳┻|     ヽ`"
         "`\n┻┳|    ● |`"
@@ -41,14 +40,14 @@ async def _(event):
         "`\n┻┳|￣  )`"
         "`\n┳ﾐ(￣ ／`"
         "`\n┻┳T￣|`"
-        "\n**Masih Gua Pantau**",
-    )
+        "\n**Masih Gua Pantau**", reply_to=event.reply_to_msg_id)
+    await event.delete()
 
 
 @ram_cmd(pattern="kodok(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(
-        event,
+    await event.client.send_message(
+        event.chat_id,
         "⠄⠄⠄⠄⠄⣀⣀⣤⣶⣿⣿⣶⣶⣶⣤⣄⣠⣴⣶⣿⣶⣦⣄⠄\n"
         "⠄⣠⣴⣾⣿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦\n"
         "⢠⠾⣋⣭⣄⡀⠄⠙⠻⣿⣿⡿⠛⠋⠉⠉⠉⠙⠛⠿⣿⣿⣿⣿\n"
@@ -63,14 +62,14 @@ async def _(event):
         "⠄⣿⡇⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠄⢀⣼⣿⣿⣿⣿⣿\n"
         "⠄⣿⡇⠄⠠⣿⣿⣿⣿⣿⣿⣿⡿⠋⠄⠄⣠⣾⣿⣿⣿⣿⣿⣿\n"
         "⠄⣿⠁⠄⠐⠛⠛⠛⠉⠉⠉⠉⠄⠄⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿\n"
-        "⠄⠻⣦⣀⣀⣀⣀⣀⣤⣤⣤⣤⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋\n",
-    )
+        "⠄⠻⣦⣀⣀⣀⣀⣀⣤⣤⣤⣤⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋\n", reply_to=event.reply_to_msg_id)
+    await event.delete()
 
 
 @ram_cmd(pattern="kodog(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(
-        event,
+    await event.client.send_message(
+        event.chat_id,
         "⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
         "⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
         "⣿⣿⣿⡇⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
@@ -85,14 +84,14 @@ async def _(event):
         "⠑⠽⡻⢿⣮⣽⣷⣶⣯⣽⣳⠮⣽⣟⣲⠯⢭⣿⣛⡇⣿⣿⣿⣿\n"
         "⠄⠄⠈⠑⠊⠉⠟⣻⠿⣿⣿⣿⣷⣾⣭⣿⠷⠶⠂⣴⣿⣿⣿⣿\n"
         "⠄⠄⠄⠄⠄⠄⠄⠁⠙⠒⠙⠯⠍⠙⢉⣡⣶⣿⣿⣿⣿⣿⣿⣿\n"
-        "⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿\n",
-    )
+        "⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿\n", reply_to=event.reply_to_msg_id)
+    await event.delete()
 
 
 @ram_cmd(pattern="dtrump(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(
-        event,
+    await event.client.send_message(
+        event.chat_id,
         "⣿⣿⣿⣿⣿⣿⡿⠿⠛⠋⠉⡉⣉⡛⣛⠿⣿⣿⣿⣿⣿⣿⣿⣿\n"
         "⣿⣿⣿⡿⠋⠁⠄⠄⠄⠄⠄⢀⣸⣿⣿⡿⠿⡯⢙⠿⣿⣿⣿⣿\n"
         "⣿⣿⡿⠄⠄⠄⠄⠄⡀⡀⠄⢀⣀⣉⣉⣉⠁⠐⣶⣶⣿⣿⣿⣿\n"
@@ -107,14 +106,14 @@ async def _(event):
         "⠄⠄⠄⠄⠄⠄⠈⢿⣿⠟⡋⠄⠄⠄⢣⠄⠄⠄⠄⠄⠈⠹⣿⣀\n"
         "⠄⠄⠄⠄⠄⠄⠄⠘⣷⣿⣿⣷⠄⠄⢺⣇⠄⠄⠄⠄⠄⠄⠸⣿\n"
         "⠄⠄⠄⠄⠄⠄⠄⠄⠹⣿⣿⡇⠄⠄⠸⣿⡄⠄⠈⠁⠄⠄⠄⣿\n"
-        "⠄⠄⠄⠄⠄⠄⠄⠄⠄⢻⣿⡇⠄⠄⠄⢹⣧⠄⠄⠄⠄⠄⠄⠘\n",
-    )
+        "⠄⠄⠄⠄⠄⠄⠄⠄⠄⢻⣿⡇⠄⠄⠄⢹⣧⠄⠄⠄⠄⠄⠄⠘\n", reply_to=event.reply_to_msg_id)
+    await event.delete()
 
 
 @ram_cmd(pattern="scina(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(
-        event,
+    await event.client.send_message(
+        event.chat_id,
         "⣿⣿⣿⣿⠟⠋⢁⢁⢁⢁⢁⢁⢁⢁⠈⢻⢿⣿⣿⣿⣿⣿⣿⣿\n"
         "⣿⣿⣿⣿⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⡀⠭⢿⣿⣿⣿⣿\n"
         "⣿⣿⣿⡟⠄⢀⣾⣿⣿⣿⣷⣶⣿⣷⣶⣶⡆⠄⠄⠄⣿⣿⣿⣿\n"
@@ -130,14 +129,14 @@ async def _(event):
         "⠄⠄⠄⠄⠄⠄⣿⡟⣷⠄⠹⣿⣿⣿⡿⠁⠄⠄⠄⠄⠄⠄⠄⠄\n"
         "⠄⠄⠄⠄⠄⣸⣿⡷⡇⠄⣴⣾⣿⣿⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄\n"
         "⠄⠄⠄⠄⠄⣿⣿⠃⣦⣄⣿⣿⣿⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄\n"
-        "⠄⠄⠄⠄⢸⣿⠗⢈⡶⣷⣿⣿⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄\n",
-    )
+        "⠄⠄⠄⠄⢸⣿⠗⢈⡶⣷⣿⣿⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄\n", reply_to=event.reply_to_msg_id)
+    await event.delete()
 
 
 @ram_cmd(pattern="wlcm(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(
-        event,
+    await event.client.send_message(
+        event.chat_id,
         "───▄▀▀▀▄▄▄▄▄▄▄▀▀▀▄───\n"
         "───█▒▒░░░░░░░░░▒▒█───\n"
         "────█░░█░░░░░█░░█────\n"
@@ -147,14 +146,14 @@ async def _(event):
         "█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n"
         "█░░║║║╠─║─║─║║║║║╠─░░█\n"
         "█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█\n"
-        "█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█\n",
+        "█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█\n", reply_to=event.reply_to_msg_id,
     )
 
 
 @ram_cmd(pattern="gta(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(
-        event,
+    await event.client.send_message
+        event.chat_id,
         "⠀⠀⠀⠀⠀⠀⠀⢀⣤⣤⡀⠀⠀⠀⠀⠀⠀\n"
         "⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀\n"
         "⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⠟⠀⠀⠀⠀⠀⠀\n"
@@ -165,14 +164,14 @@ async def _(event):
         "⠀⠀⠀⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣷\n"
         "⠀⠀⠘⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⢰⣾⣿⠏\n"
         "⠀⢠⣧⡔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠟⠁⠀\n"
-        "⠀⢸⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ Ah\nShit, here we go again.\n",
+        "⠀⢸⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ Ah\nShit, here we go again.\n", reply_to=event.reply_to_msg_id,
     )
 
 
 @ram_cmd(pattern="sthink(?: |$)(.*)")
 async def _(event):
-    await edit_or_reply(
-        event,
+    await event.client.send_message(
+        event.chat_id,
         "⠀⠀⠀⠀⢀⣀⣀⣀\n"
         "⠀⠀⠀⠰⡿⠿⠛⠛⠻⠿⣷\n"
         "⠀⠀⠀⠀⠀⠀⣀⣄⡀⠀⠀⠀⠀⢀⣀⣀⣤⣄⣀⡀\n"
@@ -187,7 +186,7 @@ async def _(event):
         "⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄\n"
         "⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡁\n"
         "⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁\n"
-        "⠀⠀⠛⢿⣿⣿⣿⣿⣿⣿⡿⠟\n",
+        "⠀⠀⠛⢿⣿⣿⣿⣿⣿⣿⡿⠟\n", reply_to=event.reply_to_msg_id,
     )
 
 
