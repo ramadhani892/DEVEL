@@ -719,7 +719,7 @@ async def btly(event):
             )
         await setit(event, var, themssg)
         await conv.send_message(
-            f"**{var} Berhasil di Setting Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            f"**{var} Berhasil di Setting Menjadi** `{themssg}`\n\nSabar Ya tod, Gua ngerestart dulu.",
             buttons=get_back_button("apiset"),
         )
 
@@ -743,7 +743,7 @@ async def strone(event):
             )
         await setit(event, var, themssg)
         await conv.send_message(
-            f"**{var} Berhasil diganti**\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            f"**{var} Berhasil disetting Nih.**\n\nSabar Tod, Gua ngerestart Dulu ya.",
             buttons=get_back_button("multiclient"),
         )
 
@@ -768,7 +768,7 @@ async def strtwo(event):
             )
         await setit(event, var, themssg)
         await conv.send_message(
-            f"**{name} Berhasil disettings**\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            f"**{name} Berhasil disetting Nih.**\n\nSabar Tod, Gua ngerestart Dulu ya.",
             buttons=get_back_button("multiclient"),
         )
 
@@ -793,7 +793,7 @@ async def strtri(event):
             )
         await setit(event, var, themssg)
         await conv.send_message(
-            f"**{name} Berhasil disettings**\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            f"**{name} Berhasil disetting Nih.**\n\nSabar Tod, Gua ngerestart Dulu ya.",
             buttons=get_back_button("multiclient"),
         )
 
@@ -818,7 +818,7 @@ async def strfor(event):
             )
         await setit(event, var, themssg)
         await conv.send_message(
-            f"**{name} Berhasil disettings**\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            f"**{name} Berhasil disetting Nih.**\n\nSabar Tod, Gua ngerestart Dulu ya.",
             buttons=get_back_button("multiclient"),
         )
 
@@ -831,7 +831,7 @@ async def strfiv(event):
     name = "MULTI CLIENT ke 5"
     async with event.client.conversation(pru) as conv:
         await conv.send_message(
-            f"**Silahkan Kirimkan {var} Telethon anda dari @StringManRobot**\n\nGunakan /cancel untuk membatalkan."
+            f"**Silahkan Kirimkan {var} Telethon anda dari @StringRamUbot**\n\nGunakan /cancel untuk membatalkan."
         )
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
@@ -843,7 +843,7 @@ async def strfiv(event):
             )
         await setit(event, var, themssg)
         await conv.send_message(
-            f"**{name} Berhasil disettings**\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            f"**{name} Berhasil disetting nih.**\n\nSabar Ya Tod, Gua ngerestart dulu.",
             buttons=get_back_button("multiclient"),
         )
 
@@ -900,11 +900,11 @@ async def bot_start(event):
                 my_mention=my_mention,
             )
         else:
-            start_msg = f"**👋 Hai** {mention}**!**\
-                        \n\n**Saya adalah {my_first}** \
-                        \n**Anda dapat menghubungi [{OWNER}](tg://user?id={OWNER_ID}) dari sini.**\
-                        \n**Jangan melakukan spam atau anda akan di Banned**\
-                        \n\n**Powered by** [✨RAM - UBOT✨](https://github.com/ramadhani892/RAM-UBOT)"
+            start_msg = f"**👋 Hai Anak Yatim!** {mention}**!**\
+                        \n\n**Gua Asisstant {my_first}** \
+                        \n**Mending Lu Pc owner gua ngentot [{OWNER}](tg://user?id={OWNER_ID}) Tuh.**\
+                        \n**Lu jangan Spam Ngentot, Nanti gua Ban lo dari bumi si anjing!!!**\
+                        \n\n**Pesan Dari==>** [✨RAM - UBOT✨](https://github.com/ramadhani892/RAM-UBOT)"
         buttons = [
             (
                 Button.url("ɢʀᴏᴜᴘ", f"{GROUP_LINK}"),
