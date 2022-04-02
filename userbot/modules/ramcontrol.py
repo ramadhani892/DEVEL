@@ -892,7 +892,7 @@ async def bot_start(event):
                 my_mention=my_mention,
             )
         else:
-            file=ramlogo,
+            file = "https://telegra.ph/file/35fad21fce80bcf7ee128.jpg"
             start_msg = f"**👋 Hai** {mention}**!**\
                         \n\n**Saya adalah {my_first}** \
                         \n**Anda dapat menghubungi [{OWNER}](tg://user?id={OWNER_ID}) dari sini.**\
