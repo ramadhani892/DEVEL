@@ -13,6 +13,7 @@ from telethon.utils import get_display_name, pack_bot_file_id
 
 from userbot import (
     BOTLOG_CHATID,
+    ALIVE_LOGO,
     GROUP_LINK,
     CH_SFS,
     CMD_HANDLER,
@@ -22,7 +23,6 @@ from userbot import (
     StartTime,
     tgbot,
     user,
-    ramlogo,
 )
 from userbot.modules.sql_helper.bot_blacklist import check_is_black_list
 from userbot.modules.sql_helper.bot_starters import (
@@ -866,6 +866,7 @@ async def bot_start(event):
     mention = f"[{chat.first_name}](tg://user?id={chat.id})"
     my_mention = f"[{user.first_name}](tg://user?id={user.id})"
     first = chat.first_name
+    ramlogo = ALIVE_LOGO
     last = chat.last_name
     fullname = f"{first} {last}" if last else first
     username = f"@{chat.username}" if chat.username else mention
@@ -892,7 +893,6 @@ async def bot_start(event):
                 my_mention=my_mention,
             )
         else:
-            file = "https://telegra.ph/file/35fad21fce80bcf7ee128.jpg"
             start_msg = f"**👋 Hai** {mention}**!**\
                         \n\n**Saya adalah {my_first}** \
                         \n**Anda dapat menghubungi [{OWNER}](tg://user?id={OWNER_ID}) dari sini.**\
