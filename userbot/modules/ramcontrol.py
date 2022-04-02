@@ -923,7 +923,7 @@ async def bot_start(event):
         await event.client.send_message(
             chat.id,
             start_msg,
-            file,
+            file=ramlogo,
             link_preview=False,
             buttons=buttons,
             reply_to=reply_to,
