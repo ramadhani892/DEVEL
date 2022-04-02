@@ -880,7 +880,7 @@ async def bot_start(event):
             start_msg = customstrmsg.format(
                 mention=mention,
                 first=first,
-                file=ramlogo
+                file=ramlogo,
                 last=last,
                 fullname=fullname,
                 username=username,
