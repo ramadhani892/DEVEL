@@ -13,7 +13,7 @@ from telethon.utils import get_display_name
 from userbot import BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot, tgbot, user
-from userbot.modules.sql_helper.bot_blacklists import (
+from userbot.modules.sql_helper.bot_blacklist import (
     add_user_to_bl,
     check_is_black_list,
     get_all_bl_users,
