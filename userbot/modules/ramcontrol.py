@@ -40,7 +40,7 @@ OWNER_ID = user.id
 telegraph = Telegraph()
 r = telegraph.create_account(short_name="telegraph")
 auth_url = r["auth_url"]
-
+ramlogo = ALIVE_LOGO
 
 heroku_api = "https://api.heroku.com"
 if HEROKU_APP_NAME is not None and HEROKU_API_KEY is not None:
@@ -106,6 +106,7 @@ async def pmbot(event):
     if event.query.user_id == OWNER_ID:
         await tgbot.send_message(
             event.chat_id,
+            file=ramlogo,
             message=f"""**Perintah di Bot ini adalah:**\n
 **NOTE: Perintah ini hanya berfungsi di @{botusername}**\n
  • **Command : **/uinfo <reply ke pesan>
@@ -143,6 +144,7 @@ async def users(event):
             await tgbot.send_file(
                 event.chat_id,
                 fileuser,
+                file=ramlogo,
                 force_document=True,
                 thumb="userbot/utils/styles/RAMBOT.jpg",
                 caption="**Total Pengguna Di Bot anda.**",
@@ -163,6 +165,7 @@ async def botsettings(event):
         await tgbot.send_message(
             event.chat_id,
             message=f"**Halo [{OWNER}](tg://user?id={OWNER_ID})**\n**Apa ada yang bisa saya bantu?**",
+            file=ramlogo,
             buttons=[
                 (Button.inline("sᴇᴛᴛɪɴɢs ᴠᴀʀ", data="apiset"),),
                 (
@@ -182,6 +185,7 @@ async def botsettings(event):
 async def apiset(event):
     await event.edit(
         "**Silahkan Pilih VAR yang ingin anda Setting**",
+        file=ramlogo,
         buttons=[
             [Button.inline("ᴍᴜʟᴛɪ ᴄʟɪᴇɴᴛ", data="multiclient")],
             [
@@ -201,6 +205,7 @@ async def apiset(event):
 async def apikeys(event):
     await event.edit(
         "**Silahkan Pilih VAR yang ingin anda Setting**",
+        file=ramlogo,
         buttons=[
             [
                 Button.inline("ʙɪᴛʟʏ ᴛᴏᴋᴇɴ", data="btly"),
@@ -223,6 +228,7 @@ async def apikeys(event):
 async def alivemenu(event):
     await event.edit(
         "**Silahkan Pilih VAR yang ingin anda Setting**",
+        file=ramlogo,
         buttons=[
             [
                 Button.inline("ᴀʟɪᴠᴇ ʟᴏɢᴏ", data="alvlogo"),
@@ -244,6 +250,7 @@ async def alivemenu(event):
 async def hndlrmenu(event):
     await event.edit(
         "**Silahkan Pilih VAR yang ingin anda Setting**",
+        file=ramlogo,
         buttons=[
             [
                 Button.inline("ᴄᴍᴅ ʜᴀɴᴅʟᴇʀ", data="cmdhndlr"),
@@ -258,6 +265,7 @@ async def hndlrmenu(event):
 async def menuclient(event):
     await event.edit(
         "**Silahkan Pilih VAR yang ingin anda Setting**",
+        file=ramlogo,
         buttons=[
             [
                 Button.inline("sᴛʀɪɴɢ_sᴇssɪᴏɴ", data="strone"),
@@ -279,6 +287,7 @@ async def menuclient(event):
 async def inlinemenu(event):
     await event.edit(
         "**Silahkan Pilih VAR yang ingin anda Setting**",
+        file=ramlogo,
         buttons=[
             [
                 Button.inline("ɪɴʟɪɴᴇ ᴇᴍᴏᴊɪ", data="inmoji"),
@@ -866,7 +875,6 @@ async def bot_start(event):
     mention = f"[{chat.first_name}](tg://user?id={chat.id})"
     my_mention = f"[{user.first_name}](tg://user?id={user.id})"
     first = chat.first_name
-    ramlogo = ALIVE_LOGO
     last = chat.last_name
     fullname = f"{first} {last}" if last else first
     username = f"@{chat.username}" if chat.username else mention
