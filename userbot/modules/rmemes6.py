@@ -50,19 +50,19 @@ async def _(typew):
 @tod(pattern=r"peler(?: |$)(.*)")
 async def _(typew):
     await typew.client.send_message(
-        typew.chat_id, "░░░░█─────────────█──▀──\n"
-                     "░░░░▓█───────▄▄▀▀█──────\n"
-                     "░░░░▒░█────▄█▒░░▄░█─────\n"
-                     "░░░░░░░▀▄─▄▀▒▀▀▀▄▄▀──SIJONI─\n"
-                     "░░░░░░░░░█▒░░░░▄▀────PANJANG\n"
-                     "▒▒▒░░░░▄▀▒░░░░▄▀───DAN─\n"
-                     "▓▓▓▓▒░█▒░░░░░█▄───PEMBERANI─\n"
-                     "█████▀▒░░░░░█░▀▄───CROTT──\n"
-                     "█████▒▒░░░▒█░░░▀▄─AHHH──\n"
-                     "███▓▓▒▒▒▀▀▀█▄░░░░█──────\n"
-                     "▓██▓▒▒▒▒▒▒▒▒▒█░░░░█─────\n"
-                     "▓▓█▓▒▒▒▒▒▒▓▒▒█░░░░░█────\n"
-                     "░▒▒▀▀▄▄▄▄█▄▄▀░░░░░░░█─\n", reply_to=typew.reply_to_msg_id)
+        typew.chat_id, "░░░░██▀\n"
+                     "░░░░▓█         ▄▄▀▀█\n"
+                     "░░░░▒░█     ▄█▒░░▄░█\n"
+                     "░░░░░░░▀▄ ▄▀▒▀▀▀▄▄█\n"
+                     "░░░░░░░░░█▒░░░░▄▀\n"
+                     "▒▒▒░░░░▄▀▒░░░░▄▀\n"
+                     "▓▓▓▓▒░█▒░░░░░█▄\n"
+                     "█████▀▒░░░░░█░▀▄\n"
+                     "█████▒▒░░░▒█░░░▀▄\n"
+                     "███▓▓▒▒▒▀▀▀█▄░░░░█\n"
+                     "▓██▓▒▒▒▒▒▒▒▒▒█░░░░█\n"
+                     "▓▓█▓▒▒▒▒▒▒▓▒▒█░░░░░█\n"
+                     "░▒▒▀▀▄▄▄▄█▄▄▀░░░░░░░█\n", reply_to=typew.reply_to_msg_id)
     await typew.delete()
 
 @tod(pattern=r"ahh(?: |$)(.*)")
@@ -90,7 +90,7 @@ async def _(typew):
 
 CMD_HELP.update(
     {
-        "animasi9": f"**Plugin : **`animasi8`\
+        "animasi9": f"**Plugin : **`memes12`\
         \n\n  •  **Syntax :** `{cmd}heu`\
         \n  •  **Function : **Mengirim Gambar Monyet.\
         \n\n  •  **Syntax :** `{cmd}hem`\
