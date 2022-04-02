@@ -144,7 +144,6 @@ async def users(event):
             await tgbot.send_file(
                 event.chat_id,
                 fileuser,
-                file=ramlogo,
                 force_document=True,
                 thumb="userbot/utils/styles/RAMBOT.jpg",
                 caption="**Total Pengguna Di Bot anda.**",
