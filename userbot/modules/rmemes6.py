@@ -1,4 +1,3 @@
-from time import sleep
 
 from userbot import CMD_HELP, CMD_HANDLER as cmd
 from userbot.utils import ram_cmd as tod
