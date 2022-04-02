@@ -90,7 +90,7 @@ async def _(typew):
 
 CMD_HELP.update(
     {
-        "animasi9": f"**Plugin : **`memes12`\
+        "memes12": f"**Plugin : **`memes12`\
         \n\n  •  **Syntax :** `{cmd}heu`\
         \n  •  **Function : **Mengirim Gambar Monyet.\
         \n\n  •  **Syntax :** `{cmd}hem`\
