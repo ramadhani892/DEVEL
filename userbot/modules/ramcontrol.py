@@ -22,6 +22,7 @@ from userbot import (
     StartTime,
     tgbot,
     user,
+    ramlogo,
 )
 from userbot.modules.sql_helper.bot_blacklist import check_is_black_list
 from userbot.modules.sql_helper.bot_starters import (
@@ -855,7 +856,7 @@ async def _(event):
     await event.answer(pin, cache_time=0, alert=True)
 
 
-@asst_cmd(pattern="^/set?([\\s]+)?$", func=lambda e: e.is_private)
+@asst_cmd(pattern="^/start?([\\s]+)?$", func=lambda e: e.is_private)
 async def bot_start(event):
     chat = await event.get_chat()
     user = await event.client.get_me()
@@ -879,6 +880,7 @@ async def bot_start(event):
             start_msg = customstrmsg.format(
                 mention=mention,
                 first=first,
+                file=ramlogo
                 last=last,
                 fullname=fullname,
                 username=username,
@@ -894,7 +896,7 @@ async def bot_start(event):
                         \n\n**Saya adalah {my_first}** \
                         \n**Anda dapat menghubungi [{OWNER}](tg://user?id={OWNER_ID}) dari sini.**\
                         \n**Jangan melakukan spam atau anda akan di Banned**\
-                        \n\n**Powered by** [UserBot](https://github.com/mrismanaziz/Man-Userbot)"
+                        \n\n**Powered by** [✨RAM - UBOT✨](https://github.com/ramadhani892/RAM-UBOT)"
         buttons = [
             (
                 Button.url("ɢʀᴏᴜᴘ", f"{GROUP_LINK}"),
