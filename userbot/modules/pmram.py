@@ -101,7 +101,7 @@ async def unban_user_from_bot(user, reason, reply_to=None):
         rem_user_from_bl(user.id)
     except Exception as e:
         LOGS.error(str(e))
-    banned_msg = "**Anda Telah diunbanned dari Bot ini.**"
+    banned_msg = "**Lo udah gua unbanned Nih ngentot anjing bangsat, jangan ngejamet lagi!!!.**"
 
     if reason is not None:
         banned_msg += f"\n**Karena:** {reason}"
@@ -118,7 +118,7 @@ async def unban_user_from_bot(user, reason, reply_to=None):
 async def bot_broadcast(event):
     replied = await event.get_reply_message()
     if not replied:
-        return await event.reply("**Mohon Balas Ke Pesan Yang ingin di Broadcast!**")
+        return await event.reply("**KALO MALES NGETIK, MINIMAL YA REPLY PESANNYA KONTOL!!!!!**")
     start_ = datetime.now()
     br_cast = await replied.reply("`Broadcasting...`")
     blocked_users = []
