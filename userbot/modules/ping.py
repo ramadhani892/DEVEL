@@ -80,8 +80,23 @@ async def _(landak):
 async def _(landak):
     await landak.reply(random.choice(brb))
 
-
 @ram_cmd(pattern="ping$")
+async def _(ping)
+    """ For.ping command, ping the userbot from any chat."""
+    uptime = await get_readable_time((time.time() - StartTime))
+    start = datetime.now()
+    duration = (end start).microseconds / 1000
+    user = await ping.client.get_me()
+    await ping.client.send_message(
+        ping.chat_id, f""**╰•★★ ᥅ꪖꪑ ρꪮꪀᧁ ★★•╯**\n"
+                    f"★ **speed:** "
+                    f"`%sms` \n"
+                    f"★ **Uptime:** "
+                    f"`{uptime}` \n"
+                    f"★ **owner:** [{user.first_name}](tg://user?id={user.id})\n", reply_to=ping.reply_to_msg_id, % (duration))
+
+
+@ram_cmd(pattern="rping$")
 @register(pattern=r"^\.cping(?: |$)(.*)", sudo=True)
 async def _(pong):
     """For .ping command, ping the userbot from any chat."""
@@ -147,24 +162,6 @@ async def redis(pong):
         f"**➾ OWNER      :** [{user.first_name}](tg://user?id={user.id}) \n"
         f"**➾ Kecepatan : ** %sms  \n"
         f"**➾ Branch       : ** [{REPO_NAME}](https://t.me/ram_ubot) \n" % (duration)) 
-
-
-@ram_cmd(pattern="rping$")
-@register(pattern=r"^\.cpi(?: |$)(.*)", sudo=True)
-async def _(pong):
-    """ For .ping command, ping the userbot from any chat.  """
-    uptime = await get_readable_time((time.time() - StartTime))
-    start = datetime.now()
-    ram = await edit_or_reply(pong, "**✴️pingers powers✴️**")
-    end = datetime.now()
-    duration = (end - start).microseconds / 1000
-    user = await pong.client.get_me()
-    await ram.edit(f"**╰•★★ ᥅ꪖꪑ ρꪮꪀᧁ ★★•╯**\n"
-                    f"★ **speed:** "
-                    f"`%sms` \n"
-                    f"★ **Uptime:** "
-                    f"`{uptime}` \n"
-                    f"★ **owner:** [{user.first_name}](tg://user?id={user.id})" % (duration))
 
 
 @ram_cmd(pattern="speed$")
