@@ -9,31 +9,15 @@ import json
 import re
 
 import requests
-from userbot.events import register
+
 from userbot import bot
-
-
-def time_formatter(milliseconds: int) -> str:
-    """Inputs time in milliseconds, to get beautified time,
-    as string"""
-    seconds, milliseconds = divmod(int(milliseconds), 1000)
-    minutes, seconds = divmod(seconds, 60)
-    hours, minutes = divmod(minutes, 60)
-    days, hours = divmod(hours, 24)
-    tmp = (
-        ((str(days) + " day(s), ") if days else "")
-        + ((str(hours) + " hour(s), ") if hours else "")
-        + ((str(minutes) + " minute(s), ") if minutes else "")
-        + ((str(seconds) + " second(s), ") if seconds else "")
-        + ((str(milliseconds) + " millisecond(s), ") if milliseconds else "")
-    )
-    return tmp[:-2]
+from userbot.utils import ram_cmd, time_formatter
 
 
 def shorten(description, info="anilist.co"):
     msg = ""
     if len(description) > 700:
-        description = description[0:200] + "....."
+        description = f"{description[:200]}....."
         msg += f"\n**Description**:\n{description} [Read More]({info})"
     else:
         msg += f"\n**Description**: \n   {description}"
@@ -174,11 +158,7 @@ async def callAPI(search_str):
     """
     variables = {"search": search_str}
     url = "https://graphql.anilist.co"
-    response = requests.post(
-        url,
-        json={
-            "query": query,
-            "variables": variables})
+    response = requests.post(url, json={"query": query, "variables": variables})
     return response.text
 
 
@@ -198,9 +178,9 @@ async def formatJSON(outData):
     link = f"https://anilist.co/anime/{jsonData['id']}"
     msg += f"[{title}]({link})"
     msg += f"\n\n**Type** : {jsonData['format']}"
-    msg += f"\n**Genres** : "
+    msg += "\n**Genres** : "
     for g in jsonData["genres"]:
-        msg += g + " "
+        msg += f"{g} "
     msg += f"\n**Status** : {jsonData['status']}"
     msg += f"\n**Episode** : {jsonData['episodes']}"
     msg += f"\n**Year** : {jsonData['startDate']['year']}"
@@ -215,28 +195,21 @@ async def formatJSON(outData):
 url = "https://graphql.anilist.co"
 
 
-@register(outgoing=True, pattern=r"^\.anichar ?(.*)")
-async def anilist(event):
+@ram_cmd(pattern=r"anichar ?(.*)")
+async def anichar(event):
     search = event.pattern_match.group(1)
-    reply_to_id = event.message.id
-    if event.reply_to_msg_id:
-        reply_to_id = event.reply_to_msg_id
+    reply_to_id = event.reply_to_msg_id or event.message.id
     variables = {"query": search}
-    json = (
-        requests.post(
-            url,
-            json={
-                "query": character_query,
-                "variables": variables}) .json()["data"] .get(
-            "Character",
-            None))
-    if json:
+    if json := (
+        requests.post(url, json={"query": character_query, "variables": variables})
+        .json()["data"]
+        .get("Character", None)
+    ):
         msg = f"**{json.get('name').get('full')}**\n"
         description = f"{json['description']}"
         site_url = json.get("siteUrl")
         msg += shorten(description, site_url)
-        image = json.get("image", None)
-        if image:
+        if image := json.get("image", None):
             image = image.get("large")
             await event.delete()
             await bot.send_file(
@@ -248,8 +221,8 @@ async def anilist(event):
         await event.edit("Sorry, No such results")
 
 
-@register(outgoing=True, pattern=r"^\.airing ?(.*)")
-async def anilist(event):
+@ram_cmd(pattern="airing ?(.*)")
+async def arings(event):
     search = event.pattern_match.group(1)
     variables = {"search": search}
     response = requests.post(
@@ -265,12 +238,10 @@ async def anilist(event):
     await event.edit(ms_g)
 
 
-@register(outgoing=True, pattern=r"^\.animanga ?(.*)")
-async def anilist(event):
+@ram_cmd(pattern="animanga ?(.*)")
+async def animanga(event):
     search = event.pattern_match.group(1)
-    reply_to_id = event.message.id
-    if event.reply_to_msg_id:
-        reply_to_id = event.reply_to_msg_id
+    reply_to_id = event.reply_to_msg_id or event.message.id
     variables = {"search": search}
     json = (
         requests.post(url, json={"query": manga_query, "variables": variables})
@@ -279,9 +250,9 @@ async def anilist(event):
     )
     ms_g = ""
     if json:
-        title, title_native = json["title"].get(
-            "romaji", False), json["title"].get(
-            "native", False)
+        title, title_native = json["title"].get("romaji", False), json["title"].get(
+            "native", False
+        )
         start_date, status, score = (
             json["startDate"].get("year", False),
             json.get("status", False),
@@ -326,7 +297,7 @@ async def anilist(event):
             await event.edit(ms_g)
 
 
-@register(outgoing=True, pattern=r"^\.anilist ?(.*)")
+@ram_cmd(pattern="anilist ?(.*)")
 async def anilist(event):
     input_str = event.pattern_match.group(1)
     event = await event.edit("Searching...")
