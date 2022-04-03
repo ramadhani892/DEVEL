@@ -162,7 +162,7 @@ async def redis(pong):
     await pong.client.send_message(
         pong.chat_id, f"**➾ OWNER      :** [{user.first_name}](tg://user?id={user.id}) \n"
                      f"**➾ Kecepatan : ** %sms  \n"
-                     f"**➾ Branch       : ** [{REPO_NAME}](https://t.me/ram_ubot) \n" % (duration), reply_to=pong.reply_to_msg_id) 
+                     f"**➾ Branch       : ** [{branch}] \n" % (duration), reply_to=pong.reply_to_msg_id) 
     await pong.delete()
 
 @ram_cmd(pattern="speed$")
