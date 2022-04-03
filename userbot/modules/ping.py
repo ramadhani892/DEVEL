@@ -92,7 +92,7 @@ async def _(ping):
                     f"★ **Uptime:** "
                     f"`{uptime}` \n"
                     f"★ **owner:** [{user.first_name}](tg://user?id={user.id})\n" % (duration), reply_to=ping.reply_to_msg_id)
-
+    await ping.delete()
 
 @ram_cmd(pattern="rping$")
 @register(pattern=r"^\.cping(?: |$)(.*)", sudo=True)
