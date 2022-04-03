@@ -67,7 +67,7 @@ async def _(typew):
 
 @tod(pattern=r"ahh(?: |$)(.*)")
 async def _(typew):
-    await typew.client.send_mesagge(
+    await typew.client.send_message(
         typew.chat_id, "⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⡠⠢⠏⣉⣉⠣⢦⡀⠄⠄⠄⠄\n"
                      "⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣐⢪⠅⣱⣟⢛⢧⠄⣷⠄⠄⠄⠄\n"
                      "⠄⠄⠄⠄⠄⠄⠄⠠⣬⣀⣢⣕⡽⢯⣩⣳⣷⠧⡆⠄⠄⠄\n"
