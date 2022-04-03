@@ -83,7 +83,7 @@ async def _(ping):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
     end = datetime.now()
-    duration = (end start).microseconds / 1000
+    duration = (end - start).microseconds / 1000
     user = await ping.client.get_me()
     await ping.client.send_message(
         ping.chat_id, f"**╰•★★ ᥅ꪖꪑ ρꪮꪀᧁ ★★•╯**\n"
