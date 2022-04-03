@@ -1,4 +1,6 @@
 # Ping From <\ram-ubot/>
+# From @lahsiajg <starboy/>
+
 """ Userbot module containing commands related to the \
     Information Superhighway (yes, Internet). """
 
@@ -86,7 +88,7 @@ async def _(ping):
     duration = (end - start).microseconds / 1000
     user = await ping.client.get_me()
     await ping.client.send_message(
-        ping.chat_id, f"**╰•★★ ᥅ꪖꪑ ρꪮꪀᧁ ★★•╯**\n"
+        ping.chat_id, f"**╰•★★ |᥅ꪖꪑ ρꪮꪀᧁ| ★★•╯**\n"
                     f"★ **speed:** "
                     f"`%sms` \n"
                     f"★ **Uptime:** "
@@ -113,15 +115,16 @@ async def _(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     user = await pong.client.get_me()
-    await ram.edit(
-        f"**🌟𝗥𝗔𝗠-𝗨𝗕𝗢𝗧🌟**\n"
-        f"** ➠  Sɪɢɴᴀʟ   :** "
-        f"`%sms` \n"
-        f"** ➠  Bᴏᴛᴠᴇʀ  :** "
-        f"`{BOT_VER}` \n"
-        f"** ➠  Uᴘᴛɪᴍᴇ  :** "
-        f"`{uptime}` \n"
-        f"** ➠  Oᴡɴᴇʀ   :** [{user.first_name}](tg://user?id={user.id})" % (duration))
+    await pong.client.send_message(
+        pong.chat_id, f"**🌟𝗥𝗔𝗠-𝗨𝗕𝗢𝗧🌟**\n"
+                     f"** ➠  Sɪɢɴᴀʟ   :** "
+                     f"`%sms` \n"
+                     f"** ➠  Bᴏᴛᴠᴇʀ  :** "
+                     f"`{BOT_VER}` \n"
+                     f"** ➠  Uᴘᴛɪᴍᴇ  :** "
+                     f"`{uptime}` \n"
+                     f"** ➠  Oᴡɴᴇʀ   :** [{user.first_name}](tg://user?id={user.id})" % (duration), reply_to=pong.reply_to_msg_id)
+    await pong.delete()
 
 @ram_cmd(pattern="pink$")
 async def redis(pong):
@@ -156,10 +159,10 @@ async def redis(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     user= await pong.client.get_me()
-    await pong.edit(
-        f"**➾ OWNER      :** [{user.first_name}](tg://user?id={user.id}) \n"
-        f"**➾ Kecepatan : ** %sms  \n"
-        f"**➾ Branch       : ** [{REPO_NAME}](https://t.me/ram_ubot) \n" % (duration)) 
+    await pong.client.send_message(
+        pong.chat_id, f"**➾ OWNER      :** [{user.first_name}](tg://user?id={user.id}) \n"
+                     f"**➾ Kecepatan : ** %sms  \n"
+                     f"**➾ Branch       : ** [{REPO_NAME}](https://t.me/ram_ubot) \n" % (duration), reply_to=pong.reply_to_msg_id) 
 
 
 @ram_cmd(pattern="speed$")
