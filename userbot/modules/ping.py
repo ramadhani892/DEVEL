@@ -78,10 +78,11 @@ async def _(landak):
     await landak.reply(random.choice(brb))
 
 @ram_cmd(pattern="ping$")
-async def _(ping)
+async def _(ping):
     """ For.ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
+    end = datetime.now()
     duration = (end start).microseconds / 1000
     user = await ping.client.get_me()
     await ping.client.send_message(
