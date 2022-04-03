@@ -224,8 +224,9 @@ async def pingme(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 9000
     user= await pong.client.get_me()
-    await ram.edit(f"**✨Oᴡɴᴇʀ : [{user.first_name}](tg://user?id={user.id})**\n📗 `%sms`" % (duration))
-
+    await pong.client.send_message(
+        pong.chat_id, f"**✨Oᴡɴᴇʀ : [{user.first_name}](tg://user?id={user.id})**\n📗 `%sms`" % (duration), reply_to=pong.reply_to_msg_id)
+    await pong.delete()
 
 CMD_HELP.update({
     "ping": f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}ping` or `{cmd}rping` or `{cmd}pink`\
