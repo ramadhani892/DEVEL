@@ -91,7 +91,7 @@ async def _(ping):
                     f"`%sms` \n"
                     f"★ **Uptime:** "
                     f"`{uptime}` \n"
-                    f"★ **owner:** [{user.first_name}](tg://user?id={user.id})\n", reply_to=ping.reply_to_msg_id, % (duration))
+                    f"★ **owner:** [{user.first_name}](tg://user?id={user.id})\n" % (duration), reply_to=ping.reply_to_msg_id)
 
 
 @ram_cmd(pattern="rping$")
