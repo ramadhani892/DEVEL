@@ -86,7 +86,7 @@ async def _(ping):
     duration = (end start).microseconds / 1000
     user = await ping.client.get_me()
     await ping.client.send_message(
-        ping.chat_id, f""**╰•★★ ᥅ꪖꪑ ρꪮꪀᧁ ★★•╯**\n"
+        ping.chat_id, f"**╰•★★ ᥅ꪖꪑ ρꪮꪀᧁ ★★•╯**\n"
                     f"★ **speed:** "
                     f"`%sms` \n"
                     f"★ **Uptime:** "
