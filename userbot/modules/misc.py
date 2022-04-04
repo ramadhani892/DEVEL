@@ -112,10 +112,10 @@ async def repeat(event):
 
 @ram_cmd(pattern="repo$")
 async def repo_is_here(event):
-    xx = await edit_or_reply(event, "`Sabar Tod....`")
-    await xx.edit(
-        f"╭✠╼━━━━━━━━━━━━━━━\n"
-        f"│    __Welcome To The Hell__\n"
+    await edit_or_reply(event, "`Sabar Tod....`")
+    await event.client.send_message(
+        event.chat_id, f"╭✠╼━━━━━━━━━━━━━━━\n"
+        f"│  __Welcome Orphan To The hell__\n"
         f"├✠╼━━━━━━━━━━━━━━━\n"
         f"│`★ Bot Ver    :` `{BOT_VER}@{branch}`\n"
         f"│`★ Support    :` [Ram Support](t.me/RamSupportt)\n"
@@ -124,9 +124,9 @@ async def repo_is_here(event):
         f"├✠╼━━━━━━━━━━━━━━━━\n"
         f"│`★ Repository :` [𝙍𝘼𝙈 - 𝙐𝘽𝙊𝙏](https://github.com/ramadhani892/RAM-UBOT)\n"
         f"╰✠╼━━━━━━━━━━━━━━━━\n"
-        f"  𝗟𝗶𝗰𝗲𝗻𝘀𝗲 : [GPL-3.0 License](https://github.com/ramadhani892/RAM-UBOT/blob/master/LICENSE)"
+        f"  𝗟𝗶𝗰𝗲𝗻𝘀𝗲 : [GPL-3.0 License](https://github.com/ramadhani892/RAM-UBOT/blob/master/LICENSE)", reply_to=event.reply_to_msg_id
     )
-
+    await event.delete()
 
 @ram_cmd(pattern="string$")
 async def string_is_here(event):
