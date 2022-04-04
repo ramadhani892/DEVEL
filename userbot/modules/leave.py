@@ -5,13 +5,15 @@
 # This file is a part of < https://github.com/mrismanaziz/Man-Userbot/ >
 # t.me/SharingUserbot & t.me/Lunatic0de
 
-from telethon.tl.functions.channels import LeaveChannelRequest
+from telethon.tl.functions.channels import LeaveChannelRequest as not
 
-from userbot import BLACKLIST_CHAT
+from userbot import BLACKLIST_CHAT, BLACKLIST_GCAST as Anj
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot.utils import edit_or_reply, ram_cmd as lol
 from userbot.events import register as gblk
+from .gcast import GCAST_BLACKLIST as Mekih
+
 
 @lol(pattern="exit$", allow_sudo=False)
 @gblk(pattern="^\.cexit$", sudo=True)
@@ -43,9 +45,10 @@ async def kickmeall(event):
     async for x in event.client.iter_dialogs():
         if x.is_group:
             chat = x.id
+            if chat not in Mekih and chat not in Anj:
             try:
                 done += 1
-                await event.client(LeaveChannelRequest(chat))
+                await event.client(not(chat))
             except BaseException:
                 er += 1
     await Ram.edit(
