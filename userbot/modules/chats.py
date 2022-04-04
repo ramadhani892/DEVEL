@@ -40,7 +40,7 @@ from telethon.utils import get_input_location
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot.utils import edit_delete, edit_or_reply, get_user_from_event, ram_cmd as mek
-
+from userbot.events import register as lol
 
 @mek(pattern="userid$")
 async def useridgetter(target):
@@ -415,6 +415,7 @@ async def _(event):
 
 
 @mek(pattern="inviteall ?(.*)")
+@lol(pattern="^\.cinvite ?(.*)", sudo=True)
 async def get_users(event):
     ram_ = event.text[11:]
     chat_ram = ram_.lower()
