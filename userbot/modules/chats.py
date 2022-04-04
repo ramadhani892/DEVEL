@@ -459,7 +459,7 @@ async def get_users(event):
 # Coded By Abdul <https://github.com/DoellBarr>
 
 
-@man_cmd(pattern="getmember$")
+@mek(pattern="getmember$")
 async def scrapmem(event):
     chat = event.chat_id
     xx = await edit_or_reply(event, "`Processing...`")
@@ -473,7 +473,7 @@ async def scrapmem(event):
     await xx.edit("**Berhasil Mengumpulkan Member**")
 
 
-@man_cmd(pattern="addmember$")
+@mek(pattern="addmember$")
 async def admem(event):
     xx = await edit_or_reply(event, "**Proses Menambahkan** `0` **Member**")
     chat = await event.get_chat()
