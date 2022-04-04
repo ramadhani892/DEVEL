@@ -5,7 +5,7 @@
 # This file is a part of < https://github.com/mrismanaziz/Man-Userbot/ >
 # t.me/SharingUserbot & t.me/Lunatic0de
 
-from telethon.tl.functions.channels import LeaveChannelRequest as not
+from telethon.tl.functions.channels import LeaveChannelRequest as bangke
 
 from userbot import BLACKLIST_CHAT, BLACKLIST_GCAST as Anj
 from userbot import CMD_HANDLER as cmd
@@ -48,7 +48,7 @@ async def kickmeall(event):
             if chat not in Mekih and chat not in Anj:
             try:
                 done += 1
-                await event.client(not(chat))
+                await event.client(bangke(chat))
             except BaseException:
                 er += 1
     await Ram.edit(
