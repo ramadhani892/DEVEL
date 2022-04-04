@@ -259,14 +259,14 @@ async def _(event):
 async def text_to_speech(query):
     textx = await query.get_reply_message()
     message = query.pattern_match.group(1)
-    xx = await edit_or_reply(query, "`Processing...`")
+    xx = await edit_or_reply(query, "`Sabar Ngentod....`")
     if message:
         pass
     elif textx:
         message = textx.text
     else:
         return await edit_delete(
-            xx, "**Berikan teks atau balas pesan untuk Text-to-Speech!**"
+            xx, "**KALO MALES NGETIK, MINILA BALES PESANNYA NGENTOD!!!**"
         )
     try:
         gTTS(message, lang=TTS_LANG)
@@ -289,7 +289,7 @@ async def text_to_speech(query):
         tts = gTTS(message, lang=TTS_LANG)
         tts.save("k.mp3")
     with open("k.mp3", "r"):
-        await query.client.send_file(query.chat_id, "k.mp3", voice_note=True)
+        await query.client.send_file(query.chat_id, "k.mp3", reply_tp=xx.reply_to_msg_id, voice_note=True)
         os.remove("k.mp3")
         await xx.delete()
 
