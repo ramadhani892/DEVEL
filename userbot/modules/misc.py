@@ -119,7 +119,7 @@ async def repo_is_here(event):
         f"├✠╼━━━━━━━━━━━━━━━\n"
         f"│`★ Bot Ver    :` `{BOT_VER}@{branch}`\n"
         f"│`★ Support    :` [Ram Support](t.me/RamSupportt)\n"
-        f"│`★ Channel    :` [Channel Support](t.me/UserbotCh)\n"
+        f"│`★ Channel    :` [Ch Support](t.me/UserbotCh)\n"
         f"│`★ Owner Repo :` [merdhani](t.me/merdhni)\n"
         f"├✠╼━━━━━━━━━━━━━━━━\n"
         f"│`★ Repository :` [𝙍𝘼𝙈 - 𝙐𝘽𝙊𝙏](https://github.com/ramadhani892/RAM-UBOT)\n"
