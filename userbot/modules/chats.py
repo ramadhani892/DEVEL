@@ -9,7 +9,6 @@ import csv
 import random
 from datetime import datetime
 from math import sqrt
-from secrets import choice
 
 from emoji import emojize
 from telethon import functions
@@ -40,8 +39,6 @@ from telethon.utils import get_input_location
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.events import register
-from userbot.modules.ping import absen
 from userbot.utils import edit_delete, edit_or_reply, get_user_from_event, ram_cmd as mek
 
 
