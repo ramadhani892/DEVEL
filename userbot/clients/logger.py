@@ -79,7 +79,4 @@ async def ram_ubot_on():
                 )
     except BaseException:
         pass
-    try:
-        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
-    except BaseException:
-        pass
+   
