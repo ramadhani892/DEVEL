@@ -46,11 +46,11 @@ async def kickmeall(event):
         if x.is_group:
             chat = x.id
             if chat not in Mekih and chat not in Anj:
-            try:
-                done += 1
-                await event.client(bangke(chat))
-            except BaseException:
-                er += 1
+                try:
+                    done += 1
+                    await event.client(bangke(chat))
+                except BaseException:
+                    er += 1
     await Ram.edit(
         f"**Berhasil Keluar dari {done} Group, Gagal Keluar dari {er} Group**"
     )
