@@ -1,10 +1,3 @@
-# Man - UserBot
-# Copyright (c) 2022 Man-Userbot
-# Credits: @mrismanaziz || https://github.com/mrismanaziz
-#
-# This file is a part of < https://github.com/mrismanaziz/Man-Userbot/ >
-# t.me/SharingUserbot & t.me/Lunatic0de
-
 from telethon.tl.functions.channels import LeaveChannelRequest as bangke
 
 from userbot import BLACKLIST_CHAT, BLACKLIST_GCAST as Anj
@@ -12,7 +5,8 @@ from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot.utils import edit_or_reply, ram_cmd as lol
 from userbot.events import register as gblk
-from .gcast import GCAST_BLAKCLIST as Kntl
+from .gcast import GCAST_BLACKLIST as Mekih
+
 
 @lol(pattern="exit$", allow_sudo=False)
 @gblk(pattern="^\.cexit$", sudo=True)
@@ -37,6 +31,7 @@ async def kikme(event):
 
 
 @lol(pattern="exitall$", allow_sudo=False)
+@gblk(pattern="^\.exits$", sudo=True)
 async def kickmeall(event):
     Ram = await edit_or_reply(event, "`Saat Nya keluar Dari seluruh Group.....`")
     er = 0
@@ -44,7 +39,7 @@ async def kickmeall(event):
     async for x in event.client.iter_dialogs():
         if x.is_group:
             chat = x.id
-            if chat not in Kntl and chat not in Anj:
+            if chat not in Mekih and chat not in Anj:
                 try:
                     done += 1
                     await event.client(bangke(chat))
@@ -60,10 +55,18 @@ CMD_HELP.update(
         "kickme": f"**Plugin : **`kickme`\
         \n\n  •  **Syntax :** `{cmd}exit`\
         \n  •  **Function : **Keluar grup\
-        \n\n  •  **Syntax :** `{cmd}leavex`\
+        \n\n  •  **Syntax :** `{cmd}leaved`\
         \n  •  **Function : **Keluar grup dengan menampilkan pesan Toxic 🥴\
+    "
+    }
+)
+
+CMD_HELP.update(
+    {
+        "exitall": f"**Plugin : **`exitall`\
         \n\n  •  **Syntax :** `{cmd}exitall`\
         \n  •  **Function : **Keluar dari semua grup telegram yang anda gabung.\
+        \n\n  •NOTE: Berhati hatilah Dalam menggunakan fitur {cmd}exitall, Karna Itu Berbahaya.\
     "
     }
 )
