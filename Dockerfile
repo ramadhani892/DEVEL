@@ -7,7 +7,5 @@ FROM ramadhani892/ramagans:slim-buster
 # ======================
 ##
 
-WORKDIR /home/main/
-
 
 CMD ["python3", "-m", "userbot"]
