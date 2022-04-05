@@ -7,6 +7,6 @@ FROM ramadhani892/ramagans:slim-buster
 # ======================
 ##
 
-
+RUN git clone -b master https://github.com/ramadhani892/RAM-UBOT home/ramagans/
 CMD ["python3", "-m", "userbot"]
-WORKDIR home/main/
+WORKDIR home/ramagans/
