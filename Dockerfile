@@ -9,4 +9,4 @@ FROM ramadhani892/ramagans:slim-buster
 
 
 CMD ["python3", "-m", "userbot"]
-WPRKDIR home/main/
+WORKDIR home/main/
