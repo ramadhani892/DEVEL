@@ -25,7 +25,7 @@ from youtube_dl.utils import (
 from youtubesearchpython import SearchVideos
 
 from userbot.utils import edit_or_reply as babi, ram_cmd as tod
-from userbot import CMD_HELP
+from userbot import CMD_HELP, CMD_HANDLER as cmd
 
 
 @tod(pattern="song ?(.*)")
@@ -125,5 +125,5 @@ Artis - {}
     )
     os.remove(f"{rip_data['id']}.mp3")
 
-CMD_HELP.update({"song": "**Modules:** __Song__\n\n**Perintah:** `.song <judul>`"
+CMD_HELP.update({"song": f"**Modules:** __Song__\n\n**Perintah:** `{cmd}song <judul>`"
                  "\n**Penjelasan:** Mendownload Lagu"})
