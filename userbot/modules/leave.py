@@ -8,12 +8,11 @@
 from telethon.tl.functions.channels import LeaveChannelRequest as bangke
 
 from userbot import BLACKLIST_CHAT, BLACKLIST_GCAST as Anj
-from userbot import BOTLOG_CHATID as Kntl
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot.utils import edit_or_reply, ram_cmd as lol
 from userbot.events import register as gblk
-
+from .gcast import GCAST_BLAKCLIST as Kntl
 
 @lol(pattern="exit$", allow_sudo=False)
 @gblk(pattern="^\.cexit$", sudo=True)
