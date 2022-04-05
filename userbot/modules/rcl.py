@@ -19,7 +19,7 @@ async def impostor(event):
         await event.edit("**Otw Berubah jadi diri sendiri...**")
         if not STORAGE.userObj:
             return await xx.edit("**Lu ngeclone Dulu lah tolol, Baru clone back**")
-        await updateProfile(event, STORAGE.userObj, back=True)
+        await updateProfile(event, STORAGE.userObj, restore=True)
         return await xx.edit("**Berhasil Berubah Menjadi Diri sendiri...**")
     if inputArgs:
         try:
