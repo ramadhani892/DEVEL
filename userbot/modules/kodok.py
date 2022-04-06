@@ -54,7 +54,7 @@ async def _(event):
         cobra, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
     stdout, stderr = await process.communicate()
-    await xx.edit(f"```Sedang meng upload {rambot}```")
+    await xx.edit(f"```Sedang meng upload...```")
     c_time = time.time()
     await event.client.send_file(
         event.chat_id,
@@ -74,7 +74,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "rgif": f"**Plugin : **`rgif`\
-        \n\n  •  **Syntax :** `{cmd}gif` <sambil reply ke media>\
+        \n\n  •  **Syntax :** `{cmd}rgif` <sambil reply ke media>\
         \n  •  **Function : **Untuk mengubah gambar jadi gif memutar.\
     "
     }
