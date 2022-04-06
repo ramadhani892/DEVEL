@@ -4,5 +4,6 @@ FROM ramadhani892/ramagans:slim-buster
 #    RAM-UBOT DOCKER
 #   FROM DOCKERHUB.COM
 # ======================
-RUN git clone -b main https://github.com/ramadhani892/DEVEL
+RUN git clone -b main https://github.com/ramadhani892/DEVEL /home/main \ 
+WORKDIR /home/main
 CMD ["python3", "-m", "userbot"]
