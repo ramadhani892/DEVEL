@@ -4,4 +4,3 @@ FROM ramadhani892/ramagans:slim-buster
 #    RAM-UBOT DOCKER
 #   FROM DOCKERHUB.COM
 # ======================
-CMD ["python3", "-m", "userbot"]
