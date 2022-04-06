@@ -4,7 +4,7 @@ from telethon.tl.functions.channels import EditBannedRequest
 from userbot.events import register
 from userbot import CMD_HELP
 from userbot import CMD_HANDLER as cmd
-from userbot.utils import ram_cmd as tod, edit_or_reply as babi
+from userbot.utils import edit_or_reply as babi
 
 # Aku nambah kredit sdikit
 # rama ganteng bgt kan?
