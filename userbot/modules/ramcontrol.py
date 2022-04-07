@@ -16,6 +16,7 @@ from userbot import (
     ALIVE_LOGO,
     GROUP_LINK,
     CH_SFS,
+    IG_ALIVE,
     CMD_HANDLER,
     HEROKU_API_KEY,
     HEROKU_APP_NAME,
