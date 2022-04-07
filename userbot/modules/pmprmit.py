@@ -414,7 +414,7 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-       "message": f"**Plugin : **`message`\
+       "pesan": f"**Plugin : **`pesan`\
         \n\n  •  **Syntax :** `{cmd}block`\
         \n  •  **Function : **Memblokir Orang Di PM.\
         \n\n  •  **Syntax :** `{cmd}unblock`\
