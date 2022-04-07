@@ -289,7 +289,7 @@ async def inlinemenu(event):
         file=ramlogo,
         buttons=[
             [
-                Button.inline("ɪɴʟɪɴᴇ ᴇᴍᴏᴊɪ", data="inmoji"),
+                Button.inline("ᴘᴇsᴀɴ ʙᴏᴛʟᴏɢ", data="inmoji"),
                 Button.inline("ɪɴʟɪɴᴇ ᴘɪᴄ", data="inpics"),
             ],
             [Button.inline("« ʙᴀᴄᴋ", data="apiset")],
@@ -445,7 +445,7 @@ async def inmoji(event):
     var = "BOTLOG_MSG"
     async with event.client.conversation(pru) as conv:
         await conv.send_message(
-            "**Silahkan Kirimkan Teks Untuk var INLINE_EMOJI anda**\n\nGunakan /cancel untuk membatalkan."
+            "**Silahkan Kirimkan Teks Untuk var BOTLOG_MSG anda**\n\nGunakan /cancel untuk membatalkan."
         )
         response = conv.wait_event(events.NewMessage(chats=pru))
         response = await response
