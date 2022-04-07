@@ -241,7 +241,7 @@ async def alivemenu(event):
                 Button.inline("ɢʀᴏᴜᴘ", data="alvgc"),
             ],
             [
-                Button.inline("ɪɢ ᴀʟɪᴠᴇ", data=""alvig"),
+                Button.inline("ɪɢ ᴀʟɪᴠᴇ", data="alvig"),
             ],
             [Button.inline("« ʙᴀᴄᴋ", data="apiset")],
         ],
