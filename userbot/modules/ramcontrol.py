@@ -240,6 +240,9 @@ async def alivemenu(event):
                 Button.inline("ᴄʜᴀɴɴᴇʟ", data="alvch"),
                 Button.inline("ɢʀᴏᴜᴘ", data="alvgc"),
             ],
+            [
+                Button.inline("ɪɢ ᴀʟɪᴠᴇ", data=""alvig"),
+            ],
             [Button.inline("« ʙᴀᴄᴋ", data="apiset")],
         ],
     )
@@ -437,6 +440,28 @@ async def alvgc(event):
             buttons=get_back_button("alivemenu"),
         )
 
+@callback(data=re.compile(b"alvig"))
+async def alvgc(event):
+    await event.delete()
+    pru = event.sender_id
+    var = "IG_ALIVE"
+    async with event.client.conversation(pru) as conv:
+        await conv.send_message(
+            "**Silahkan Kirimkan User Instagram Anda, Pakailah instagram.com/ di awalnya.**\n\nGunakan /cancel untuk membatalkan."
+        )
+        response = conv.wait_event(events.NewMessage(chats=pru))
+        response = await response
+        themssg = response.message.message
+        if themssg == "/cancel":
+            return await conv.send_message(
+                f"Membatalkan Proses Settings VAR {var}",
+                buttons=get_back_button("alivemenu"),
+            )
+        await setit(event, var, themssg)
+        await conv.send_message(
+            f"**Link IG_ALIVE Berhasil di Ganti Menjadi** `{themssg}`\n\nSedang MeRestart Heroku untuk Menerapkan Perubahan.",
+            buttons=get_back_button("alivemenu"),
+        )
 
 @callback(data=re.compile(b"inmoji"))
 async def inmoji(event):
@@ -909,6 +934,9 @@ async def bot_start(event):
             (
                 Button.url("ɢʀᴏᴜᴘ", f"{GROUP_LINK}"),
                 Button.url("ᴄʜᴀɴɴᴇʟ", f"{CH_SFS}"),
+            ),
+            (
+                Button.url("ɪɴsᴛᴀɢʀᴀᴍ", f"{IG_ALIVE}"),
             )
         ]
     else:
