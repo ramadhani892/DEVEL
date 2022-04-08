@@ -281,16 +281,16 @@ async def text_to_speech(query):
     except RuntimeError:
         return await edit_delete(xx, "**Error saat memuat kamus bahasa.**")
     tts = gTTS(message, lang=TTS_LANG)
-    tts.save("k.voice")
-    with open("k.voice", "rb") as audio:
+    tts.save("voice")
+    with open("voice", "rb") as audio:
         linelist = list(audio)
         linecount = len(linelist)
     if linecount == 1:
         tts = gTTS(message, lang=TTS_LANG)
-        tts.save("k.voice")
-    with open("k.voice", "r"):
-        await query.client.send_file(query.chat_id, "k.voice", reply_to=xx.reply_to_msg_id, voice_note=True)
-        os.remove("k.voice")
+        tts.save("voice")
+    with open("voice", "r"):
+        await query.client.send_file(query.chat_id, "voice", reply_to=xx.reply_to_msg_id, voice_note=True)
+        os.remove("voice")
         await xx.delete()
 
 
