@@ -289,7 +289,7 @@ async def text_to_speech(query):
         tts = gTTS(message, lang=TTS_LANG)
         tts.save("k.opus")
     with open("k.opus", "r"):
-        await query.client.send_file(query.chat_id, "k.opus", reply_to=xx.reply_to_msg_id, voice_note=True)
+        await query.client.send_voice(query.chat_id, "k.opus", reply_to=xx.reply_to_msg_id, voice_note=True)
         os.remove("k.opus")
         await xx.delete()
 
