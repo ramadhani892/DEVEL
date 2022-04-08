@@ -182,7 +182,7 @@ async def dyno_usage(dyno):
         AppHours = math.floor(AppQuotaUsed / 60)
         AppMinutes = math.floor(AppQuotaUsed % 60)
 
-        await edit.delete(xx,
+        await edit_delete(xx,
                 f"𝗜𝗡𝗙𝗢 𝗞𝗘𝗞𝗨𝗔𝗧𝗔𝗡 𝗥𝗔𝗠-𝗨𝗕𝗢𝗧!!\n\n"
                 "╭✠╼━━━━━━❖━━━━━━━✠╮\n"
                 "┣•𝗣𝗘𝗡𝗚𝗚𝗨𝗡𝗔𝗔𝗡 𝗦𝗔𝗔𝗧 𝗜𝗡𝗜 : \n"
