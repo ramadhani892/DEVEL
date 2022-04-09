@@ -26,7 +26,7 @@ from userbot.utils import edit_or_reply, ram_cmd as tod
 
 @tod(pattern="shibe$")
 async def shibe(event):
-    xx = await edit_or_reply(event, "`Processing...`")
+    xx = await edit_or_reply(event, "`Nyari Mantan lu...`")
     response = requests.get("https://shibe.online/api/shibes").json()
     if not response:
         await event.edit("**Tidak bisa menemukan Anjing.**")
@@ -37,8 +37,18 @@ async def shibe(event):
 
 @tod(pattern="cat$")
 async def cats(event):
-    xx = await edit_or_reply(event, "`Processing...`")
+    xx = await edit_or_reply(event, "`Nyari kucing bentar...`")
     response = requests.get("https://shibe.online/api/cats").json()
+    if not response:
+        await event.edit("**Tidak bisa menemukan kucing.**")
+        return
+    await event.client.send_message(entity=event.chat_id, file=response[0])
+    await xx.delete()
+
+@tod(pattern="bird$")
+async def bird(event):
+    xx = await edit_or_reply(event, "`Nyari peler....`")
+    response = requests.get("https://shibe.online/api/birds").json()
     if not response:
         await event.edit("**Tidak bisa menemukan kucing.**")
         return
