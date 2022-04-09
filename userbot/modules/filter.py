@@ -7,7 +7,7 @@ from telethon.utils import get_display_name
 from userbot import BLACKLIST_CHAT, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
-from userbot.events import ram_cmd
+from userbot.events import ram_cmd as tod
 from userbot.modules.sql_helper.filter_sql import (
     add_filter,
     get_filters,
@@ -78,11 +78,11 @@ async def filter_incoming_handler(event):
             )
 
 
-@bot.on(ram_cmd(outgoing=True, pattern="fltr (.*)"))
+@bot.on(tod(outgoing=True, pattern="fltr (.*)"))
 async def add_new_filter(event):
     if event.chat_id in BLACKLIST_CHAT:
         return await edit_or_reply(
-            event, f"**maaf Lo gabisa nanem filter disini ngentod!!**"
+            event, "**Perintah ini Dilarang digunakan di Group ini**"
         )
     value = event.pattern_match.group(1).split(None, 1)
     keyword = value[0]
@@ -109,13 +109,13 @@ async def add_new_filter(event):
         else:
             await edit_or_reply(
                 event,
-                f"** Untuk menyimpan media ke filter membutuhkan** `BOTLOG_CHATID` **untuk disetel.**",
+                "**Untuk menyimpan media ke filter membutuhkan** `BOTLOG_CHATID` **untuk disetel.**",
             )
             return
     elif msg and msg.text and not string:
         string = msg.text
     elif not string:
-        return await edit_or_reply(event, "Apa yang harus saya lakukan ?")
+        return await edit_or_reply(event, "Lu mau ngapain si ngentot ?")
     success = "**Berhasil {} Filter** `{}` **Disini**"
     if add_filter(str(event.chat_id), keyword, string, msg_id) is True:
         return await edit_or_reply(event, success.format("Menyimpan", keyword))
@@ -125,13 +125,13 @@ async def add_new_filter(event):
     await edit_or_reply(event, f"**ERROR saat menyetel filter untuk** `{keyword}`")
 
 
-@bot.on(ram_cmd(outgoing=True, pattern="fltrs$"))
+@bot.on(tod(outgoing=True, pattern="fltrs$"))
 async def on_snip_list(event):
-    OUT_STR = f"** LO GA NANEM FILTER DISINI BANGSAT.**"
+    OUT_STR = "**Lu ga nanem filter apa apa kontol.**"
     filters = get_filters(event.chat_id)
     for filt in filters:
-        if OUT_STR == f"** LO GA NANEM FILTER DISINI BANGSAT..**":
-            OUT_STR = "**✥ Daftar Filter Yang Aktif Disini:**\n"
+        if OUT_STR == "**Ga ada filter lu disini Anjink.**":
+            OUT_STR = "**✨ Daftar Filter Yg tersedia di obrolan:**\n"
         OUT_STR += "• `{}`\n".format(filt.keyword)
     await edit_or_reply(
         event,
@@ -141,7 +141,7 @@ async def on_snip_list(event):
     )
 
 
-@bot.on(ram_cmd(outgoing=True, pattern="stop ([\s\S]*)"))
+@bot.on(tod(outgoing=True, pattern="stp ([\s\S]*)"))
 async def remove_a_filter(event):
     filt = event.pattern_match.group(1)
     if not remove_filter(event.chat_id, filt):
@@ -150,7 +150,7 @@ async def remove_a_filter(event):
         await event.edit("**Berhasil Menghapus Filter** `{}` **Disini**".format(filt))
 
 
-@bot.on(ram_cmd(outgoing=True, pattern="rmallfilters$"))
+@bot.on(tod(outgoing=True, pattern="rmallfilters$"))
 async def on_all_snip_delete(event):
     filters = get_filters(event.chat_id)
     if filters:
