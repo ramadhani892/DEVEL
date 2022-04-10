@@ -1,6 +1,6 @@
 
 # From Koala <@manusiarakitann/> Kampang-Bot
-
+# Recode by RAM-UBOT <@merdhni/>
 """ Userbot module which contains afk-related commands """
 
 from datetime import datetime
@@ -68,9 +68,9 @@ async def set_afk(afk_e):
     else:
         await edit_delete(afk_e, f"**! 𝗔𝗙𝗞  🐨**\n╭✠╼━━━━━━❖━━━━━━━✠╮\n{owner} Sibuk Dulu Kawan...\n╰✠╼━━━━━━❖━━━━━━━✠╯", 5)
     if user.last_name:
-        await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=user.last_name + " [ •𝗕𝗨𝗦𝗬• ]"))
+        await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=user.last_name + "【 ┉•𝗕𝗨𝗦𝗬•┉ 】"))
     else:
-        await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=" [ •𝗕𝗨𝗦𝗬• ]"))
+        await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name="【 ┉•𝗕𝗨𝗦𝗬•┉ 】"))
     if afk_e.chat_id:
         await afk_e.client.send_message(BOTLOG_CHATID, "#! 𝗔𝗙𝗞  🐨\nSIBUK!")
     ISAFK = True
@@ -91,7 +91,7 @@ async def type_afk_is_not_true(notafk):
     global afk_end
     user = await bot.get_me()  # pylint:disable=E0602
     last = user.last_name
-    if last and last.endswith(" [ •𝗕𝗨𝗦𝗬• ]"):
+    if last and last.endswith("【 ┉•𝗕𝗨𝗦𝗬•┉ 】"):
         last1 = last[:-12]
     else:
         last1 = ""
