@@ -8,7 +8,7 @@
 from asyncio import sleep
 from re import IGNORECASE, escape, search
 
-from userbot import BOTLOG_CHATID, CMD_HANDLER as cmd, CMD_HELP
+from userbot import BLACKLIST_CHAT, BOTLOG_CHATID, CMD_HANDLER as cmd, CMD_HELP
 from userbot.utils import ram_cmd as tod
 from userbot.events import register
 
@@ -44,6 +44,10 @@ async def filter_incoming_handler(handler):
 @tod(pattern="fltr (.*)")
 async def add_new_filter(new_handler):
     """For .filter command, allows adding new filters in a chat"""
+    if event.chat_id in BLACKLIST_CHAT:
+        return await edit_or_reply(
+            event, "**Perintah ini Dilarang digunakan di Group ini**"
+        )
     try:
         from userbot.modules.sql_helper.filter_sql import add_filter
     except AttributeError:
