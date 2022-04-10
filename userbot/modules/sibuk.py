@@ -103,8 +103,8 @@ async def type_afk_is_not_true(notafk):
         if notafk.chat_id:
             await notafk.client.send_message(
                 BOTLOG_CHATID,
-                "You've recieved " + str(COUNT_MSG) + " messages from " +
-                str(len(USERS)) + " chats while you were away",
+                "Kamu telah menerima " + str(COUNT_MSG) + " Pesan Dari " +
+                str(len(USERS)) + " Saat Anda Sibuk",
             )
             for i in USERS:
                 name = await notafk.client.get_entity(i)
