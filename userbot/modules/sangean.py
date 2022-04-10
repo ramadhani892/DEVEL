@@ -7,7 +7,7 @@ from userbot.utils import ram_cmd
 from userbot import owner
 from telethon.tl.types import InputMessagesFilterVoice
 from telethon.tl.types import InputMessagesFilterPhotos
-
+from telethon.tl.types import InputMessagesFilterMusic
 
 @ram_cmd(pattern=r"ayg$")
 async def _(event):
@@ -81,6 +81,26 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             file=random.choice(qurannya),
+            caption=f"Dengarkan Dengan Khusyu [{owner}](tg://user?id={aing.id})",
+        )
+        await event.delete()
+    except Exception:
+        await event.edit("`Lu Haram jd gabisa denger Qur'an...`")
+
+
+@ram_cmd(pattern=r"sholawat$")
+async def _(event):
+    try:
+        sholawatnya = [
+            quran
+            async for quran in event.client.iter_messages(
+                "@pengagum_sholawat", filter=InputMessagesFilterMusic
+            )
+        ]
+        aing = await event.client.get_me()
+        await event.client.send_file(
+            event.chat_id,
+            file=random.choice(sholawatnya),
             caption=f"Dengarkan Dengan Khusyu [{owner}](tg://user?id={aing.id})",
         )
         await event.delete()
