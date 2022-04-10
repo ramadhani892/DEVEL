@@ -22,8 +22,8 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             file=random.choice(asupannya),
-            caption=f"Silahkan menikmati [{owner}](tg://user?id={aing.id})", reply_to=event.reply_to_msg_id
-        )
+            caption=f"Silahkan menikmati [{owner}](tg://user?id={aing.id})",
+            reply_to=event.reply_to_msg_id)
         await event.delete()
     except Exception:
         await event.edit("Kalo Gak bisa, Ya jangan nangis tod")
@@ -41,8 +41,8 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             file=random.choice(desahnya),
-            caption=f"Silahkan menikmati tot! [{owner}](tg://user?id={aing.id})", reply_to=event.reply_to_msg_id
-        )
+            caption=f"Silahkan menikmati tot! [{owner}](tg://user?id={aing.id})",
+            reply_to=event.reply_to_msg_id)
         await event.delete()
     except Exception:
         await event.edit("`Yah Kurang beruntung lu bang...`")
@@ -61,8 +61,8 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             file=random.choice(desahnya),
-            caption=f"Silahkan Menikmati [{owner}](tg://user?id={aing.id})", reply_to=event.reply_to_msg_id
-        )
+            caption=f"Silahkan Menikmati [{owner}](tg://user?id={aing.id})",
+            reply_to=event.reply_to_msg_id)
         await event.delete()
     except Exception:
         await event.edit("`Yah Kurang Beruntung lu neng...`")
@@ -81,11 +81,11 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             file=random.choice(qurannya),
-            caption=f"Dengarkan Dengan Khusyu [{owner}](tg://user?id={aing.id})", reply_to=event.reply_to_msg_id
-        )
+            caption=f"Dengarkan Dengan Khusyu [{owner}](tg://user?id={aing.id})",
+           reply_to=event.reply_to_msg_id)
         await event.delete()
     except Exception:
-        await event.edit("`Kalo Ga bisa, Jangan nangis ya {owner}`")
+        await event.edit(f"`Kalo Ga bisa, Jangan nangis ya {owner}`")
 
 
 @ram_cmd(pattern=r"sholawat$")
@@ -101,11 +101,11 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             file=random.choice(sholawatnya),
-            caption=f"Dengerin tuh Sholawat Biar adem [{owner}](tg://user?id={aing.id})", reply_to=event.reply_to_msg_id
-        )
+            caption=f"Dengerin tuh Sholawat Biar adem [{owner}](tg://user?id={aing.id})",
+           reply_to=event.reply_to_msg_id)
         await event.delete()
     except Exception:
-        await event.edit("`Kalo Gabisa Ya jangan nangis lah {owner}.`")
+        await event.edit(f"`Kalo Gabisa Ya jangan nangis lah {owner}.`")
 
 
 CMD_HELP.update(
