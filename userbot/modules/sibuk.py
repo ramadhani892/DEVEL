@@ -15,6 +15,9 @@ from telethon.tl.functions.account import UpdateProfileRequest
 from userbot import AFKREASON, BOTLOG_CHATID, PM_AUTO_BAN
 from userbot.utils import ram_cmd, ram_handler
 
+
+RamUbot = await sender.client.get_me()
+    owner = RamUbot.first_name
 # ========================= CONSTANTS ============================
 AFKSTR = [
     f"𝗔𝗙𝗞\n╭✠╼━━━━━━━━━━━━ \n┣ {owner} 𝐋𝐚𝐠𝐢 𝐍𝐆𝐄𝐍𝐓𝐎𝐓\n╰✠╼━━━━━━━━━",
@@ -193,8 +196,6 @@ async def afk_on_pm(sender):
     global afk_start
     global afk_end
     back_alivee = datetime.now()
-    RamUbot = await sender.client.get_me()
-    owner = RamUbot.first_name
     afk_end = back_alivee.replace(microsecond=0)
     afk_since = "**Belum Lama**"
     if (
