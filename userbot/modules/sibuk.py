@@ -17,7 +17,7 @@ from userbot.utils import ram_cmd, ram_handler
 
 
 RamUbot = await sender.client.get_me()
-    owner = RamUbot.first_name
+owner = RamUbot.first_name
 # ========================= CONSTANTS ============================
 AFKSTR = [
     f"𝗔𝗙𝗞\n╭✠╼━━━━━━━━━━━━ \n┣ {owner} 𝐋𝐚𝐠𝐢 𝐍𝐆𝐄𝐍𝐓𝐎𝐓\n╰✠╼━━━━━━━━━",
