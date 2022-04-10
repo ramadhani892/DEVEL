@@ -44,9 +44,9 @@ async def filter_incoming_handler(handler):
 @tod(pattern="fltr (.*)")
 async def add_new_filter(new_handler):
     """For .filter command, allows adding new filters in a chat"""
-    if event.chat_id in BLACKLIST_CHAT:
+    if new_handler.chat_id in BLACKLIST_CHAT:
         return await edit_or_reply(
-            event, "**Perintah ini Dilarang digunakan di Group ini**"
+            new_handler, "**lo Gabisa nanem filter disini anjing**"
         )
     try:
         from userbot.modules.sql_helper.filter_sql import add_filter
