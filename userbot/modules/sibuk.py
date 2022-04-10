@@ -1,3 +1,6 @@
+
+# From Koala <@manusiarakitann/> Kampang-Bot
+
 """ Userbot module which contains afk-related commands """
 
 from datetime import datetime
@@ -23,9 +26,9 @@ from userbot.utils import edit_delete, ram_cmd as tod
 # ========================= CONSTANTS ============================
 AFKSTR = [
     f"**`! 𝗔𝗙𝗞 🐨\n Sedang Sibuk, Tunggu {owner} Online Kembali`**",
-    f"**`! 𝗔𝗙𝗞 🐨\n Mohon Maaf {owner} Sedang Sibuk\n Sedang Menjalankan Perintah Tuhan!!**",
-    f"**`! 𝗔𝗙𝗞 🐨\n {owner} Sedang Melakukan Perintah Tuhan\n Tunggu {owner} Online Kembali !!!!!`**",
-    f"**`! 𝗔𝗙𝗞 🐨\n Maaf {owner} Sedang Sibuk!!`**",
+    f"**`! 𝗔𝗙𝗞 🐨\n Mohon Maaf, {owner} Sedang Sibuk\n Karena Menjalankan Perintah Tuhan!!**",
+    f"**`! 𝗔𝗙𝗞 🐨\n {owner} Sedang Melakukan Perintah Tuhan\n Tunggu {owner} Online Kembali!!!!!`**",
+    f"**`! 𝗔𝗙𝗞 🐨\n Maaf, {owner} Sedang Sibuk Berat!!`**",
 ]
 
 
