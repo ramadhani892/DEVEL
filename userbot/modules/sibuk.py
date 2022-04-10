@@ -68,7 +68,7 @@ async def set_afk(afk_e):
         await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=user.last_name + " [ •𝗕𝗨𝗦𝗬• ]"))
     else:
         await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=" [ •𝗕𝗨𝗦𝗬• ]"))
-    if event.chat_id:
+    if afk_e.chat_id:
         await afk_e.client.send_message(BOTLOG_CHATID, "#! 𝗔𝗙𝗞  🐨\nSIBUK!")
     ISAFK = True
     afk_time = datetime.now()  # pylint:disable=E0602
@@ -100,7 +100,7 @@ async def type_afk_is_not_true(notafk):
         time.sleep(3)
         await msg.delete()
         await notafk.client(UpdateProfileRequest(first_name=user.first_name, last_name=last1))
-        if BOTLOG:
+        if notafk.chat_id:
             await notafk.client.send_message(
                 BOTLOG_CHATID,
                 "You've recieved " + str(COUNT_MSG) + " messages from " +
