@@ -12,7 +12,7 @@ from secrets import choice
 from telethon.events import StopPropagation
 from telethon.tl.functions.account import UpdateProfileRequest
 
-from userbot import AFKREASON, BOTLOG_CHATID, PM_AUTO_BAN, owner
+from userbot import AFKREASON, BOTLOG_CHATID, USERS, PM_AUTO_BAN, owner
 from userbot.utils import ram_cmd, ram_handler
 
 
