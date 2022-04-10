@@ -17,7 +17,8 @@ from userbot import (  # noqa pylint: disable=unused-import isort:skip
     bot,
     owner,
 )
-from userbot.events import register, ram_cmd as tod
+from userbot.events import register
+from userbot.utils import ram_cmd as tod
 
 # ========================= CONSTANTS ============================
 AFKSTR = [
@@ -39,7 +40,7 @@ afk_start = {}
 # =================================================================
 
 
-@bot.on(tod(pattern="afk(?: |$)(.*)", disable_errors=True))
+@tod(pattern="afk(?: |$)(.*)"))
 async def set_afk(afk_e):
     """ For .afk command, allows you to inform people that you are afk when they message you """
     message = afk_e.text  # pylint:disable=E0602
