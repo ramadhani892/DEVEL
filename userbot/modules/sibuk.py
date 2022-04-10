@@ -36,6 +36,7 @@ async def set_afk(afk_e):
     string = afk_e.pattern_match.group(1)
     global ISAFK
     global AFKREASON
+    global USERS
     global USER_AFK
     global afk_time
     global afk_start
