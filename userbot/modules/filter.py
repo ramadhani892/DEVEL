@@ -121,7 +121,7 @@ async def kick_marie_filter(event):
             await event.reply("/stop %s" % (i.strip()))
         await sleep(0.3)
     await event.respond("```Berhasil Menghapus Semua Filter Bot!```")
-    if BOTLOG:
+    if event.chat_id:
         await event.client.send_message(
             BOTLOG_CHATID, "Saya Membersihkan Semua Filter Bot Di " + str(event.chat_id)
         )
