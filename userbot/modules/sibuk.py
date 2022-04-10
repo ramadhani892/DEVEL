@@ -183,7 +183,7 @@ async def mention_afk(mention):
         COUNT_MSG = COUNT_MSG + 1
 
 
-@man_handler(incoming=True, func=lambda e: e.is_private)
+@ram_handler(incoming=True, func=lambda e: e.is_private)
 async def afk_on_pm(sender):
     global ISAFK
     global USERS
