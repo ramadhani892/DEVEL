@@ -17,8 +17,7 @@ from userbot import (  # noqa pylint: disable=unused-import isort:skip
     bot,
     owner,
 )
-from userbot.events import register
-from userbot.utils import ram_cmd as tod
+from userbot.events import register, ram_cmd as tod
 
 # ========================= CONSTANTS ============================
 AFKSTR = [
