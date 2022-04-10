@@ -9,9 +9,8 @@ from asyncio import sleep
 from re import IGNORECASE, escape, search
 
 from userbot import BLACKLIST_CHAT, BOTLOG_CHATID, CMD_HANDLER as cmd, CMD_HELP
-from userbot.utils import ram_cmd as tod
+from userbot.utils import edit_delete, ram_cmd as tod
 from userbot.events import register
-
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
 async def filter_incoming_handler(handler):
@@ -45,8 +44,8 @@ async def filter_incoming_handler(handler):
 async def add_new_filter(new_handler):
     """For .filter command, allows adding new filters in a chat"""
     if new_handler.chat_id in BLACKLIST_CHAT:
-        return await edit_or_reply(
-            new_handler, "**lo Gabisa nanem filter disini anjing**"
+        return await edit_delete(
+            new_handler, "**lo Gabisa nanem filter disini anjing**", 5
         )
     try:
         from userbot.modules.sql_helper.filter_sql import add_filter
