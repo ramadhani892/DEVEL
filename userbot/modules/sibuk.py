@@ -165,7 +165,7 @@ async def mention_afk(mention):
             afk_since = f"`{int(minutes)} Menit {seconds} Detik`"
         else:
             afk_since = f"`{seconds} Detik`"
-        if mention.sender_id not in user:
+        if mention.sender_id not in USERS:
             if AFKREASON:
                 await mention.reply(
                     f"𝗔𝗙𝗞\n╭✠╼━━━━━━━━━━━━ \n┣ {owner} 𝐋𝐚𝐠𝐢 𝐍𝐆𝐄𝐍𝐓𝐎𝐓\n┣ ꜱᴇᴊᴀᴋ: {afk_since}\n┣ ᴀʟᴀꜱᴀɴ: {AFKREASON}\n╰✠╼━━━━━━━━━`"
