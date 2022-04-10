@@ -28,7 +28,7 @@ afk_start = {}
 # =================================================================
 
 
-@bot.on(ram_cmd(outgoing=True, pattern=r"off(?: |$)(.*)"))
+@bot.on(ram_cmd(outgoing=True, pattern=r"afk(?: |$)(.*)"))
 async def set_afk(afk_e):
     """For .afk command, allows you to inform people that you are afk when they message you"""
     string = afk_e.pattern_match.group(1)
