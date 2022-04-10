@@ -22,7 +22,7 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             file=random.choice(asupannya),
-            caption=f"Silahkan menikmati [{owner}](tg://user?id={aing.id})", reply_to=event.reply_to_msg_id,
+            caption=f"Silahkan menikmati [{owner}](tg://user?id={aing.id})", reply_to=event.reply_to_msg_id
         )
         await event.delete()
     except Exception:
@@ -41,7 +41,7 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             file=random.choice(desahnya),
-            caption=f"Silahkan menikmati tot! [{owner}](tg://user?id={aing.id})", reply_to=event.reply_to_msg_id,
+            caption=f"Silahkan menikmati tot! [{owner}](tg://user?id={aing.id})", reply_to=event.reply_to_msg_id
         )
         await event.delete()
     except Exception:
@@ -61,7 +61,7 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             file=random.choice(desahnya),
-            caption=f"Silahkan Menikmati [{owner}](tg://user?id={aing.id})", reply_to=event.reply_to_msg_id,
+            caption=f"Silahkan Menikmati [{owner}](tg://user?id={aing.id})", reply_to=event.reply_to_msg_id
         )
         await event.delete()
     except Exception:
@@ -81,7 +81,7 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             file=random.choice(qurannya),
-            caption=f"Dengarkan Dengan Khusyu [{owner}](tg://user?id={aing.id})", reply_to=event.reply_to_msg_id,
+            caption=f"Dengarkan Dengan Khusyu [{owner}](tg://user?id={aing.id})", reply_to=event.reply_to_msg_id
         )
         await event.delete()
     except Exception:
@@ -101,7 +101,7 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             file=random.choice(sholawatnya),
-            caption=f"Dengerin tuh Sholawat Biar adem [{owner}](tg://user?id={aing.id})", reply_to=event.reply_to_msg_id,
+            caption=f"Dengerin tuh Sholawat Biar adem [{owner}](tg://user?id={aing.id})", reply_to=event.reply_to_msg_id
         )
         await event.delete()
     except Exception:
