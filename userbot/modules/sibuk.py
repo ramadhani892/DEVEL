@@ -26,6 +26,7 @@ ISAFK = False
 USER_AFK = {}
 afk_time = None
 afk_start = {}
+owner = user.first_name
 
 # =================================================================
 
