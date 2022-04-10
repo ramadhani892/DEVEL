@@ -74,7 +74,7 @@ async def _(event):
         qurannya = [
             quran
             async for quran in event.client.iter_messages(
-                "@kureenkeryam", filter=InputMessagesFilterVoice
+                "@kureenkeryam", filter=InputMessagesFilterMusic
             )
         ]
         aing = await event.client.get_me()
