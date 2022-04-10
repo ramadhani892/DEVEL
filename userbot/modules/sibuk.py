@@ -61,9 +61,9 @@ async def set_afk(afk_e):
     if string:
         AFKREASON = string
         await edit_delete(afk_e, f"**! 𝗔𝗙𝗞  🐨**\n╭✠╼━━━━━━❖━━━━━━━✠╮\n{owner} Sibuk Dulu Gaes...\
-        \n𝘼𝙡𝙖𝙨𝙖𝙣: `{string}`\n╰✠╼━━━━━━❖━━━━━━━✠╯" 5)
+        \n𝘼𝙡𝙖𝙨𝙖𝙣: `{string}`\n╰✠╼━━━━━━❖━━━━━━━✠╯", 5)
     else:
-        await edit_delete(afk_e, f"**! 𝗔𝗙𝗞  🐨**\n╭✠╼━━━━━━❖━━━━━━━✠╮\n{owner} Sibuk Dulu Kawan...\n╰✠╼━━━━━━❖━━━━━━━✠╯" 5)
+        await edit_delete(afk_e, f"**! 𝗔𝗙𝗞  🐨**\n╭✠╼━━━━━━❖━━━━━━━✠╮\n{owner} Sibuk Dulu Kawan...\n╰✠╼━━━━━━❖━━━━━━━✠╯", 5)
     if user.last_name:
         await afk_e.client(UpdateProfileRequest(first_name=user.first_name, last_name=user.last_name + " [ •𝗕𝗨𝗦𝗬• ]"))
     else:
