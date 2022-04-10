@@ -31,7 +31,7 @@ owner = user.first_name
 # =================================================================
 
 
-@ram_cmd(pattern="off(?: |$)(.*)")
+@ram_cmd(pattern="afk(?: |$)(.*)")
 async def set_afk(afk_e):
     string = afk_e.pattern_match.group(1)
     global ISAFK
