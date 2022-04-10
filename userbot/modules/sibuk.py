@@ -12,7 +12,7 @@ from secrets import choice
 from telethon.events import StopPropagation
 from telethon.tl.functions.account import UpdateProfileRequest
 
-from userbot import AFKREASON, BOTLOG_CHATID, PM_AUTO_BAN, owner
+from userbot import AFKREASON, BOTLOG_CHATID, PM_AUTO_BAN
 from userbot.utils import ram_cmd, ram_handler
 
 # ========================= CONSTANTS ============================
@@ -193,8 +193,8 @@ async def afk_on_pm(sender):
     global afk_start
     global afk_end
     back_alivee = datetime.now()
-    ManUBOT = await sender.client.get_me()
-    owner = ManUBOT.first_name
+    RamUbot = await sender.client.get_me()
+    owner = RamUbot.first_name
     afk_end = back_alivee.replace(microsecond=0)
     afk_since = "**Belum Lama**"
     if (
