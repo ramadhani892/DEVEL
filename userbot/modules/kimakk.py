@@ -43,7 +43,7 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             file=random.choice(asupannya),
-            caption=f"Silahkan menikmati [{owner}](tg://user?id={aing.id})",
+            caption=f"Ini Ayang Lu [{owner}](tg://user?id={aing.id})",
             reply_to=event.reply_to_msg_id)
         await event.delete()
     except Exception:
