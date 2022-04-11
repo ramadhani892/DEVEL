@@ -7,6 +7,7 @@ from userbot.utils import ram_cmd
 from userbot import owner
 from telethon.tl.types import InputMessagesFilterVoice
 from telethon.tl.types import InputMessagesFilterPhotos
+from telethon.tl.types import InputMessagesFilterVideo
 from telethon.tl.types import InputMessagesFilterMusic
 
 @ram_cmd(pattern=r"asupan$")
@@ -15,7 +16,7 @@ async def _(event):
         videonya = [
             asupan
             async for asupan in event.client.iter_messages(
-                "@Cari_Temen_Bangsat", filter=InputMessagesFilterPhotos
+                "@Cari_Temen_Bangsat", filter=InputMessagesFilterVideo
             )
         ]
         aing = await event.client.get_me()
@@ -131,7 +132,7 @@ async def _(event):
 CMD_HELP.update(
     {
         "asupan": f"**Plugin : **`asupan`\
-        \n\n  •  **Syntax :** `{cms}asupan`\
+        \n\n  •  **Syntax :** `{cmd}asupan`\
         \n  •  **Function : **Untuk mengirim Video Asupan Secara Random.\
         \n\n  •  **Syntax :** `{cmd}ayg`\
         \n  •  **Function : **Untuk Mengirim Foto cewe cantik secara random.\
