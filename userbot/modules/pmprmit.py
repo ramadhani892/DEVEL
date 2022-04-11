@@ -309,7 +309,7 @@ async def blockpm(block):
         replied_user = await block.client.get_entity(reply.sender_id)
         aname = replied_user.id
         await block.client(BlockRequest(aname))
-        await block.edit("**Maaf Jamet, Lo gua blok dulu ye jijik!**")
+        await edit_delete(block, "**Maaf Jamet, Lo gua blok dulu ye jijik!**", 5)
         uid = replied_user.id
     else:
         await block.client(BlockRequest(block.chat_id))
@@ -334,7 +334,7 @@ async def unblockpm(unblock):
         reply = await unblock.get_reply_message()
         replied_user = await unblock.client.get_entity(reply.sender_id)
         await unblock.client(UnblockRequest(replied_user.id))
-        await unblock.edit("**Ok udah gua ublock, Jangan Bikin risih kontol.**")
+        await edit_delete(unblock, "**Ok udah gua ublock, Jangan Bikin risih kontol.**", 5)
 
 
 @bot.on(ram_cmd(outgoing=True, pattern=r"(set|get|reset) pmpermit(?: |$)(\w*)"))
