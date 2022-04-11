@@ -7,8 +7,8 @@ from userbot.utils import ram_cmd
 from userbot import owner
 from telethon.tl.types import InputMessagesFilterVoice
 from telethon.tl.types import InputMessagesFilterPhotos
+from telethon.tl.typew import InputMessagesFilterVideo
 from telethon.tl.types import InputMessagesFilterMusic
-https://t.me/Cari_Temen_Bangsat
 
 @ram_cmd(pattern=r"asupan$")
 async def _(event):
