@@ -4,7 +4,7 @@
 import random
 
 from userbot import CMD_HELP, BLACKLIST_CHAT, CMD_HANDLER as cmd
-from userbot.utils import ram_cmd, edit_or_reply
+from userbot.utils import ram_cmd, edit_or_reply, edit_delete
 from userbot import owner
 from telethon.tl.types import InputMessagesFilterVoice
 from telethon.tl.types import InputMessagesFilterPhotos
@@ -14,8 +14,8 @@ from telethon.tl.types import InputMessagesFilterMusic
 @ram_cmd(pattern=r"vbkp$")
 async def _(event):
     if event.chat_id in BLACKLIST_CHAT:
-        return await edit_or_reply(
-            event, "**NYARI BOKEP JANGAN DISINI ANJING LU NGENTOD!!!!!**"
+        return await edit_delete(
+            event, "**NYARI BOKEP JANGAN DISINI ANJING LU NGENTOD!!!!!**", 5
         )
     ram = await edit_or_reply(event, "`Bentar tod lg gua ambilin...`")
     try:
