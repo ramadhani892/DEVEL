@@ -50,13 +50,13 @@ async def gban(event):
     if not user:
         return
     if user.id == (await event.client.get_me()).id:
-        await ehajg(event, "**Kurang Kerjaan Amat Gban diri Sendiri Ngentot lo...**")
+        await ehajg(event, "**Kurang Kerjaan Amat Gban diri Sendiri Ngentot lo...**", 5)
         return
     if user.id in DEVS:
-        await ehajg(event, "**Maaf Mas, Lo Gabisa Gban dia Karna Dia Developer Gua**")
+        await ehajg(event, "**Maaf Mas, Lo Gabisa Gban dia Karna Dia Developer Gua**", 5)
         return
     if user.id in DEVG:
-        await ehajg(event, "**Omaygat, Itu admin @Ramsupportt Tolol, Gabisa lah...**")
+        await ehajg(event, "**Omaygat, Itu admin @Ramsupportt Tolol, Gabisa lah...**", 5)
         return
     if gban_sql.is_gbanned(user.id):
         await gbun.edit(
@@ -92,7 +92,7 @@ async def gban(event):
         )
     else:
         await ehajg(event,
-            f"**Global Banned Si** [{user.first_name}](tg://user?id={user.id}) **Dalam** `{count}` **grup, Dengan** `{timetaken}` **seconds**!!\n**Terdaftar Dalam List Gban.**"
+            f"**Global Banned Si** [{user.first_name}](tg://user?id={user.id}) **Dalam** `{count}` **grup, Dengan** `{timetaken}` **seconds**!!\n**Terdaftar Dalam List Gban.**", 5
         )
 
 
@@ -141,13 +141,13 @@ async def ungban(event):
         )
     else:
         await ehajg(event,
-            f"**Membatalkan Perintah Global Banned** [{user.first_name}](tg://user?id={user.id}) **Dalam** `{count}` **Grup, Dengan** `{timetaken}` **Detik**!!\n**Menghapus Dari Daftar Global Banned**"
+            f"**Membatalkan Perintah Global Banned** [{user.first_name}](tg://user?id={user.id}) **Dalam** `{count}` **Grup, Dengan** `{timetaken}` **Detik**!!\n**Menghapus Dari Daftar Global Banned**", 5
         )
 
 
 @ram_cmd(pattern="listgban$")
 async def gablist(event):
-    await edit_or_reply("**Sebentar Gua Ambil list nya....**")
+    await edit_or_reply(event, "**Sebentar Gua Ambil list nya....**")
     if event.fwd_from:
         return
     gbanned_users = gban_sql.get_all_gbanned()
