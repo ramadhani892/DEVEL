@@ -3,7 +3,7 @@ from telethon.tl.functions.channels import LeaveChannelRequest as bangke
 from userbot import BLACKLIST_CHAT, BLACKLIST_GCAST as Anj
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import edit_or_reply, ram_cmd as lol
+from userbot.utils import edit_or_reply, edit_delete, ram_cmd as lol
 from userbot.events import register as gblk
 from .gcast import GCAST_BLACKLIST as Mekih
 
@@ -12,8 +12,8 @@ from .gcast import GCAST_BLACKLIST as Mekih
 @gblk(pattern="^\.cexit$", sudo=True)
 async def kickme(event):
     if event.chat_id in BLACKLIST_CHAT:
-        return await edit_or_reply(
-            event, "**LO GABISA GUNAKAN DISINI NGENTOD!!**"
+        return await edit_delete(
+            event, "**LO GABISA GUNAKAN DISINI NGENTOD!!**", 5
         )
     user = await event.client.get_me()
     await edit_or_reply(event, f"`{user.first_name} Keluar Dari grup, Karna haram gc nya!!`")
@@ -23,8 +23,8 @@ async def kickme(event):
 @lol(pattern="leaved$", allow_sudo=False)
 async def kikme(event):
     if event.chat_id in BLACKLIST_CHAT:
-        return await edit_or_reply(
-            event, "**LO GABISA GUNAIN DISINI ANJING!!!!**"
+        return await edit_delete(
+            event, "**LO GABISA GUNAIN DISINI ANJING!!!!**", 5
         )
     await edit_or_reply(event, "**GC JELEK BGINI ANJING, MENDING GUA CABUT!!** 🥴")
     await event.client.kick_participant(event.chat_id, "me")
