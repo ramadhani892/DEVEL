@@ -17,7 +17,7 @@ ram = edit_delete
 @register(pattern=r"^\.roas(?: |$)(.*)", sudo=True)
 async def _(owner):
     if owner.chat_id in BLACKLIST_CHAT:
-        return await ram.edit(
+        return await ram(
             owner, "**Dasar ngentot, Lo gabisa Nyoba disini anjing!!!**", 5
         )
     await owner.client.send_message(
@@ -29,7 +29,7 @@ async def _(owner):
 @ram_cmd(pattern="roas2(?: |$)(.*)")
 async def _(event):
     if event.chat_id in BLACKLIST_CHAT:
-        return await ram.edit(
+        return await ram(
             event, f"**Dasar ngentot, Lo gabisa Nyoba disini anjing!!!**", 5
         )
     await event.client.send_message(
@@ -40,7 +40,7 @@ async def _(event):
 @ram_cmd(pattern="roas3(?: |$)(.*)")
 async def _(event):
     if event.chat_id in BLACKLIST_CHAT:
-        return await ram.edit(
+        return await ram(
             event, f"**Dasar ngentot, Lo gabisa Nyoba disini anjing!!!**", 5
         )
     await event.client.send_message(
@@ -51,7 +51,7 @@ async def _(event):
 @ram_cmd(pattern="roas4(?: |$)(.*)")
 async def _(event):
     if event.chat_id in BLACKLIST_CHAT:
-        return await ram.edit(
+        return await ram(
             event, f"**Dasar ngentot, Lo gabisa Nyoba disini anjing!!!**", 5
         )
     await event.client.send_message(
@@ -62,7 +62,7 @@ async def _(event):
 @ram_cmd(pattern="roas5(?: |$)(.*)")
 async def _(event):
     if event.chat_id in BLACKLIST_CHAT:
-        return await ram.edit(
+        return await ram(
             event, f"**Dasar ngentot, Lo gabisa Nyoba disini anjing!!!**", 5
         )
     await event.client.send_message(
@@ -73,7 +73,7 @@ async def _(event):
 @ram_cmd(pattern="roas6(?: |$)(.*)")
 async def _(event):
     if event.chat_id in BLACKLIST_CHAT:
-        return await ram.edit(
+        return await ram(
             event, f"**Dasar ngentot, Lo gabisa Nyoba disini anjing!!!**", 5
         )
     await event.client.send_message(
@@ -84,7 +84,7 @@ async def _(event):
 @ram_cmd(pattern="roas7(?: |$)(.*)")
 async def _(event):
     if event.chat_id in BLACKLIST_CHAT:
-        return await ram.edit(
+        return await ram(
             event, f"**Dasar ngentot, Lo gabisa Nyoba disini anjing!!!**", 5
         )
     await event.client.send_message(
@@ -95,7 +95,7 @@ async def _(event):
 @ram_cmd(pattern="roas8(?: |$)(.*)")
 async def _(event):
     if event.chat_id in BLACKLIST_CHAT:
-        return await ram.edit(
+        return await ram(
             event, f"**Dasar ngentot, Lo gabisa Nyoba disini anjing!!!**", 5
         )
     await event.client.send_message(
@@ -106,7 +106,7 @@ async def _(event):
 @ram_cmd(pattern="roas9(?: |$)(.*)")
 async def _(event):
     if event.chat_id in BLACKLIST_CHAT:
-        return await ram.edit(
+        return await ram(
             event, f"**Dasar ngentot, Lo gabisa Nyoba disini anjing!!!**", 5
         )
     await event.client.send_message(
@@ -117,7 +117,7 @@ async def _(event):
 @ram_cmd(pattern="roas10(?: |$)(.*)")
 async def _(event):
     if event.chat_id in BLACKLIST_CHAT:
-        return await ram.edit(
+        return await ram(
             event, f"**Dasar ngentot, Lo gabisa Nyoba disini anjing!!!**", 5
         )
     await event.client.send_message(
@@ -128,7 +128,7 @@ async def _(event):
 @ram_cmd(pattern="roas11(?: |$)(.*)")
 async def _(event):
     if event.chat_id in BLACKLIST_CHAT:
-        return await ram.edit(
+        return await ram(
             event, f"**Dasar ngentot, Lo gabisa Nyoba disini anjing!!!**", 5
         )
     await event.client.send_message(
