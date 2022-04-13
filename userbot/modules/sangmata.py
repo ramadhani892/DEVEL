@@ -30,7 +30,7 @@ async def _(event):
     user, rank = await get_user_from_event(event, secondgroup=True)
     if not user:
         return
-    if user id in DEVS:
+    if user.id in DEVS:
         await edit_delete(event, "`Lu gabisa telusuri nama dia, Karna dia developer gua tod😏`")
         return
     uid = user.id
