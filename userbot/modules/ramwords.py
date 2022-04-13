@@ -76,18 +76,18 @@ async def _(e):
     txt = ram_h
     await eor(e, txt)    
     
-@ram_cmd(pattern="i(?: |$)(.*)")
+@ram_cmd(pattern="ii(?: |$)(.*)")
 async def _(e):
     txt = ram_i
     await eor(e, txt)
     
-@ram_cmd(pattern="j(?: |$)(.*)")
+@ram_cmd(pattern="jj(?: |$)(.*)")
 async def _(e):
     txt = ram_j
     await eor(e, txt)
     
     
-@ram_cmd(pattern="k(?: |$)(.*)")
+@ram_cmd(pattern="kk(?: |$)(.*)")
 async def _(e):
     txt = ram_k
     await eor(e, txt)    
@@ -99,18 +99,18 @@ async def _(e):
     await eor(e, txt)
     
     
-@ram_cmd(pattern="m(?: |$)(.*)")
+@ram_cmd(pattern="mm(?: |$)(.*)")
 async def _(e):
     txt = ram_m
     await eor(e, txt)
     
     
-@ram_cmd(pattern="n(?: |$)(.*)")
+@ram_cmd(pattern="nn(?: |$)(.*)")
 async def _(e):
     txt = ram_n
     await eor(e, txt)    
     
-@ram_cmd(pattern="o(?: |$)(.*)")
+@ram_cmd(pattern="oo(?: |$)(.*)")
 async def _(e):
     txt = ram_o
     await eor(e, txt)
@@ -121,7 +121,7 @@ async def _(e):
     await eor(e, txt)
     
     
-@ram_cmd(pattern="q(?: |$)(.*)")
+@ram_cmd(pattern="qq(?: |$)(.*)")
 async def _(e):
     txt = ram_q
     await eor(e, txt)    
