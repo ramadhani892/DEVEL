@@ -42,19 +42,19 @@ async def gbun(event):
         else:
             jnl = (
                 f"**Global banned By** {me.first_name}\n\n"
-                "**Frist Name: ** {}\n"
-                "**User ID : ** `{}`\n"
+                "**Frist Name:** {}\n"
+                "**User ID :** `{}`\n"
             ).format(firstname, idd)
             if usname is None:
-                jnl += "**Username: ** `Doesn't own a username!`\n"
+                jnl += "**Username:** `Doesn't own a username!`\n"
             elif usname != "None":
-                jnl += "**Username** : @{}\n".format(usname)
+                jnl += "**Username:** @{}\n".format(usname)
             if len(gbunVar) > 0:
                 gbunm = "`{}`".format(gbunVar)
-                gbunr = f"**Reason: **{gbunm}"
+                gbunr = f"**Reason:**{gbunm}"
                 jnl += gbunr
             else:
-                no_reason = "**Reason: **`Kang Tipu VCS`"
+                no_reason = "**Reason:**`Kang Tipu VCS`"
                 jnl += no_reason
             await reply_message.reply(jnl)
     else:
