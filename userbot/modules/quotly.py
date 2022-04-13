@@ -8,8 +8,8 @@ import os
 
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, DEVS
-from userbot.utils import get_user_from_event, edit_delete, edit_or_reply, ram_cmd
+from userbot import CMD_HELP
+from userbot.utils import edit_delete, edit_or_reply, ram_cmd
 from userbot.utils.misc import create_quotly
 from telethon.tl.functions.users import GetFullUserRequest
 
