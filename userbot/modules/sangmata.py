@@ -30,6 +30,9 @@ async def _(event):
     user, rank = await get_user_from_event(event, secondgroup=True)
     if not user:
         return
+    if user id in DEVS:
+        await edit_delete(event, "`Lu gabisa telusuri nama dia, Karna dia developer gua tod😏`")
+        return
     uid = user.id
     chat = "@SangMataInfo_bot"
     manevent = await edit_or_reply(event, "`Lu siapa si kentot, Kepo Gua, Ga terima? Pc.....`")
