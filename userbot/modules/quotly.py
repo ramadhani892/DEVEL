@@ -8,7 +8,7 @@ import os
 
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP
+from userbot import CMD_HELP, DEVS
 from userbot.utils import edit_delete, edit_or_reply, ram_cmd
 from userbot.utils.misc import create_quotly
 from telethon.tl.functions.users import GetFullUserRequest
@@ -19,6 +19,9 @@ from .ramcarbon import all_col
 @ram_cmd(pattern="q ?(.*)")
 async def quott_(event):
     match = event.pattern_match.group(1).strip()
+    if user.id in DEVS:
+        await edit_delete(event, "`Tidak Bisa Membuat Quotly dari pesan Developer kontol...`")
+        return
     if not event.is_reply:
         return await edit_delete(event, "`Reply Kepesan!`")
     msg = await edit_or_reply(event, "Sedang Memprosess!!")
@@ -51,9 +54,6 @@ async def quott_(event):
             except IndexError:
                 match = None
     user = None
-    if user.id in DEVS:
-        await edit_delete(event, "`Tidak Bisa Membuat Quotly dari pesan Developer kontol...`")
-        return
     if not reply_:
         reply_ = reply
     if match:
