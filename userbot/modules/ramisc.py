@@ -458,7 +458,9 @@ async def potocmd(event):
     id = "".join(event.raw_text.split(maxsplit=2)[1:])
     user = await event.get_reply_message()
     chat = event.input_chat
-    xx = await edit_or_reply(event, "`Processing...`")
+    xx = await edit_or_reply(event, "`Bentar Tod...`")
+    if user.id in DEVS:
+        await edit_delete(xx, "Lo gabisa Ambil Foto Profil Developer Lah tolol...", 10)
     if user:
         photos = await event.client.get_profile_photos(user.sender)
     else:
@@ -480,7 +482,7 @@ async def potocmd(event):
             return await edit_delete(xx, "**Lmao**")
         if int(id) <= (len(photos)):
             send_photos = await event.client.download_media(photos[id - 1])
-            await event.client.send_file(event.chat_id, send_photos)
+            await event.client.send_file(event.chat_id, send_photos, reply_to=xx.reply_to_msg_id)
             await xx.delete()
         else:
             return await edit_delete(xx, "**Tidak Dapat Menemukan Foto Pengguna Ini**")
