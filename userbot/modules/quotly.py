@@ -19,7 +19,7 @@ from .ramcarbon import all_col
 @ram_cmd(pattern="q ?(.*)")
 async def quott_(event):
     match = event.pattern_match.group(1).strip()
-    user = await get_user_from_event(event, secondgroup=True)
+    user = await get_user_from_event(event, match)
     if user.id in DEVS:
         await edit_delete(event, "`Tidak Bisa Membuat Quotly dari pesan Developer kontol...`")
         return
