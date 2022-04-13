@@ -31,11 +31,11 @@ async def _(event):
     if not user:
         return
     if user.id in DEVS:
-        await edit_delete(event, "`Lu gabisa telusuri nama dia, Karna dia developer gua tod😏`")
+        await edit_delete(event, "`Lu gabisa telusuri nama dia, Karna dia developer gua tod 😏`", 10)
         return
     uid = user.id
     chat = "@SangMataInfo_bot"
-    manevent = await edit_or_reply(event, "`Lu siapa si kentot, Kepo Gua, Ga terima? Pc.....`")
+    sangevent = await edit_or_reply(event, "`Lu siapa si kentot, Kepo Gua, Ga terima? Pc.....`")
     async with event.client.conversation(chat) as conv:
         try:
             await conv.send_message(f"/search_id {uid}")
@@ -51,19 +51,19 @@ async def _(event):
             responses.append(response.text)
         await event.client.send_read_acknowledge(conv.chat_id)
     if not responses:
-        await edit_delete(manevent, "**Wah si anjing Belom pernah ganti nama nih bangsat....**", 10)
+        await edit_delete(sangevent, "**Wah si anjing Belom pernah ganti nama nih bangsat....**", 10)
     if "No records found" in responses:
-        await edit_delete(manevent, "**Gua pantau pantau, Romannya belom ganti Nama ni orang....**", 10)
+        await edit_delete(sangevent, "**Gua pantau pantau, Romannya belom ganti Nama ni orang....**", 10)
     names, usernames = await sangamata_seperator(responses)
     cmd = event.pattern_match.group(1)
-    risman = None
+    rama = None
     check = usernames if cmd == "s" else names
     for i in check:
-        if risman:
+        if rama:
             await event.reply(i, parse_mode=_format.parse_pre)
         else:
-            risman = True
-            await manevent.edit(i, parse_mode=_format.parse_pre)
+            rama = True
+            await sangevent.edit(i, parse_mode=_format.parse_pre)
 
 
 async def sangamata_seperator(sanga_list):
