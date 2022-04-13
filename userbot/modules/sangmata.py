@@ -54,7 +54,7 @@ async def _(event):
     names, usernames = await sangamata_seperator(responses)
     cmd = event.pattern_match.group(1)
     risman = None
-    check = usernames if cmd == "u" else names
+    check = usernames if cmd == "s" else names
     for i in check:
         if risman:
             await event.reply(i, parse_mode=_format.parse_pre)
