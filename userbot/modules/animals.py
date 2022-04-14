@@ -54,7 +54,7 @@ async def bird(event):
     await event.client.send_message(entity=event.chat_id, file=response[0], reply_to=xx.reply_to_msg_id)
     await xx.delete()
 
-@tod(pattern="bird$")
+@tod(pattern="puki$")
 async def bird(event):
     xx = await edit_or_reply(event, "`Nyari Memek....`")
     response = requests.get("https://instagram.com/models.clip").json()
