@@ -1,6 +1,6 @@
 from time import sleep
 from userbot.utils import edit_or_reply, ram_cmd
-from userbot import CMD_HELP, CM_HANDLER as cmd, owner
+from userbot import CMD_HELP, CMD_HANDLER as cmd, owner
 eor = edit_or_reply
 
 @ram_cmd(pattern='oi(?: |$)(.*)')
