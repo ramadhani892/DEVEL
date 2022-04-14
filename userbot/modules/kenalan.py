@@ -5,7 +5,7 @@ eor = edit_or_reply
 
 @ram_cmd(pattern='oi(?: |$)(.*)')
 async def _(event):
-    await eor(event, f"`Hai Perkenalkan Namaku {owner`")
+    await eor(event, f"`Hai Perkenalkan Namaku {owner}`")
     sleep(3)
     await eor(event, "Salam Kenal Ya semua`")
     sleep(1)
