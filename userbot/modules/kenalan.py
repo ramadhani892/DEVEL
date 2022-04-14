@@ -27,7 +27,7 @@ async def _(event):
 async def _(event):
     await eor(event, "`Apapun Yang Terjadi`")
     sleep(3)
-    await eor(event"`Tetaplah Bernapas`")
+    await eor(event, "`Tetaplah Bernapas`")
     sleep(1)
     await eor(event, "`Dan Selalu Bersyukur`")
 # Create by myself @localheart
