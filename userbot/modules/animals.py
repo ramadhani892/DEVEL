@@ -23,7 +23,6 @@ from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot.utils import edit_or_reply, ram_cmd as tod
 
-
 @tod(pattern="shibe$")
 async def shibe(event):
     xx = await edit_or_reply(event, "`Nyari Mantan lu...`")
@@ -50,10 +49,21 @@ async def bird(event):
     xx = await edit_or_reply(event, "`Nyari peler....`")
     response = requests.get("https://shibe.online/api/birds").json()
     if not response:
+        await event.edit("**Tidak bisa menemukan Burung.**")
+        return
+    await event.client.send_message(entity=event.chat_id, file=response[0], reply_to=xx.reply_to_msg_id)
+    await xx.delete()
+
+@tod(pattern="bird$")
+async def bird(event):
+    xx = await edit_or_reply(event, "`Nyari Memek....`")
+    response = requests.get("https://instagram.com/models.clip").json()
+    if not response:
         await event.edit("**Tidak bisa menemukan kucing.**")
         return
     await event.client.send_message(entity=event.chat_id, file=response[0], reply_to=xx.reply_to_msg_id)
     await xx.delete()
+
 
 
 CMD_HELP.update(
