@@ -51,6 +51,7 @@ async def join_(event):
                 asu(
                     'http://duramecho.com/Misc/SilentCd/Silence01s.mp3'
                 ),
+            ),
             stream_type=kontol().pulse_stream,
             )
             await ede(event, f"⚝ **{from_user} Berhasil Join Obrolan Suara**\n**┗ Chat ID: {chatin}**")
