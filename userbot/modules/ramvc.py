@@ -39,7 +39,7 @@ async def join_(event):
         except Exception as e:
             await ede(event, f"**ERROR:** `{e}`", 30)
     else:
-        chatin = event.chatid
+        chatin = event.chat_id
         await event.get_chat()
         from_user = vcmention(event.sender)
     if chatin:
@@ -51,7 +51,7 @@ async def join_(event):
                 ),
             stream_type=kontol().pulse_stream,
             )
-            await ede(event, f"⚝ **{from_user} Berhasil Join Obrolan Suara**\n**┗ Chat ID: {chatin}")
+            await ede(event, f"⚝ **{from_user} Berhasil Join Obrolan Suara**\n**┗ Chat ID: {chat_id}")
         except memek:
             await sayang.leave_group_call(chatin)
             await ede(
