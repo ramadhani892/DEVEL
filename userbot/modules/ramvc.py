@@ -35,7 +35,7 @@ async def join_(event):
     if len(event.text.split()) > 1:
         chatid = event.text.split()[1]
         try:
-            chatid = await event.client.get_peer_id(babi(chatid))
+            chatid = await event.client.get_peer_id(int(chatid))
         except Exception as e:
             await ede(event, f"**ERROR:** `{e}`", 30)
     else:
@@ -60,7 +60,7 @@ async def join_(event):
                 10,
             )
         except Exception:
-            await eor(event, "**INFO:** `Ga ada obrolan suara Ngentot!!!`")
+            await eor(event, "`Ga ada obrolan suara Ngentot!!!`")
 
 @tod(pattern="lvc(?: |$)(.*)")
 async def leavevc(event):
