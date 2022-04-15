@@ -45,14 +45,14 @@ async def _(event):
                 stream_type=kontol().local_stream,
             )
             await ede(ram,
-                f"⚝ **{first_name} Berhasil Join Ke Obrolan Suara**\n┗ **Chat ID:** `{chats}`", 5
+                f"⚝ **Berhasil Join Ke Obrolan Suara**\n┗ **Chat ID:** `{chats}`", 5
             )
         except babi:
             return await ede(
                 ram, "**ERROR**: `Kayak Nya lo udh naik os Dah ngentod.`", 10
             )
         except Exception as e:
-            return await ede(ram, f"**ERROR:** `{e}`", 10)
+            return await ede(ram, f"**ERROR:** `{e}`",)
 
 
 @tod(pattern="lvc(?: |$)(.*)")
@@ -72,7 +72,7 @@ async def vc_end(event):
             await goblok.leave_group_call(chatid)
             await ede(
                 ram,
-                f"⚝ **Babay Anak anak Ngentod, {first_name} Turun dulu.**\n┗ **Chat ID:** `{chatid}`", 10
+                f"⚝ **Babay Anak anak Ngentod, Gua Turun dulu.**\n┗ **Chat ID:** `{chatid}`", 10
             )
         except Exception as e:
             return await ede(ram, f"**INFO:** `{e}`", 10)
