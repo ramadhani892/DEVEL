@@ -1,21 +1,21 @@
-from pytgcalls import StreamType
+from pytgcalls import StreamType as kontol
 from pytgcalls.types.input_stream import (
-    AudioPiped,
+    AudioPiped as asu,
 )
 from pytgcalls.exceptions import (
-    AlreadyJoinedError,
+    AlreadyJoinedError as memek,
 )
 
 from telethon.tl import types
 from telethon.utils import get_display_name
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl.functions.channels import GetFullChannelRequest
+from telethon.tl.functions.users import GetFullUserRequest as babi
+from telethon.tl.functions.channels import GetFullChannelRequest as kentod
 
 from userbot import CMD_HANDLER as cmd
-from userbot import call_py
+from userbot import call_py as sayang
 from userbot.utils import edit_delete, edit_or_reply, ram_cmd as tod
 async def get_call(event):
-    call = await event.client(GetFullChannelRequest(event.chat.id))
+    call = await event.client(kentod(event.chat.id))
     return call.full_chat.call
 
 def vcmention(user):
@@ -32,46 +32,46 @@ ede = edit_delete
 
 @tod(pattern="jvc(?: |$)(.*)")
 async def join_(event):
-    rambot = await eor(event, f"**Processing**")
+    await eor(event, f"**Hoi Aku datang....**")
     if len(event.text.split()) > 1:
-        chat_id = event.text.split()[1]
+        chatid = event.text.split()[1]
         try:
-            chat_id = await event.client(GetFullUserRequest(chat_id))
+            chats = await event.client(babi(chatid))
         except Exception as e:
-            await ede(rambot, f"**ERROR:** `{e}`", 30)
+            await ede(event, f"**ERROR:** `{e}`", 30)
     else:
-        chat_id = event.chat_id
+        chatin = event.chats
         await event.get_chat()
         from_user = vcmention(event.sender)
-    if chat_id:
+    if chatin:
         try:
-            await call_py.join_group_call(
-                chat_id,
+            await sayang.join_group_call(
+                chatin,
                 AudioPiped(
                     'http://duramecho.com/Misc/SilentCd/Silence01s.mp3'
                 ),
-            stream_type=StreamType().pulse_stream,
+            stream_type=kontol().pulse_stream,
             )
-            await ede(rambot, f"**{from_user} Berhasil Naik Ke VC Group!**")
-        except AlreadyJoinedError:
-            await call_py.leave_group_call(chat_id)
+            await ede(event, f"⚝ **{from_user} Berhasil Join Obrolan Suara**\n**┗ Chat ID: {chatin}")
+        except memek:
+            await sayang.leave_group_call(chatin)
             await ede(
                 rambot,
-                f"**ERROR:** `Akun Anda Sudah Berada Di VC Group!`\n\n**Noted :** __Silahkan Ketik__ `{cmd}joinvc` __untuk menggunakan command kembali.__",
-                30,
+                f"**ERROR:** `Akun Anda Sudah Berada Di Obrolan Suara!`\n\n**Noted :** __Silahkan Ketik__ `{cmd}jvc` __Untuk Naik kembali.__",
+                10,
             )
         except Exception as e:
-            await geezav.edit(f"**INFO:** `{e}`")
+            await eor(event, f"**INFO:** `{e}`")
 
 @tod(pattern="lvc(?: |$)(.*)")
 async def leavevc(event):
-    rambot = await eor(event, "`Processing...`")
+    await eor(event, "`Saatnya Turun...`")
     if len(event.text.split()) > 1:
         chat_id = event.text.split()[1]
         try:
-            chat_id = await event.client(GetFullUserRequest(chat_id))
+            chat_id = await event.client(babi(chat_id))
         except Exception as e:
-            return await ede(rambot, f"**ERROR:** `{e}`")
+            return await ede(event, f"**ERROR:** `{e}`")
     else:
         chat_id = event.chat_id
         from_user = vcmention(event.sender)
@@ -79,8 +79,8 @@ async def leavevc(event):
         try:
             await call_py.leave_group_call(chat_id)
             await ede(
-                rambot,
-                f"{from_user} Berhasil Turun Dari VC Group!",
+                event,
+                f"⚝ {from_user} Berhasil Turun Dari Obrolam Suara!\n┗ Chat ID : {chat_id}", 5
             )
         except Exception as e:
             await eor(event, f"**INFO:** `{e}`")
