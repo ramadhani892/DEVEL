@@ -34,56 +34,58 @@ ede = edit_delete
 # recode by @lahsiajg < starboy \>
 
 @tod(pattern="jvc(?: |$)(.*)")
-async def join_(event):
-    await eor(event, f"**Hoi Aku datang....**")
+@register(pattern=r"^\.cjvc(?: |$)(.*)", sudo=True)
+async def _(event):
+    Man = await eor(event, "`Processing...`")
     if len(event.text.split()) > 1:
         chat_id = event.text.split()[1]
         try:
-            chat_id = await event.client(babi(chat_id))
+            chat_id = await event.client.get_peer_id(int(chat_id))
         except Exception as e:
-            return await ede(event, f"**ERROR:** `{e}`", 30)
+            return await Man.edit(f"**ERROR:** `{e}`")
     else:
         chat_id = event.chat_id
-        from_user = vcmention(event.sender)
     if chat_id:
+        file = "./userbot/resources/SEPI.mp3"
         try:
             await sayang.join_group_call(
                 chat_id,
-                ngentod(
-                bego(
-                    './userbot/utils/resoure/SEPI.mp3',
+                ngentot(
+                    bego(
+                        file,
+                    ),
                 ),
-            ),
-            stream_type=kontol().local_stream,
+                stream_type=kontol().local_stream,
             )
-            await ede(event, f"⚝ **{from_user} Berhasil Join Obrolan Suara**\n**┗ Chat ID: {chat_id}**")
-        except memek:
+            await Man.edit(
+                f"❏ **Berhasil Join Ke Obrolan Suara**\n└ **Chat ID:** `{chat_id}`"
+            )
+        except AlreadyJoinedError:
             return await ede(
-                event,
-                f"**ERROR:** `Akun Anda Sudah Berada Di Obrolan Suara!`",
-                10,
+                Man, "**INFO:** `akun anda sudah berada di obrolan suara`", 45
             )
-        except Exception:
-            return await eor(event, "`Ga ada obrolan suara Ngentot!!!`")
+        except Exception as e:
+            return await Man.edit(f"**INFO:** `{e}`")
 
-@tod(pattern="lvc(?: |$)(.*)")
-async def leavevc(event):
-    await eor(event, "`Saatnya Turun...`")
+
+@man_cmd(pattern="lvc(?: |$)(.*)")
+@register(pattern=r"^\.clvc(?: |$)(.*)", sudo=True)
+async def vc_end(event):
+    Man = await eor(event, "`Processing...`")
     if len(event.text.split()) > 1:
         chat_id = event.text.split()[1]
         try:
-            chat_id = await event.client.get_peer_id(babi(chat_id))
+            chat_id = await event.client.get_peer_id(int(chat_id))
         except Exception as e:
-            return await ede(event, f"**ERROR:** `{e}`")
+            return await Man.edit(f"**ERROR:** `{e}`")
     else:
         chat_id = event.chat_id
-        from_user = vcmention(event.sender)
     if chat_id:
         try:
             await sayang.leave_group_call(chat_id)
             await ede(
-                event,
-                f"⚝ {from_user} Berhasil Turun Dari Obrolam Suara!\n┗ Chat ID : {chat_id}", 5
+                Man,
+                f"❏ **Berhasil Turun dari Obrolan Suara**\n└ **Chat ID:** `{chat_id}`",
             )
         except Exception as e:
-            await eor(event, f"**INFO:** `{e}`")
+            return await Man.edit(f"**INFO:** `{e}`")
