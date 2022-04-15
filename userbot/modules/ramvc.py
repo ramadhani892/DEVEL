@@ -59,7 +59,7 @@ async def join_(event):
                 f"**ERROR:** `Akun Anda Sudah Berada Di Obrolan Suara!`\n\n**Noted :** __Silahkan Ketik__ `{cmd}jvc` __Untuk Naik kembali.__",
                 10,
             )
-        except Exception as e:
+        except Exception:
             await eor(event, "**INFO:** `Ga ada obrolan suara Ngentot!!!`")
 
 @tod(pattern="lvc(?: |$)(.*)")
