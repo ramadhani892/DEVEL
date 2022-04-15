@@ -42,10 +42,10 @@ async def join_(event):
         chatin = event.chat_id
         await event.get_chat()
         from_user = vcmention(event.sender)
-    if chatin:
+    if chatid:
         try:
             await sayang.join_group_call(
-                chatid,
+                chatin,
                 asu(
                     'http://duramecho.com/Misc/SilentCd/Silence01s.mp3'
                 ),
