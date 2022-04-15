@@ -1,14 +1,6 @@
 from pytgcalls import StreamType
-from pytgcalls.types import Update
 from pytgcalls.types.input_stream import (
     AudioPiped,
-    AudioVideoPiped,
-)
-from pytgcalls.types.input_stream.quality import (
-    HighQualityAudio,
-    HighQualityVideo,
-    LowQualityVideo,
-    MediumQualityVideo,
 )
 from pytgcalls.exceptions import (
     AlreadyJoinedError,
@@ -18,22 +10,10 @@ from telethon.tl import types
 from telethon.utils import get_display_name
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.functions.channels import GetFullChannelRequest
-from youtubesearchpython import VideosSearch
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP
-from userbot import PLAY_PIC as fotoplay
-from userbot import QUEUE_PIC as ngantri
 from userbot import call_py
-from userbot.utils import bash, edit_delete, edit_or_reply, ram_cmd as tod
-from userbot.utils.chattitle import CHAT_TITLE
-from userbot.utils.queues.queues import (
-    QUEUE,
-    add_to_queue,
-    clear_queue,
-    get_queue,
-    pop_an_item,
-)
+from userbot.utils import edit_delete, edit_or_reply, ram_cmd as tod
 async def get_call(event):
     call = await event.client(GetFullChannelRequest(event.chat.id))
     return call.full_chat.call
