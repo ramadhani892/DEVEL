@@ -50,18 +50,16 @@ async def join_(event):
                 chatin,
                 ngentod(
                 bego(
-                asu(
                     'http://duramecho.com/Misc/SilentCd/Silence01s.mp3'
                 ),
-            )),
+            ),
             stream_type=kontol().pulse_stream,
             )
             await ede(event, f"⚝ **{from_user} Berhasil Join Obrolan Suara**\n**┗ Chat ID: {chatin}**")
         except memek:
-            await sayang.leave_group_call(chatin)
             await ede(
                 rambot,
-                f"**ERROR:** `Akun Anda Sudah Berada Di Obrolan Suara!`\n\n**Noted :** __Silahkan Ketik__ `{cmd}jvc` __Untuk Naik kembali.__",
+                f"**ERROR:** `Akun Anda Sudah Berada Di Obrolan Suara!`",
                 10,
             )
         except Exception:
