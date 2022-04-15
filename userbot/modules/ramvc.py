@@ -4,7 +4,6 @@ from pytgcalls.exceptions import (
 )
 
 from pytgcalls.types.input_stream import (
-    AudioPiped as asu,
     InputStream as ngentod,
     InputAudioStream as bego,
 )
@@ -13,7 +12,6 @@ from telethon.utils import get_display_name
 from telethon.tl.functions.users import GetFullUserRequest as babi
 from telethon.tl.functions.channels import GetFullChannelRequest as kentod
 
-from userbot import CMD_HANDLER as cmd
 from userbot import call_py as sayang
 from userbot.utils import edit_delete, edit_or_reply, ram_cmd as tod
 async def get_call(event):
