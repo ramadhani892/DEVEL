@@ -39,7 +39,7 @@ async def join_(event):
     if len(event.text.split()) > 1:
         chat_id = event.text.split()[1]
         try:
-            chat_id = await event.client.get_peer_id(int(chat_id))
+            chat_id = await event.client(babi(chat_id))
         except Exception as e:
             return await ede(event, f"**ERROR:** `{e}`", 30)
     else:
