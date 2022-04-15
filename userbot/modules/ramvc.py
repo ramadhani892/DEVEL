@@ -1,7 +1,4 @@
 from pytgcalls import StreamType as kontol
-from pytgcalls.types.input_stream import (
-    AudioPiped as asu,
-)
 from pytgcalls.exceptions import (
     AlreadyJoinedError as memek,
 )
@@ -36,7 +33,7 @@ async def join_(event):
     if len(event.text.split()) > 1:
         chatid = event.text.split()[1]
         try:
-            chats = await event.client(babi(chatid))
+            await event.client(babi(chatid))
         except Exception as e:
             await ede(event, f"**ERROR:** `{e}`", 30)
     else:
