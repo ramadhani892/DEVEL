@@ -3,6 +3,7 @@ from pytgcalls.types.input_stream import (
     InputAudioStream as bego,
     InputStream as ngentot,
 )
+from pytgcalls import StreamType as kontol
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 
