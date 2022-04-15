@@ -6,6 +6,7 @@ from pytgcalls.exceptions import (
 from pytgcalls.types.input_stream import (
     AudioPiped as asu,
     InputStream as ngentod,
+    InputAudioStream as bego,
 )
 from telethon.tl import types
 from telethon.utils import get_display_name
@@ -48,10 +49,11 @@ async def join_(event):
             await sayang.join_group_call(
                 chatin,
                 ngentod(
+                bego(
                 asu(
                     'http://duramecho.com/Misc/SilentCd/Silence01s.mp3'
                 ),
-            ),
+            )),
             stream_type=kontol().pulse_stream,
             )
             await ede(event, f"⚝ **{from_user} Berhasil Join Obrolan Suara**\n**┗ Chat ID: {chatin}**")
