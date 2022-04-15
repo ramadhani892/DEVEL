@@ -10,13 +10,8 @@ from pytgcalls.types.input_stream import (
 from telethon.tl import types
 from telethon.utils import get_display_name
 from telethon.tl.functions.users import GetFullUserRequest as babi
-from telethon.tl.functions.channels import GetFullChannelRequest as kentod
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
-from telethon.tl.functions.phone import CreateGroupCallRequest as startvc
-from telethon.tl.functions.phone import DiscardGroupCallRequest as stopvc
-from telethon.tl.functions.phone import EditGroupCallTitleRequest as settitle
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
-from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 
 from userbot import call_py as sayang
 from userbot.utils import edit_delete, edit_or_reply, ram_cmd as tod
