@@ -51,7 +51,7 @@ async def join_(event):
                     'userbot/utils/resoure/SEPI.mp3'
                 ),
             ),
-            stream_type=kontol().pulse_stream,
+            stream_type=kontol().local_stream,
             )
             await ede(event, f"⚝ **{from_user} Berhasil Join Obrolan Suara**\n**┗ Chat ID: {chatin}**")
         except memek:
