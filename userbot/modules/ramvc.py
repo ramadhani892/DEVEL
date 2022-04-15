@@ -1,4 +1,3 @@
-from pytgcalls.exceptions import AlreadyJoinedError as memek
 from pytgcalls.types.input_stream import (
     InputAudioStream as bego,
     InputStream as ngentot,
@@ -54,7 +53,7 @@ async def join_(event):
             return await ede(
                 rambot, "Maaf {from_user}, Lo udah di obrolan suara anjing lo.`", 10
             )
-        except Exception as e:
+        except Exception:
             return await ede(rambot, f"**GA ADA OS DISINI KONTOL!!!**", 10)
 
 
@@ -70,7 +69,7 @@ async def vc_end(event):
             return await Man.edit(f"**ERROR:** `{e}`")
     else:
         chat_id = event.chat_id
-        from_user = toyik(event.sender)
+        toyik(event.sender)
     if chat_id:
         try:
             await sayang.leave_group_call(chat_id)
@@ -78,5 +77,5 @@ async def vc_end(event):
                 rambot,
                 f"⚝ **Berhasil Turun dari Obrolan Suara**\n╚ **Chat ID:** `{chat_id}`", 5
             )
-        except Exception as e:
+        except Exception:
             return await ede(rambot, f"**LO LAGI GA DI OS KONTOL!!!!**", 10)
