@@ -1,15 +1,10 @@
 from pytgcalls import StreamType as kontol
-from pytgcalls.exceptions import (
-    AlreadyJoinedError as memek,
-)
 
 from pytgcalls.types.input_stream import (
-    InputStream as ngentod,
     InputAudioStream as bego,
 )
 from telethon.tl import types
 from telethon.utils import get_display_name
-from telethon.tl.functions.users import GetFullUserRequest as babi
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 
