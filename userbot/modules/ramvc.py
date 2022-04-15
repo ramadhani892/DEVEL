@@ -40,9 +40,8 @@ async def join_(event):
             await ede(event, f"**ERROR:** `{e}`", 30)
     else:
         chatin = event.chat_id
-        await event.get_chat()
         from_user = vcmention(event.sender)
-    if chat_id:
+    if chatid:
         try:
             await sayang.join_group_call(
                 chatin,
