@@ -2,7 +2,9 @@ from pytgcalls import StreamType as kontol
 from pytgcalls.exceptions import (
     AlreadyJoinedError as memek,
 )
-
+from pytgcalls.types.input_stream import (
+    AudioPiped as asu,
+)
 from telethon.tl import types
 from telethon.utils import get_display_name
 from telethon.tl.functions.users import GetFullUserRequest as babi
@@ -44,7 +46,7 @@ async def join_(event):
         try:
             await sayang.join_group_call(
                 chatin,
-                AudioPiped(
+                asu(
                     'http://duramecho.com/Misc/SilentCd/Silence01s.mp3'
                 ),
             stream_type=kontol().pulse_stream,
