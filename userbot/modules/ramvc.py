@@ -3,7 +3,7 @@ from telethon.tl.functions.channels import GetFullChannelRequest as getchat
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 
 from userbot.events import register
-from userbot.utils import edit_delete, edit_or_reply, man_cmd
+from userbot.utils import edit_delete, edit_or_reply, ram_cmd as tod
 
 
 async def get_call(event):
