@@ -14,6 +14,7 @@ from telethon.tl.functions.channels import GetFullChannelRequest as kentod
 
 from userbot import call_py as sayang
 from userbot.utils import edit_delete, edit_or_reply, ram_cmd as tod
+
 async def get_call(event):
     call = await event.client(kentod(event.chat.id))
     return call.full_chat.call
@@ -34,18 +35,18 @@ ede = edit_delete
 async def join_(event):
     await eor(event, f"**Hoi Aku datang....**")
     if len(event.text.split()) > 1:
-        chatid = event.text.split()[1]
+        chat_id = event.text.split()[1]
         try:
-            chatid = await event.client.get_peer_id(int(chatid))
+            chat_id = await event.client.get_peer_id(int(chat_id))
         except Exception as e:
             await ede(event, f"**ERROR:** `{e}`", 30)
     else:
-        chatin = event.chat_id
+        chat_id = event.chat_id
         from_user = vcmention(event.sender)
-    if chatin:
+    if chat_id:
         try:
             await sayang.join_group_call(
-                chatin,
+                chat_id,
                 ngentod(
                 bego(
                     './userbot/utils/resoure/SEPI.mp3'
@@ -53,7 +54,7 @@ async def join_(event):
             ),
             stream_type=kontol().local_stream,
             )
-            await ede(event, f"⚝ **{from_user} Berhasil Join Obrolan Suara**\n**┗ Chat ID: {chatin}**")
+            await ede(event, f"⚝ **{from_user} Berhasil Join Obrolan Suara**\n**┗ Chat ID: {chat_id}**")
         except memek:
             await ede(
                 rambot,
