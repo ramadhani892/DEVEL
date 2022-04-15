@@ -48,7 +48,7 @@ async def join_(event):
                 chatin,
                 ngentod(
                 bego(
-                    'userbot/utils/resoure/SEPI.mp3'
+                    './userbot/utils/resoure/SEPI.mp3'
                 ),
             ),
             stream_type=kontol().local_stream,
