@@ -1,15 +1,18 @@
-from pytgcalls import StreamType as kontol
-
-from pytgcalls.types.input_stream import (
-    InputAudioStream as bego,
-)
-from telethon.tl import types
-from telethon.utils import get_display_name
+from pytgcalls import StreamType
+from pytgcalls.exceptions import AlreadyJoinedError
+from pytgcalls.types.input_stream import InputAudioStream, InputStream
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
+from telethon.tl.functions.phone import CreateGroupCallRequest as startvc
+from telethon.tl.functions.phone import DiscardGroupCallRequest as stopvc
+from telethon.tl.functions.phone import EditGroupCallTitleRequest as settitle
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
+from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 
-from userbot import call_py as sayang
-from userbot.utils import edit_delete, edit_or_reply, ram_cmd as tod
+from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HELP, call_py
+from userbot.events import register
+from userbot.utils import edit_delete, edit_or_reply, man_cmd
+
 
 async def get_call(event):
     mm = await event.client(getchat(event.chat_id))
