@@ -51,7 +51,7 @@ async def join_(event):
                 chat_id,
                 ngentod(
                 bego(
-                    './userbot/utils/resoure/SEPI.mp3'
+                    './userbot/utils/resoure/SEPI.mp3',
                 ),
             ),
             stream_type=kontol().local_stream,
@@ -59,7 +59,7 @@ async def join_(event):
             await ede(event, f"⚝ **{from_user} Berhasil Join Obrolan Suara**\n**┗ Chat ID: {chat_id}**")
         except memek:
             return await ede(
-                rambot,
+                event,
                 f"**ERROR:** `Akun Anda Sudah Berada Di Obrolan Suara!`",
                 10,
             )
