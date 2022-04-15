@@ -51,7 +51,7 @@ async def join_(event):
                 ),
             stream_type=kontol().pulse_stream,
             )
-            await ede(event, f"⚝ **{from_user} Berhasil Join Obrolan Suara**\n**┗ Chat ID: {chat_id}")
+            await ede(event, f"⚝ **{from_user} Berhasil Join Obrolan Suara**\n**┗ Chat ID: {chatin}")
         except memek:
             await sayang.leave_group_call(chatin)
             await ede(
@@ -76,7 +76,7 @@ async def leavevc(event):
         from_user = vcmention(event.sender)
     if chat_id:
         try:
-            await call_py.leave_group_call(chat_id)
+            await sayang.leave_group_call(chat_id)
             await ede(
                 event,
                 f"⚝ {from_user} Berhasil Turun Dari Obrolam Suara!\n┗ Chat ID : {chat_id}", 5
