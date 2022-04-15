@@ -1,4 +1,4 @@
-from pytgcalls.exceptions import AlreadyJoinedError
+from pytgcalls.exceptions import AlreadyJoinedError as memek
 from pytgcalls.types.input_stream import (
     InputAudioStream as bego,
     InputStream as ngentot,
@@ -7,20 +7,14 @@ from pytgcalls import StreamType as kontol
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 
-from userbot.events import register
+from userbot.events import register as ok
 from userbot.utils import edit_delete, edit_or_reply, ram_cmd as tod
 from userbot import call_py as sayang
-
+from .ramcals import vcmention as toyik
 async def get_call(event):
     mm = await event.client(getchat(event.chat_id))
     xx = await event.client(getvc(mm.full_chat.call, limit=1))
     return xx.call
-
-def vcmention(user):
-    full_name = get_display_name(user)
-    if not isinstance(user, types.User):
-        return full_name
-    return f"[{full_name}](tg://user?id={user.id})"
 
 eor = edit_or_reply
 ede = edit_delete
@@ -29,17 +23,18 @@ ede = edit_delete
 # recode by @lahsiajg < starboy \>
 
 @tod(pattern="jvc(?: |$)(.*)")
-@register(pattern=r"^\.cjvc(?: |$)(.*)", sudo=True)
-async def _(event):
-    Man = await eor(event, "`Processing...`")
+@ok(pattern=r"^\.cjvc(?: |$)(.*)", sudo=True)
+async def join_(event):
+    rambot = await eor(event, "`Processing...`")
     if len(event.text.split()) > 1:
         chat_id = event.text.split()[1]
         try:
             chat_id = await event.client.get_peer_id(int(chat_id))
         except Exception as e:
-            return await Man.edit(f"**ERROR:** `{e}`")
+            return await ede(rambot, f"**ERROR:** `{e}`", 5)
     else:
         chat_id = event.chat_id
+        from_user = toyik(event.sender)
     if chat_id:
         file = "./userbot/resource/SEPI.mp3"
         try:
@@ -52,21 +47,21 @@ async def _(event):
                 ),
                 stream_type=kontol().local_stream,
             )
-            await Man.edit(
-                f"❏ **Berhasil Join Ke Obrolan Suara**\n└ **Chat ID:** `{chat_id}`"
+            await ede(rambot,
+                f"⚝ **{from_user} Berhasil Join Ke Obrolan Suara**\n┗ **Chat ID:** `{chat_id}`", 3
             )
         except AlreadyJoinedError:
             return await ede(
-                Man, "**INFO:** `akun anda sudah berada di obrolan suara`", 45
+                rambot, "Maaf {from_user}, Lo udah di obrolan suara anjing lo.`", 10
             )
         except Exception as e:
-            return await Man.edit(f"**INFO:** `{e}`")
+            return await ede(rambot, f"**GA ADA OS DISINI KONTOL!!!**", 10)
 
 
 @tod(pattern="lvc(?: |$)(.*)")
-@register(pattern=r"^\.clvc(?: |$)(.*)", sudo=True)
+@ok(pattern=r"^\.clvc(?: |$)(.*)", sudo=True)
 async def vc_end(event):
-    Man = await eor(event, "`Processing...`")
+    rambot = await eor(event, "`Processing...`")
     if len(event.text.split()) > 1:
         chat_id = event.text.split()[1]
         try:
@@ -75,12 +70,13 @@ async def vc_end(event):
             return await Man.edit(f"**ERROR:** `{e}`")
     else:
         chat_id = event.chat_id
+        from_user = toyik(event.sender)
     if chat_id:
         try:
             await sayang.leave_group_call(chat_id)
             await ede(
-                Man,
-                f"❏ **Berhasil Turun dari Obrolan Suara**\n└ **Chat ID:** `{chat_id}`",
+                rambot,
+                f"⚝ **Berhasil Turun dari Obrolan Suara**\n╚ **Chat ID:** `{chat_id}`", 5
             )
         except Exception as e:
-            return await Man.edit(f"**INFO:** `{e}`")
+            return await ede(rambot, f"**LO LAGI GA DI OS KONTOL!!!!**", 10)
