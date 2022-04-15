@@ -41,7 +41,7 @@ async def join_(event):
     else:
         chatin = event.chat_id
         from_user = vcmention(event.sender)
-    if chatid:
+    if chatin:
         try:
             await sayang.join_group_call(
                 chatin,
