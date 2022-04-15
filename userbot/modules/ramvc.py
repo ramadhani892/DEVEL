@@ -45,7 +45,7 @@ async def join_(event):
     if chatin:
         try:
             await sayang.join_group_call(
-                chatin,
+                chatid,
                 asu(
                     'http://duramecho.com/Misc/SilentCd/Silence01s.mp3'
                 ),
