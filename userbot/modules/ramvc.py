@@ -1,19 +1,13 @@
-import asyncio
-from pytgcalls import StreamType as ya
-from pytgcalls.types.input_stream import AudioPiped as rambot
-from pytgcalls.exceptions import (
-    NoActiveGroupCall as memek,
-    AlreadyJoinedError as asu,
-    NotInGroupCallError as ajg
+from pytgcalls import StreamType as kontol
+from pytgcalls.exceptions import AlreadyJoinedError as babi
+from pytgcalls.types.input_stream import (
+    InputAudioStream as memek, 
+    InputStream as asu,
 )
-from telethon.tl import types
-from telethon.utils import get_display_name
-from telethon.tl.functions.users import GetFullUserRequest as ngentod
-from userbot import call_py
-from userbot.utils import edit_delete, edit_or_reply, edit_delete, ram_cmd as boy
-from userbot.events import register as ok
-
-from userbot.utils.queues.queues import clear_queue
+from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HELP, call_py as goblok
+from userbot.events import register
+from userbot.utils import edit_delete, edit_or_reply, ram_cmd as tod
 
 def vcmention(user):
     full_name = get_display_name(user)
@@ -21,54 +15,65 @@ def vcmention(user):
         return full_name
     return f"[{full_name}](tg://user?id={user.id})"
 
-
+eor = edit_or_reply
+ede = edit_delete
 
 # credits by @vckyaz < vicky \>
 # recode by @lahsiajg < starboy \>
 
-@boy(pattern="jvc(?: |$)(.*)")
-@ok(pattern=r"^\.cjvc(?: |$)(.*)", sudo=True)
-async def join_(event):
-    await edit_or_reply(event, f"**Hoii Aku datangg....**")
+@tod(pattern="jvc(?: |$)(.*)")
+@register(pattern=r"^\.cjvc(?: |$)(.*)", sudo=True)
+async def _(event):
+    await eor(event, "**Hoi aku datang....**")
     if len(event.text.split()) > 1:
-        chat = event.chat_id
-        chats = event.pattern_match.group(1)
+        chats = event.text.split()[1]
         try:
-            chat = await event.client(ngentod(chats))
-        except asu as e:
-            await call_py.leave_group_call(chat)
-            clear_queue(chat)
-            await asyncio.sleep(3)
-            return await edit_delete(event, f"**ERROR:** `{e}`", 30)
-        except (NodeJSNotInstalled, TooOldNodeJSVersion):
-            return await edit_or_reply(event, "NodeJs is not installed or installed version is too old.")
+            chats = await event.client.get_peer_id(int(chats))
+        except Exception as e:
+            return await eor(event, f"**ERROR:** `{e}`")
     else:
-        chat_id = event.chat_id
-        chats = event.pattern_match.group(1)
-        vcmention(event.sender)
-    if not call_py.is_connected:
-        await call_py.start()
-    await call_py.join_group_call(
-        chat_id,
-        rambot(
-            'http://duramecho.com/Misc/SilentCd/Silence01s.mp3'
-        ),
-        chats,
-        stream_type=ya().pulse_stream,
-    )
-    await edit_delete(event, f"**Berhasil Join Obrolan Suara.**\n**Group Id:{chat_id}!**", 5)
-
-
-@boy(pattern="lvc(?: |$)(.*)")
-@ok(pattern=r"^\.clvc(?: |$)(.*)", sudo=True)
-async def leavevc(event):
-    """ leave video chat """
-    await edit_or_reply(event, "**Turun dulu....**")
-    chat_id = event.chat_id
-    from_user = vcmention(event.sender)
-    if from_user:
+        chats = event.chats
+    if chats:
+        file = "http://duramecho.com/Misc/SilentCd/Silence01s.mp3"
         try:
-            await call_py.leave_group_call(chat_id)
-        except (memek, ajg):
-            await edit_or_reply(event, f"Eh {from_user}, Lo ga ada di os ngentot!!!!!")
-        await edit_delete(event, f"**Babay Anak kontol, {from_user} Turun dulu...**", 2)
+            await goblok.join_group_call(
+                chats,
+                asu(
+                    memek(
+                        file,
+                    ),
+                ),
+                stream_type=kontol().local_stream,
+            )
+            await ede(event,
+                f"⚝ **{first_name} Berhasil Join Ke Obrolan Suara**\n┗ **Chat ID:** `{chats}`", 5
+            )
+        except babi:
+            return await ede(
+                event, "**ERROR**: `Kayak Nya lo udh naik os Dah ngentod.`", 10
+            )
+        except Exception as e:
+            return await ede(event, f"**ERROR:** `{e}`", 10)
+
+
+@tod(pattern="lvc(?: |$)(.*)")
+@register(pattern=r"^\.clvc(?: |$)(.*)", sudo=True)
+async def vc_end(event):
+    await eor(event, "`Saatnya Pergi....`")
+    if len(event.text.split()) > 1:
+        chat = event.text.split()[1]
+        try:
+            chats = await event.client.get_peer_id(int(chat))
+        except Exception as e:
+            return await ede(event, f"**ERROR:** `{e}`", 10)
+    else:
+        chatid = event.chats
+    if chatid:
+        try:
+            await goblok.leave_group_call(chatid)
+            await ede(
+                event,
+                f"⚝ **Babay Anak anak Ngentod, {first_name} Turun dulu.**\n┗ **Chat ID:** `{chatid}`", 10
+            )
+        except Exception as e:
+            return await ede(event, f"**INFO:** `{e}`", 10)
