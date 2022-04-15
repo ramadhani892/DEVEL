@@ -4,8 +4,7 @@ from pytgcalls.types.input_stream import (
     InputAudioStream as memek, 
     InputStream as asu,
 )
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, call_py as goblok
+from userbot import call_py as goblok
 from userbot.events import register
 from userbot.utils import edit_delete, edit_or_reply, ram_cmd as tod
 
@@ -63,7 +62,7 @@ async def vc_end(event):
     if len(event.text.split()) > 1:
         chat = event.text.split()[1]
         try:
-            chats = await event.client.get_peer_id(int(chat))
+            await event.client.get_peer_id(int(chat))
         except Exception as e:
             return await ede(event, f"**ERROR:** `{e}`", 10)
     else:
