@@ -41,7 +41,7 @@ async def join_(event):
         try:
             chat_id = await event.client.get_peer_id(int(chat_id))
         except Exception as e:
-            await ede(event, f"**ERROR:** `{e}`", 30)
+            return await ede(event, f"**ERROR:** `{e}`", 30)
     else:
         chat_id = event.chat_id
         from_user = vcmention(event.sender)
