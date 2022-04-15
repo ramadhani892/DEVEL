@@ -58,13 +58,13 @@ async def join_(event):
             )
             await ede(event, f"⚝ **{from_user} Berhasil Join Obrolan Suara**\n**┗ Chat ID: {chat_id}**")
         except memek:
-            await ede(
+            return await ede(
                 rambot,
                 f"**ERROR:** `Akun Anda Sudah Berada Di Obrolan Suara!`",
                 10,
             )
         except Exception:
-            await eor(event, "`Ga ada obrolan suara Ngentot!!!`")
+            return await eor(event, "`Ga ada obrolan suara Ngentot!!!`")
 
 @tod(pattern="lvc(?: |$)(.*)")
 async def leavevc(event):
