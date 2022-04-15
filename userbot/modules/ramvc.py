@@ -1,10 +1,14 @@
 from pytgcalls.exceptions import AlreadyJoinedError
+from pytgcalls.types.input_stream import (
+    InputAudioStream as bego,
+    InputStream as ngentod,
+)
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 
 from userbot.events import register
 from userbot.utils import edit_delete, edit_or_reply, ram_cmd as tod
-
+from userbot import call_py as sayang
 
 async def get_call(event):
     mm = await event.client(getchat(event.chat_id))
