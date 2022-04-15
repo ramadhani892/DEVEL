@@ -37,7 +37,7 @@ async def join_(event):
         except Exception as e:
             await ede(event, f"**ERROR:** `{e}`", 30)
     else:
-        chatin = event.chats
+        chatin = event.chatid
         await event.get_chat()
         from_user = vcmention(event.sender)
     if chatin:
