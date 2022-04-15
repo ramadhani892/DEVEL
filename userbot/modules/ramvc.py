@@ -35,7 +35,7 @@ async def join_(event):
     if len(event.text.split()) > 1:
         chatid = event.text.split()[1]
         try:
-            chatid = await event.client(babi(chatid))
+            chatid = await event.client.get_peer_id(babi(chatid))
         except Exception as e:
             await ede(event, f"**ERROR:** `{e}`", 30)
     else:
@@ -51,7 +51,7 @@ async def join_(event):
                 ),
             stream_type=kontol().pulse_stream,
             )
-            await ede(event, f"⚝ **{from_user} Berhasil Join Obrolan Suara**\n**┗ Chat ID: {chatin}")
+            await ede(event, f"⚝ **{from_user} Berhasil Join Obrolan Suara**\n**┗ Chat ID: {chatin}**")
         except memek:
             await sayang.leave_group_call(chatin)
             await ede(
@@ -60,7 +60,7 @@ async def join_(event):
                 10,
             )
         except Exception as e:
-            await eor(event, f"**INFO:** `{e}`")
+            await eor(event, "**INFO:** `Ga ada obrolan suara Ngentot!!!`")
 
 @tod(pattern="lvc(?: |$)(.*)")
 async def leavevc(event):
@@ -68,7 +68,7 @@ async def leavevc(event):
     if len(event.text.split()) > 1:
         chat_id = event.text.split()[1]
         try:
-            chat_id = await event.client(babi(chat_id))
+            chat_id = await event.client.get_peer_id(babi(chat_id))
         except Exception as e:
             return await ede(event, f"**ERROR:** `{e}`")
     else:
