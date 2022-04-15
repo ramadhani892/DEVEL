@@ -23,7 +23,7 @@ ede = edit_delete
 @tod(pattern="jvc(?: |$)(.*)")
 @register(pattern=r"^\.cjvc(?: |$)(.*)", sudo=True)
 async def _(event):
-    await eor(event, "**Hoi aku datang....**")
+    ram = await eor(event, "**Hoi aku datang....**")
     if len(event.text.split()) > 1:
         chats = event.text.split()[1]
         try:
@@ -44,15 +44,15 @@ async def _(event):
                 ),
                 stream_type=kontol().local_stream,
             )
-            await ede(event,
+            await ede(ram,
                 f"⚝ **{first_name} Berhasil Join Ke Obrolan Suara**\n┗ **Chat ID:** `{chats}`", 5
             )
         except babi:
             return await ede(
-                event, "**ERROR**: `Kayak Nya lo udh naik os Dah ngentod.`", 10
+                ram, "**ERROR**: `Kayak Nya lo udh naik os Dah ngentod.`", 10
             )
         except Exception as e:
-            return await ede(event, f"**ERROR:** `{e}`", 10)
+            return await ede(ram, f"**ERROR:** `{e}`", 10)
 
 
 @tod(pattern="lvc(?: |$)(.*)")
@@ -71,8 +71,8 @@ async def vc_end(event):
         try:
             await goblok.leave_group_call(chatid)
             await ede(
-                event,
+                ram,
                 f"⚝ **Babay Anak anak Ngentod, {first_name} Turun dulu.**\n┗ **Chat ID:** `{chatid}`", 10
             )
         except Exception as e:
-            return await ede(event, f"**INFO:** `{e}`", 10)
+            return await ede(ram, f"**INFO:** `{e}`", 10)
