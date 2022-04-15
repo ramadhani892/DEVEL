@@ -58,7 +58,7 @@ async def _(event):
             return await Man.edit(f"**INFO:** `{e}`")
 
 
-@man_cmd(pattern="lvc(?: |$)(.*)")
+@tod(pattern="lvc(?: |$)(.*)")
 @register(pattern=r"^\.clvc(?: |$)(.*)", sudo=True)
 async def vc_end(event):
     Man = await eor(event, "`Processing...`")
