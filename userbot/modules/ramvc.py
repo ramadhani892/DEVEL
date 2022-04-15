@@ -1,12 +1,42 @@
-from pytgcalls import StreamType as kontol
-from pytgcalls.exceptions import AlreadyJoinedError as babi
+from pytgcalls import StreamType
+from pytgcalls.types import Update
 from pytgcalls.types.input_stream import (
-    InputAudioStream as memek, 
-    InputStream as asu,
+    AudioPiped,
+    AudioVideoPiped,
 )
-from userbot import call_py as goblok
-from userbot.events import register
-from userbot.utils import edit_delete, edit_or_reply, ram_cmd as tod
+from pytgcalls.types.input_stream.quality import (
+    HighQualityAudio,
+    HighQualityVideo,
+    LowQualityVideo,
+    MediumQualityVideo,
+)
+from pytgcalls.exceptions import (
+    AlreadyJoinedError,
+)
+
+from telethon.tl import types
+from telethon.utils import get_display_name
+from telethon.tl.functions.users import GetFullUserRequest
+from telethon.tl.functions.channels import GetFullChannelRequest
+from youtubesearchpython import VideosSearch
+
+from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HELP
+from userbot import PLAY_PIC as fotoplay
+from userbot import QUEUE_PIC as ngantri
+from userbot import call_py
+from userbot.utils import bash, edit_delete, edit_or_reply, ram_cmd as tod
+from userbot.utils.chattitle import CHAT_TITLE
+from userbot.utils.queues.queues import (
+    QUEUE,
+    add_to_queue,
+    clear_queue,
+    get_queue,
+    pop_an_item,
+)
+async def get_call(event):
+    call = await event.client(GetFullChannelRequest(event.chat.id))
+    return call.full_chat.call
 
 def vcmention(user):
     full_name = get_display_name(user)
@@ -21,58 +51,56 @@ ede = edit_delete
 # recode by @lahsiajg < starboy \>
 
 @tod(pattern="jvc(?: |$)(.*)")
-@register(pattern=r"^\.cjvc(?: |$)(.*)", sudo=True)
-async def _(event):
-    ram = await eor(event, "**Hoi aku datang....**")
+async def join_(event):
+    rambot = await eor(event, f"**Processing**")
     if len(event.text.split()) > 1:
-        chats = event.text.split()[1]
+        chat_id = event.text.split()[1]
         try:
-            chats = await event.client.get_peer_id(int(chats))
+            chat_id = await event.client(GetFullUserRequest(chat_id))
         except Exception as e:
-            return await eor(event, f"**ERROR:** `{e}`")
+            await ede(rambot, f"**ERROR:** `{e}`", 30)
     else:
-        chats = event.chats
-    if chats:
-        file = "http://duramecho.com/Misc/SilentCd/Silence01s.mp3"
+        chat_id = event.chat_id
+        await event.get_chat()
+        from_user = vcmention(event.sender)
+    if chat_id:
         try:
-            await goblok.join_group_call(
-                chats,
-                asu(
-                    memek(
-                        file,
-                    ),
+            await call_py.join_group_call(
+                chat_id,
+                AudioPiped(
+                    'http://duramecho.com/Misc/SilentCd/Silence01s.mp3'
                 ),
-                stream_type=kontol().local_stream,
+            stream_type=StreamType().pulse_stream,
             )
-            await ede(ram,
-                f"⚝ **Berhasil Join Ke Obrolan Suara**\n┗ **Chat ID:** `{chats}`", 5
-            )
-        except babi:
-            return await ede(
-                ram, "**ERROR**: `Kayak Nya lo udh naik os Dah ngentod.`", 10
+            await ede(rambot, f"**{from_user} Berhasil Naik Ke VC Group!**")
+        except AlreadyJoinedError:
+            await call_py.leave_group_call(chat_id)
+            await ede(
+                rambot,
+                f"**ERROR:** `Akun Anda Sudah Berada Di VC Group!`\n\n**Noted :** __Silahkan Ketik__ `{cmd}joinvc` __untuk menggunakan command kembali.__",
+                30,
             )
         except Exception as e:
-            return await ede(ram, f"**ERROR:** `{e}`",)
-
+            await geezav.edit(f"**INFO:** `{e}`")
 
 @tod(pattern="lvc(?: |$)(.*)")
-@register(pattern=r"^\.clvc(?: |$)(.*)", sudo=True)
-async def vc_end(event):
-    await eor(event, "`Saatnya Pergi....`")
+async def leavevc(event):
+    rambot = await eor(event, "`Processing...`")
     if len(event.text.split()) > 1:
-        chat = event.text.split()[1]
+        chat_id = event.text.split()[1]
         try:
-            await event.client.get_peer_id(int(chat))
+            chat_id = await event.client(GetFullUserRequest(chat_id))
         except Exception as e:
-            return await ede(event, f"**ERROR:** `{e}`", 10)
+            return await ede(rambot, f"**ERROR:** `{e}`")
     else:
-        chatid = event.chats
-    if chatid:
+        chat_id = event.chat_id
+        from_user = vcmention(event.sender)
+    if chat_id:
         try:
-            await goblok.leave_group_call(chatid)
+            await call_py.leave_group_call(chat_id)
             await ede(
-                ram,
-                f"⚝ **Babay Anak anak Ngentod, Gua Turun dulu.**\n┗ **Chat ID:** `{chatid}`", 10
+                rambot,
+                f"{from_user} Berhasil Turun Dari VC Group!",
             )
         except Exception as e:
-            return await ede(ram, f"**INFO:** `{e}`", 10)
+            await eor(event, f"**INFO:** `{e}`")
