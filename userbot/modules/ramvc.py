@@ -9,7 +9,9 @@ from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 
 from userbot.events import register as ok
 from userbot.utils import edit_delete, edit_or_reply, ram_cmd as tod
-from userbot import call_py as sayang
+from userbot import owner, call_py as sayang
+
+
 async def get_call(event):
     mm = await event.client(getchat(event.chat_id))
     xx = await event.client(getvc(mm.full_chat.call, limit=1))
@@ -46,11 +48,11 @@ async def join_(event):
                 stream_type=kontol().local_stream,
             )
             await ede(rambot,
-                f"⚝ **Berhasil Join Ke Obrolan Suara**\n┗ **Chat ID:** `{chat_id}`", 3
+                f"⚝ **{owner} Berhasil Join Ke Obrolan Suara**\n┗ **Chat ID:** `{chat_id}`", 3
             ),
         except memek:
             return await ede(
-                rambot, f"Maaf tod, Lo udah di obrolan suara, dasar anjing lo.`", 10)
+                rambot, f"Maaf {owner}, Lo udah di obrolan suara, dasar anjing lo.`", 10)
         except Exception as e:
             return await ede(rambot, f"**{e}**", 10)     
 
@@ -71,7 +73,7 @@ async def vc_end(event):
             await sayang.leave_group_call(chat_id)
             await ede(
                 rambot,
-                f"⚝ **Berhasil Turun Obrolan Suara**\n╚ **Chat ID:** `{chat_id}`", 5
+                f"⚝ **{owner} Berhasil Turun Obrolan Suara**\n╚ **Chat ID:** `{chat_id}`", 5
             )
         except Exception:
             return await ede(rambot, f"**LO LAGI GA DI OS KONTOL!!!!**", 10)
