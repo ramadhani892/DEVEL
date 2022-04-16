@@ -32,7 +32,7 @@ async def join_(event):
         except Exception as e:
             return await ede(rambot, f"**ERROR:** `{e}`", 5)
     else:
-        chat_id = event.get_chat()
+        chat_id = event.chat_id
     if chat_id:
         file = "./userbot/resource/SEPI.mp3"
         try:
