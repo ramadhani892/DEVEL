@@ -34,7 +34,6 @@ async def join_(event):
             return await ede(rambot, f"**ERROR:** `{e}`", 5)
     else:
         chat_id = event.chat_id
-        from_user = toyik(event.sender)
     if chat_id:
         file = "./userbot/resource/SEPI.mp3"
         try:
@@ -48,11 +47,11 @@ async def join_(event):
                 stream_type=kontol().local_stream,
             )
             await ede(rambot,
-                f"⚝ **{from_user} Berhasil Join Ke Obrolan Suara**\n┗ **Chat ID:** `{chat_id}`", 3
+                f"⚝ **Berhasil Join Ke Obrolan Suara**\n┗ **Chat ID:** `{chat_id}`", 3
             ),
         except memek:
             return await ede(
-                rambot, f"Maaf {from_user}, Lo udah di obrolan suara, dasar anjing lo.`", 10)
+                rambot, f"Maaf tod, Lo udah di obrolan suara, dasar anjing lo.`", 10)
         except Exception as e:
             return await ede(rambot, f"**{e}**", 10)     
 
@@ -68,7 +67,6 @@ async def vc_end(event):
             return await ede(rambot, f"**ERROR:** `{e}`")
     else:
         chat_id = event.chat_id
-        toyik(event.sender)
     if chat_id:
         try:
             await sayang.leave_group_call(chat_id)
