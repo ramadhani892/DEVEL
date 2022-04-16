@@ -52,10 +52,9 @@ async def join_(event):
             ),
         except Exception:
             return await ede(rambot, f"**GA ADA OS DISINI KONTOL!!!**", 10)
-            )
         except memek:
             return await ede(
-                rambot, f"Maaf {from_user}, Lo udah di obrolan suara, dasar anjing lo.`", 10
+                rambot, f"Maaf {from_user}, Lo udah di obrolan suara, dasar anjing lo.`", 10)
             
 
 @tod(pattern="lvc(?: |$)(.*)")
