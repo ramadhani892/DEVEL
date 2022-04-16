@@ -52,7 +52,7 @@ async def join_(event):
             )
         except memek:
             return await ede(
-                rambot, "Maaf {from_user}, Lo udah di obrolan suara, dasar anjing lo.`", 10
+                rambot, f"Maaf {from_user}, Lo udah di obrolan suara, dasar anjing lo.`", 10
             )
         except Exception:
             return await ede(rambot, f"**GA ADA OS DISINI KONTOL!!!**", 10)
@@ -67,7 +67,7 @@ async def vc_end(event):
         try:
             chat_id = await event.client.get_peer_id(int(chat_id))
         except Exception as e:
-            return await Man.edit(f"**ERROR:** `{e}`")
+            return await ede(rambot, f"**ERROR:** `{e}`")
     else:
         chat_id = event.chat_id
         toyik(event.sender)
@@ -76,7 +76,7 @@ async def vc_end(event):
             await sayang.leave_group_call(chat_id)
             await ede(
                 rambot,
-                f"⚝ **Berhasil Turun dari Obrolan Suara**\n╚ **Chat ID:** `{chat_id}`", 5
+                f"⚝ **Berhasil Turun Obrolan Suara**\n╚ **Chat ID:** `{chat_id}`", 5
             )
         except Exception:
             return await ede(rambot, f"**LO LAGI GA DI OS KONTOL!!!!**", 10)
