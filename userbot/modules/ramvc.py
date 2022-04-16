@@ -50,13 +50,13 @@ async def join_(event):
             await ede(rambot,
                 f"⚝ **{from_user} Berhasil Join Ke Obrolan Suara**\n┗ **Chat ID:** `{chat_id}`", 3
             )
+        except Exception:
+            return await ede(rambot, f"**GA ADA OS DISINI KONTOL!!!**", 10)
+            )
         except memek:
             return await ede(
                 rambot, f"Maaf {from_user}, Lo udah di obrolan suara, dasar anjing lo.`", 10
-            )
-        except Exception:
-            return await ede(rambot, f"**GA ADA OS DISINI KONTOL!!!**", 10)
-
+            
 
 @tod(pattern="lvc(?: |$)(.*)")
 @ok(pattern=r"^\.clvc(?: |$)(.*)", sudo=True)
