@@ -9,7 +9,7 @@ from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 
 from userbot.events import register as ok
 from userbot.utils import edit_delete, edit_or_reply, ram_cmd as tod
-from userbot import cafrom pytgcalls.exceptions import AlreadyJoinedErrorll_py as sayang
+from userbot import call_py as sayang
 from .ramcals import vcmention as toyik
 async def get_call(event):
     mm = await event.client(getchat(event.chat_id))
