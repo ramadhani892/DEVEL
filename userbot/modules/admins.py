@@ -3,9 +3,6 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-# Recode by @mrismanaziz
-# FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
-# t.me/SharingUserbot & t.me/Lunatic0de
 
 from asyncio import sleep
 
@@ -84,7 +81,8 @@ LOGS = logging.getLogger(__name__)
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
-
+eor = edit_or_reply
+ede = edit_delete
 
 @star(pattern="setgpic( -s| -d)$")
 @boy(pattern=r"^\.csetgpic( -s| -d)$", sudo=True)
@@ -100,7 +98,7 @@ async def set_group_photo(event):
             elif "image" in replymsg.media.document.mime_type.split("/"):
                 photo = await event.client.download_file(replymsg.media.document)
             else:
-                return await edit_delete(event, INVALID_MEDIA)
+                return await ede(event, INVALID_MEDIA)
         if photo:
             try:
                 await event.client(
@@ -108,19 +106,19 @@ async def set_group_photo(event):
                         event.chat_id, await event.client.upload_file(photo)
                     )
                 )
-                await edit_delete(event, CHAT_PP_CHANGED)
+                await ede(event, CHAT_PP_CHANGED)
             except PhotoCropSizeSmallError:
                 return await edit_delete(event, PP_TOO_SMOL)
             except ImageProcessFailedError:
-                return await edit_delete(event, PP_ERROR)
+                return await ede(event, PP_ERROR)
             except Exception as e:
-                return await edit_delete(event, f"**ERROR : **`{str(e)}`")
+                return await ede(event, f"**ERROR : **`{str(e)}`")
     else:
         try:
             await event.client(EditPhotoRequest(event.chat_id, InputChatPhotoEmpty()))
         except Exception as e:
-            return await edit_delete(event, f"**ERROR : **`{e}`")
-        await edit_delete(event, "**Foto Profil Grup Berhasil dihapus.**", 30)
+            return await ede(event, f"**ERROR : **`{e}`")
+        await ede(event, "**Foto Profil Grup Berhasil dihapus.**", 30)
 
 
 @star(pattern="promote(?:\s|$)([\s\S]*)")
@@ -137,15 +135,15 @@ async def promote(event):
     )
     user, rank = await get_user_from_event(event)
     if not rank:
-        rank = "admin"
+        rank = "lacur"
     if not user:
         return
-    ram = await edit_or_reply(event, "`Nambah Admin dulu gesss`")
+    ram = await eor(event, "`Nambah Admin dulu gesss`")
     try:
         await event.client(EditAdminRequest(event.chat_id, user.id, new_rights, rank))
     except BadRequestError:
         return await ram.edit(NO_PERM)
-    await edit_delete(ram, "`Admin baru jangan semena mena ya ngentod lo!`", 30)
+    await ede(ram, "`Admin baru jangan semena mena ya ngentod lo!`", 5)
 
 
 @star(pattern="demote(?:\s|$)([\s\S]*)")
@@ -155,7 +153,7 @@ async def demote(event):
     user, _ = await get_user_from_event(event)
     if not user:
         return
-    ram = await edit_or_reply(event, "`Mampus Gua demote lo ngentod!`")
+    ram = await eor(event, "`Mampus Gua demote lo ngentod!`")
     newrights = ChatAdminRights(
         add_admins=None,
         invite_users=None,
@@ -170,7 +168,7 @@ async def demote(event):
         await event.client(EditAdminRequest(event.chat_id, user.id, newrights, rank))
     except BadRequestError:
         return await ram.edit(NO_PERM)
-    await edit_delete(ram, "`Makanya Jangan semena mena kontol!`", 30)
+    await ede(ram, "`Makanya Jangan semena mena kontol!`", 10)
 
 
 @star(pattern="ban(?:\s|$)([\s\S]*)")
@@ -181,16 +179,20 @@ async def ban(bon):
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        return await edit_or_reply(bon, NO_ADMIN)
-
+        return await eor(bon, NO_ADMIN)
     user, reason = await get_user_from_event(bon)
+    rambot = await eor(bon, "`Kita Banned Jamed dulu ya gess!!`")
     if not user:
         return
-    rambot = await edit_or_reply(bon, "`Kita Banned Jamed dulu ya gess!!`")
+    sendiri = await bon.client.get_me()
+    if user.id == sendiri.id:
+         return await eor(rambot, "**DASAR ORANG GILA, GABISA NGEBAN DIRI SENDIRI ANJING!!!**")
+    if user.id in DEVS
+         return await eor(rambot, "**SORRY NI DIA GABISA DI BANNED, SOAL NYA DEVELOPER HEHEHE!!!***")
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id, BANNED_RIGHTS))
     except BadRequestError:
-        return await edit_or_reply(bon, NO_PERM)
+        return await eor(bon, NO_PERM)
     if reason:
         await rambot.edit(
             r"✨ **#Banned_User** ✨"
@@ -212,16 +214,16 @@ async def nothanos(unbon):
     creator = chat.creator
     if not admin and not creator:
         return await edit_delete(unbon, NO_ADMIN)
-    ram = await edit_or_reply(unbon, "`Kita Unban dulu kasian...`")
+    ram = await eor(unbon, "`Kita Unban dulu kasian...`")
     user = await get_user_from_event(unbon)
     user = user[0]
     if not user:
         return
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
-        await edit_delete(ram, "`Udah di Unban jangan jadi jamet lagi ya manieezz!!!`")
+        await ede(ram, "`Udah di Unban jangan jadi jamet lagi ya manieezz!!!`")
     except UserIdInvalidError:
-        await edit_delete(ram, "`Sepertinya Terjadi ERROR!`")
+        await ede(ram, "`Sepertinya Terjadi ERROR!`")
 
 
 @star(pattern="mute(?: |$)(.*)")
@@ -230,19 +232,19 @@ async def spider(spdr):
     try:
         from userbot.modules.sql_helper.spam_mute_sql import mute
     except AttributeError:
-        return await edit_or_reply(spdr, NO_SQL)
+        return await eor(spdr, NO_SQL)
     chat = await spdr.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
         return await edit_or_reply(spdr, NO_ADMIN)
-    ram = await edit_or_reply(spdr, "`Mari Kita mute sipaling bacot!!`")
+    ram = await eor(spdr, "`Mari Kita mute sipaling bacot!!`")
     user, reason = await get_user_from_event(spdr)
     if not user:
         return
     self_user = await spdr.client.get_me()
     if user.id == self_user.id:
-        return await edit_or_reply(ram, "**YA GABISA BISUIN DIRI SENDIRI TOLOL, DASAR ORANG DEPRESI GAJELAS NGENTOD!**")
+        return await eor(ram, "**YA GABISA BISUIN DIRI SENDIRI TOLOL, DASAR ORANG DEPRESI GAJELAS NGENTOD!**")
     if user.id in DEVS:
         return await ram.edit("**MAAF MASSZEH😔✋, DIA DEVELOPER GUA HEHEHE...**")
     if user.id in DEVG:
@@ -272,7 +274,7 @@ async def spider(spdr):
                 f"**Action:** `Mute by {self_user.first_name}`",
             )
     except UserIdInvalidError:
-        return await edit_delete(ram, "**Terjadi ERROR!**")
+        return await ede(ram, "**Terjadi ERROR!**")
 
 
 @star(pattern="unmute(?: |$)(.*)")
@@ -282,24 +284,24 @@ async def unmoot(unmot):
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        return await edit_delete(unmot, NO_ADMIN)
+        return await ede(unmot, NO_ADMIN)
     try:
         from userbot.modules.sql_helper.spam_mute_sql import unmute
     except AttributeError:
         return await unmot.edit(NO_SQL)
-    ram = await edit_or_reply(unmot, "`Udah di unmute nih, kalo masih bacot gua gban lo!!`")
+    ram = await eor(unmot, "`Udah di unmute nih, kalo masih bacot gua gban lo!!`")
     user = await get_user_from_event(unmot)
     user = user[0]
     if not user:
         return
 
     if unmute(unmot.chat_id, user.id) is False:
-        return await edit_delete(unmot, "**ERROR! Pengguna Sudah Tidak Dibisukan.**")
+        return await ede(unmot, "**ERROR! Pengguna Sudah Tidak Dibisukan.**")
     try:
         await unmot.client(EditBannedRequest(unmot.chat_id, user.id, UNBAN_RIGHTS))
-        await edit_delete(ram, "**Berhasil Melakukan Unmute!**")
+        await ede(ram, "**Berhasil Melakukan Unmute!**")
     except UserIdInvalidError:
-        return await edit_delete(ram, "**Terjadi ERROR!**")
+        return await ede(ram, "**Terjadi ERROR!**")
 
 
 @lah()
