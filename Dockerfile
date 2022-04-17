@@ -1,10 +1,7 @@
-FROM ramadhani892/ramagans:slim-buster
-# Rama ganteng, Yang hapus credit, Lo babi heheh
-# ======================
-#    RAM-UBOT DOCKER
-#   FROM DOCKERHUB.COM
-# ======================
-RUN git clone -b main https://github.com/ramadhani892/DEVEL /home/main/
-WORKDIR /home/main/
+FROM vckyouubitch/geez:master
 
-CMD ["python3", "-m", "userbot"]
+RUN git clone -b master https://github.com/vckyou/GeezProjects /home/geezprojects/ \
+    && chmod 777 /home/geezprojects \
+    && mkdir /home/geezprojects/bin/
+
+CMD [ "bash", "start" ]
