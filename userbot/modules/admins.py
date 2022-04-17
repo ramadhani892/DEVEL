@@ -187,7 +187,7 @@ async def ban(bon):
     sendiri = await bon.client.get_me()
     if user.id == sendiri.id:
          return await eor(rambot, "**DASAR ORANG GILA, GABISA NGEBAN DIRI SENDIRI ANJING!!!**")
-    if user.id in DEVS
+    if user.id in DEVS:
          return await eor(rambot, "**SORRY NI DIA GABISA DI BANNED, SOAL NYA DEVELOPER HEHEHE!!!***")
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id, BANNED_RIGHTS))
