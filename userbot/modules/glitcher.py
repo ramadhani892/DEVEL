@@ -13,7 +13,7 @@ from glitch_this import ImageGlitcher
 from PIL import Image
 from telethon import functions, types
 
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, CMD_HANDLER as cmd
 from userbot.utils import check_media, edit_delete, edit_or_reply, ram_cmd, progress
 
 Glitched = TEMP_DOWNLOAD_DIRECTORY + "glitch.gif"
@@ -93,8 +93,8 @@ async def glitch(event):
 
 CMD_HELP.update(
     {
-        "glitch": "**Plugin : **`glitch`\
-        \n\n  •  **Syntax :** `.glitch` <reply Ke Sticker/Gambar>\
+        "glitch": f"**Plugin : **`glitch`\
+        \n\n  •  **Syntax :** `{cmd}glitch` <reply Ke Sticker/Gambar>\
         \n  •  **Function : **Glitch Level 1-8 Jika Tidak Membuat Level Maka Otomatis Default Level 2.\
     "
     }
