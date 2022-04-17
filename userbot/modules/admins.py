@@ -304,7 +304,7 @@ async def unmoot(unmot):
         return await ede(ram, "**Terjadi ERROR!**")
 
 
-@lah()
+@lah(incoming=True)
 async def muter(moot):
     try:
         from userbot.modules.sql_helper.gmute_sql import is_gmuted
