@@ -130,11 +130,15 @@ async def repo_is_here(event):
 
 @ram_cmd(pattern="string$")
 async def string_is_here(event):
-    await edit_or_reply(
-        event,
-        "⭐ **AMBIL STRING DI SINI :** [KLIK DISINI](https://t.me/stringramubot)\n",
-    )
+    await event.client.send_message(
+        event.chat_id,
+        "⭐ **AMBIL STRING DI SINI :** [KLIK DISINI](https://t.me/stringramubot)", link_preview=False, reply_to=event.reply_to_msg_id)
+    await event.delete()
 
+@ram_cmd(pattern="deploy$")
+async def deploy_(event):
+    await event.client.send_message(event.chat_id, "Deploy ✨RAM-UBOT✨ Disini: [TEKAN...](https://telegram.dog/XTZ_HerokuBot?start=cmFtYWRoYW5pODkyL1JBTS1VQk9UIG1hc3Rlcg)" link_preview=False, reply_to=event.reply_to_msg_id)
+    await event.reply()
 
 @ram_cmd(pattern="raw$")
 async def raw(event):
@@ -259,10 +263,10 @@ async def scam(results, lim):
 async def send(event):
     if not event.is_reply:
         return await edit_or_reply(
-            event, "**Mohon Balas ke pesan yang ingin dikirim!**"
+            event, "**REPLY PESAN NYA NGENTOD.**"
         )
     chat = event.pattern_match.group(1)
-    xx = await edit_or_reply(event, "**Berhasil Mengirim pesan ini**")
+    xx = await edit_or_reply(event, "**Berhasil Tod, Pesan Telah terkirim!**")
     try:
         chat = int(chat)
     except ValueError:
@@ -311,6 +315,8 @@ CMD_HELP.update(
         \n  •  **Function : **Menampilan link Repository RAM-UBOT\
         \n\n  •  **Syntax :** `{cmd}string`\
         \n  •  **Function : **Menampilan link String RAM-UBOT\
+        \n\n  •  **Syntax :** `{cmd}deploy`\
+        \n  •  **Function : **Untuk menampilkan Link Deploy RAM-UBOT\
     "
     }
 )
