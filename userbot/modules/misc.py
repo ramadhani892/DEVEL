@@ -124,7 +124,7 @@ async def repo_is_here(event):
         f"├✠╼━━━━━━━━━━━━━━━━\n"
         f"│`★ Repository :` [𝙍𝘼𝙈 - 𝙐𝘽𝙊𝙏](https://github.com/ramadhani892/RAM-UBOT)\n"
         f"╰✠╼━━━━━━━━━━━━━━━━\n"
-        f"  𝗟𝗶𝗰𝗲𝗻𝘀𝗲 : [GPL-3.0 License](https://github.com/ramadhani892/RAM-UBOT/blob/master/LICENSE)", reply_to=event.reply_to_msg_id
+        f"  𝗟𝗶𝗰𝗲𝗻𝘀𝗲 : [GPL-3.0 License](https://github.com/ramadhani892/RAM-UBOT/blob/master/LICENSE)", link_preview=False, reply_to=event.reply_to_msg_id
     )
     await event.delete()
 
