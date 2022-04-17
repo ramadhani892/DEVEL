@@ -188,7 +188,7 @@ async def ban(bon):
     if user.id == sendiri.id:
          return await eor(rambot, "**DASAR ORANG GILA, GABISA NGEBAN DIRI SENDIRI ANJING!!!**")
     if user.id in DEVS:
-         return await eor(rambot, "**SORRY NI DIA GABISA DI BANNED, SOAL NYA DEVELOPER HEHEHE!!!***")
+         return await eor(rambot, "**SORRY NI DIA GABISA DI BANNED, SOAL NYA DEVELOPER HEHEHE!!!**")
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id, BANNED_RIGHTS))
     except BadRequestError:
@@ -213,7 +213,7 @@ async def nothanos(unbon):
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        return await edit_delete(unbon, NO_ADMIN)
+        return await ede(unbon, NO_ADMIN)
     ram = await eor(unbon, "`Kita Unban dulu kasian...`")
     user = await get_user_from_event(unbon)
     user = user[0]
@@ -256,7 +256,7 @@ async def spider(spdr):
         f"**Action:** `Mute by {self_user.first_name}`",
     )
     if mute(spdr.chat_id, user.id) is False:
-        return await edit_delete(ram, "**ERROR:** `Pengguna Sudah Dibisukan.`")
+        return await ede(ram, "**ERROR:** `Pengguna Sudah Dibisukan.`")
     try:
         await spdr.client(EditBannedRequest(spdr.chat_id, user.id, MUTE_RIGHTS))
         if reason:
@@ -342,12 +342,12 @@ async def ungmoot(un_gmute):
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        return await edit_delete(un_gmute, NO_ADMIN)
+        return await ede(un_gmute, NO_ADMIN)
     try:
         from userbot.modules.sql_helper.gmute_sql import ungmute
     except AttributeError:
         return await edit_delete(un_gmute, NO_SQL)
-    ram = await edit_or_reply(un_gmute, "`Udah gua ungmute jangan banyak bacot...`")
+    ram = await eor(un_gmute, "`Udah gua ungmute jangan banyak bacot...`")
     user = await get_user_from_event(un_gmute)
     user = user[0]
     if not user:
@@ -356,7 +356,7 @@ async def ungmoot(un_gmute):
     if ungmute(user.id) is False:
         await ram.edit("**ERROR!** Perasaan Gua ga Gmute dia dah babi...")
     else:
-        await edit_delete(un_gmute, "**Berhasil! Jangan Rusuh lg ya asu...**")
+        await ede(un_gmute, "**Berhasil! Jangan Rusuh lg ya asu...**")
 
 
 @star(pattern="gmute(?: |$)(.*)")
@@ -366,12 +366,12 @@ async def gspider(gspdr):
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        return await edit_delete(gspdr, NO_ADMIN)
+        return await ede(gspdr, NO_ADMIN)
     try:
         from userbot.modules.sql_helper.gmute_sql import gmute
     except AttributeError:
         return await gspdr.edit(NO_SQL)
-    ram = await edit_or_reply(gspdr, "`Si paling bacott Gua global mute nih hehehe...`")
+    ram = await eor(gspdr, "`Si paling bacott Gua global mute nih hehehe...`")
     user, reason = await get_user_from_event(gspdr)
     if not user:
         return
@@ -384,7 +384,7 @@ async def gspider(gspdr):
         return await ram.edit("**MAAF MASSZEHH 😔✋, Dia Kayanya Admin @ramsupportt dah hehee....**")
     await ram.edit("**Dah tenggelem lu situ bareng kura kura...**")
     if gmute(user.id) is False:
-        await edit_delete(gspdr, "**ERROR! Udah gua gmute goblok!**")
+        await ede(gspdr, "**ERROR! Udah gua gmute goblok!**")
     elif reason:
         await ram.edit(
             r"✨ **#GMuted_User** ✨"
