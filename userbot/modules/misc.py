@@ -138,7 +138,7 @@ async def string_is_here(event):
 @ram_cmd(pattern="deploy$")
 async def deploy_(event):
     await event.client.send_message(event.chat_id, "Deploy ✨RAM-UBOT✨ Disini: [TEKAN...](https://telegram.dog/XTZ_HerokuBot?start=cmFtYWRoYW5pODkyL1JBTS1VQk9UIG1hc3Rlcg)", link_preview=False, reply_to=event.reply_to_msg_id)
-    await event.reply()
+    await event.delete()
 
 @ram_cmd(pattern="raw$")
 async def raw(event):
