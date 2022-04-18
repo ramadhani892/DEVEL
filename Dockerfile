@@ -1,6 +1,10 @@
 FROM ramadhani892/ramagans:slim-buster
-
-RUN git clone -b main https://ramadhani892/DEVEL /home/main/ \
+# Rama ganteng, Yang hapus credit, Lo babi heheh
+# ======================
+#    RAM-UBOT DOCKER
+#   FROM DOCKERHUB.COM
+# ======================
+RUN git clone -b main https://github.com/ramadhani892/DEVEL /home/main/
 WORKDIR /home/main/
 
-CMD ["python3", "-m" "userbot"]
+CMD ["python3", "-m", "userbot"]
