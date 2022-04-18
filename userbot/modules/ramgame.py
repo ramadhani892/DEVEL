@@ -1,8 +1,8 @@
 from userbot import CMD_HELP, bot
-from userbot.events import register
+from userbot.utils import ram_cmd as tod
+from userbot import CMD_HANDLER as cmd
 
-
-@register(outgoing=True, pattern=r"^\.xogame(?: |$)(.*)")
+@tod(pattern="xogame(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -15,7 +15,7 @@ async def _(event):
     await event.delete()
 
 
-@register(outgoing=True, pattern=r"^\.whisp(?: |$)(.*)")
+@tod(pattern="whisp(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -28,7 +28,7 @@ async def _(event):
     await event.delete()
 
 
-@register(outgoing=True, pattern=r"^\.mod(?: |$)(.*)")
+@tod(pattern="mod(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -41,10 +41,10 @@ async def _(event):
     await event.delete()
 
 CMD_HELP.update({
-    "games": "\
-𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.xogame`\
+    "games": f"**Plugins : **Games.\
+𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}xogame`\
 \n↳ : Mainkan game XO bersama temanmu.\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.mod <nama app>`\
+\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}mod <nama app>`\
 \n↳ : Dapatkan applikasi mod\
-\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.whisp <teks> <username>`\
+\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}whisp <teks> <username>`\
 \n↳ : Berikan pesan rahasia"})
